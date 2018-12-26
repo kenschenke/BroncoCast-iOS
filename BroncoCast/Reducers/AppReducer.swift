@@ -1,0 +1,16 @@
+//
+//  AppReducer.swift
+//  BroncoCast
+//
+//  Created by Ken Schenke on 12/26/18.
+//  Copyright © 2018 Ken Schenke. All rights reserved.
+//
+
+import Foundation
+import ReSwift
+
+func appReducer(_ action: Action, _ state : AppState?) -> AppState {
+    return AppState(
+        navigationState: navigationReducer(action, state: state?.navigationState)
+    )
+}

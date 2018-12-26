@@ -7,21 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE0DADCE21D3E903003C2B43 /* NavigationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0DADCD21D3E903003C2B43 /* NavigationAction.swift */; };
+		BE0DADD321D3ED32003C2B43 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0DADD221D3ED32003C2B43 /* AppState.swift */; };
+		BE0DADD521D3EF21003C2B43 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0DADD421D3EF21003C2B43 /* NavigationState.swift */; };
+		BE0DADD821D3EFB0003C2B43 /* NavigationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0DADD721D3EFB0003C2B43 /* NavigationReducer.swift */; };
+		BE0DADDA21D3FE41003C2B43 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0DADD921D3FE41003C2B43 /* AppReducer.swift */; };
+		BE0DADDC21D4040B003C2B43 /* RegistrationStepOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0DADDB21D4040B003C2B43 /* RegistrationStepOneViewController.swift */; };
+		BE0DADDE21D421BE003C2B43 /* RegistrationStepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0DADDD21D421BE003C2B43 /* RegistrationStepTwoViewController.swift */; };
+		BE0F039521D0322F00D6178D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F039421D0322F00D6178D /* SignInViewController.swift */; };
+		BE4772CB21D071A000C12763 /* TextFieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4772CA21D071A000C12763 /* TextFieldHelper.swift */; };
+		BEA22CB921D15E5F00D453BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA22CB821D15E5F00D453BE /* MainViewController.swift */; };
+		BEA22CBC21D3BCC600D453BE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA22CBB21D3BCC600D453BE /* DesignableView.swift */; };
 		BED9D8D721CEEC56003455E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED9D8D621CEEC56003455E6 /* AppDelegate.swift */; };
-		BED9D8D921CEEC56003455E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED9D8D821CEEC56003455E6 /* ViewController.swift */; };
 		BED9D8DC21CEEC56003455E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED9D8DA21CEEC56003455E6 /* Main.storyboard */; };
 		BED9D8DE21CEEC56003455E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED9D8DD21CEEC56003455E6 /* Assets.xcassets */; };
 		BED9D8E121CEEC56003455E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED9D8DF21CEEC56003455E6 /* LaunchScreen.storyboard */; };
+		BED9D8E921CEED8B003455E6 /* Input.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED9D8E821CEED8B003455E6 /* Input.xib */; };
+		BED9D8EB21CEED97003455E6 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED9D8EA21CEED97003455E6 /* Input.swift */; };
+		DA8E9C846812FE5B08CC5A32 /* Pods_BroncoCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B86554F42ACB63E79C9E93 /* Pods_BroncoCast.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		97B86554F42ACB63E79C9E93 /* Pods_BroncoCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroncoCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F4453E832D67EF1DCEA01DD /* Pods-BroncoCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroncoCast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BroncoCast/Pods-BroncoCast.debug.xcconfig"; sourceTree = "<group>"; };
+		BE0DADCD21D3E903003C2B43 /* NavigationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAction.swift; sourceTree = "<group>"; };
+		BE0DADD221D3ED32003C2B43 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		BE0DADD421D3EF21003C2B43 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
+		BE0DADD721D3EFB0003C2B43 /* NavigationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationReducer.swift; sourceTree = "<group>"; };
+		BE0DADD921D3FE41003C2B43 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		BE0DADDB21D4040B003C2B43 /* RegistrationStepOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationStepOneViewController.swift; sourceTree = "<group>"; };
+		BE0DADDD21D421BE003C2B43 /* RegistrationStepTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationStepTwoViewController.swift; sourceTree = "<group>"; };
+		BE0F039421D0322F00D6178D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		BE4772CA21D071A000C12763 /* TextFieldHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldHelper.swift; sourceTree = "<group>"; };
+		BEA22CB821D15E5F00D453BE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BEA22CBB21D3BCC600D453BE /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		BED9D8D321CEEC56003455E6 /* BroncoCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BroncoCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED9D8D621CEEC56003455E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BED9D8D821CEEC56003455E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BED9D8DB21CEEC56003455E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BED9D8DD21CEEC56003455E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BED9D8E021CEEC56003455E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BED9D8E221CEEC56003455E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BED9D8E821CEED8B003455E6 /* Input.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Input.xib; sourceTree = "<group>"; };
+		BED9D8EA21CEED97003455E6 /* Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		C84058CC7F8957F4A1EEB5E2 /* Pods-BroncoCast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroncoCast.release.xcconfig"; path = "Pods/Target Support Files/Pods-BroncoCast/Pods-BroncoCast.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +57,82 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8E9C846812FE5B08CC5A32 /* Pods_BroncoCast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D350C5E93E6619F86000994 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97B86554F42ACB63E79C9E93 /* Pods_BroncoCast.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7DB8E7C33FB3EC0F186823D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F4453E832D67EF1DCEA01DD /* Pods-BroncoCast.debug.xcconfig */,
+				C84058CC7F8957F4A1EEB5E2 /* Pods-BroncoCast.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BE0DADCC21D3E8EE003C2B43 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				BE0DADCD21D3E903003C2B43 /* NavigationAction.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		BE0DADD121D3ED22003C2B43 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				BE0DADD221D3ED32003C2B43 /* AppState.swift */,
+				BE0DADD421D3EF21003C2B43 /* NavigationState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		BE0DADD621D3EF9A003C2B43 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				BE0DADD721D3EFB0003C2B43 /* NavigationReducer.swift */,
+				BE0DADD921D3FE41003C2B43 /* AppReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		BE0F039321D0320E00D6178D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE0F039421D0322F00D6178D /* SignInViewController.swift */,
+				BEA22CB821D15E5F00D453BE /* MainViewController.swift */,
+				BE0DADDB21D4040B003C2B43 /* RegistrationStepOneViewController.swift */,
+				BE0DADDD21D421BE003C2B43 /* RegistrationStepTwoViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BEA22CBA21D3BC7F00D453BE /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				BEA22CBB21D3BCC600D453BE /* DesignableView.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		BED9D8CA21CEEC56003455E6 = {
 			isa = PBXGroup;
 			children = (
 				BED9D8D521CEEC56003455E6 /* BroncoCast */,
 				BED9D8D421CEEC56003455E6 /* Products */,
+				B7DB8E7C33FB3EC0F186823D /* Pods */,
+				1D350C5E93E6619F86000994 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +147,19 @@
 		BED9D8D521CEEC56003455E6 /* BroncoCast */ = {
 			isa = PBXGroup;
 			children = (
+				BE0DADD621D3EF9A003C2B43 /* Reducers */,
+				BE0DADD121D3ED22003C2B43 /* State */,
+				BE0DADCC21D3E8EE003C2B43 /* Actions */,
+				BEA22CBA21D3BC7F00D453BE /* Utility */,
+				BE0F039321D0320E00D6178D /* View Controllers */,
+				BED9D8EA21CEED97003455E6 /* Input.swift */,
+				BED9D8E821CEED8B003455E6 /* Input.xib */,
 				BED9D8D621CEEC56003455E6 /* AppDelegate.swift */,
-				BED9D8D821CEEC56003455E6 /* ViewController.swift */,
 				BED9D8DA21CEEC56003455E6 /* Main.storyboard */,
 				BED9D8DD21CEEC56003455E6 /* Assets.xcassets */,
 				BED9D8DF21CEEC56003455E6 /* LaunchScreen.storyboard */,
 				BED9D8E221CEEC56003455E6 /* Info.plist */,
+				BE4772CA21D071A000C12763 /* TextFieldHelper.swift */,
 			);
 			path = BroncoCast;
 			sourceTree = "<group>";
@@ -71,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BED9D8E521CEEC56003455E6 /* Build configuration list for PBXNativeTarget "BroncoCast" */;
 			buildPhases = (
+				935458740065A154C0BF8BD3 /* [CP] Check Pods Manifest.lock */,
 				BED9D8CF21CEEC56003455E6 /* Sources */,
 				BED9D8D021CEEC56003455E6 /* Frameworks */,
 				BED9D8D121CEEC56003455E6 /* Resources */,
+				E82496D96C5F4A81105C8E5F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,19 +226,80 @@
 			files = (
 				BED9D8E121CEEC56003455E6 /* LaunchScreen.storyboard in Resources */,
 				BED9D8DE21CEEC56003455E6 /* Assets.xcassets in Resources */,
+				BED9D8E921CEED8B003455E6 /* Input.xib in Resources */,
 				BED9D8DC21CEEC56003455E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		935458740065A154C0BF8BD3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BroncoCast-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E82496D96C5F4A81105C8E5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BroncoCast/Pods-BroncoCast-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/InputMask/InputMask.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InputMask.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BroncoCast/Pods-BroncoCast-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BED9D8CF21CEEC56003455E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BED9D8D921CEEC56003455E6 /* ViewController.swift in Sources */,
+				BE0DADD321D3ED32003C2B43 /* AppState.swift in Sources */,
+				BE0DADDA21D3FE41003C2B43 /* AppReducer.swift in Sources */,
+				BE0DADDC21D4040B003C2B43 /* RegistrationStepOneViewController.swift in Sources */,
+				BE0DADD521D3EF21003C2B43 /* NavigationState.swift in Sources */,
+				BE0F039521D0322F00D6178D /* SignInViewController.swift in Sources */,
+				BED9D8EB21CEED97003455E6 /* Input.swift in Sources */,
 				BED9D8D721CEEC56003455E6 /* AppDelegate.swift in Sources */,
+				BE4772CB21D071A000C12763 /* TextFieldHelper.swift in Sources */,
+				BEA22CBC21D3BCC600D453BE /* DesignableView.swift in Sources */,
+				BE0DADDE21D421BE003C2B43 /* RegistrationStepTwoViewController.swift in Sources */,
+				BE0DADCE21D3E903003C2B43 /* NavigationAction.swift in Sources */,
+				BE0DADD821D3EFB0003C2B43 /* NavigationReducer.swift in Sources */,
+				BEA22CB921D15E5F00D453BE /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +443,7 @@
 		};
 		BED9D8E621CEEC56003455E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F4453E832D67EF1DCEA01DD /* Pods-BroncoCast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -292,12 +456,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kenschenke.BroncoCast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		BED9D8E721CEEC56003455E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C84058CC7F8957F4A1EEB5E2 /* Pods-BroncoCast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -310,7 +475,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kenschenke.BroncoCast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

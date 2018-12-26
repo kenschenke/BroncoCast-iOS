@@ -7,16 +7,38 @@
 //
 
 import UIKit
+import ReSwift
+
+var store = Store<AppState>(reducer: appReducer, state: nil)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let storyboard: UIStoryboard
+    
+    override init() {
+        storyboard = UIStoryboard(name: "Main", bundle: nil)
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        if isLoggedIn() {
+            store.dispatch(NavigationToMainAction())
+        } else {
+            store.dispatch(NavigateToSignInAction())
+        }
+        
+        self.window?.makeKeyAndVisible()
+        
         return true
+    }
+    
+    func isLoggedIn() -> Bool {
+        return false
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
