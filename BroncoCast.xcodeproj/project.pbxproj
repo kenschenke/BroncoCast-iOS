@@ -16,8 +16,20 @@
 		BE0DADDE21D421BE003C2B43 /* RegistrationStepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0DADDD21D421BE003C2B43 /* RegistrationStepTwoViewController.swift */; };
 		BE0F039521D0322F00D6178D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F039421D0322F00D6178D /* SignInViewController.swift */; };
 		BE4772CB21D071A000C12763 /* TextFieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4772CA21D071A000C12763 /* TextFieldHelper.swift */; };
-		BEA22CB921D15E5F00D453BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA22CB821D15E5F00D453BE /* MainViewController.swift */; };
+		BE6327D421D9AA03008AB53B /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327D321D9AA03008AB53B /* MainTabBarViewController.swift */; };
+		BE6327D621D9B462008AB53B /* ProfileOrgsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327D521D9B462008AB53B /* ProfileOrgsState.swift */; };
+		BE6327D821D9B541008AB53B /* ProfileOrgsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327D721D9B541008AB53B /* ProfileOrgsActions.swift */; };
+		BE6327DA21D9B592008AB53B /* ProfileOrgsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327D921D9B592008AB53B /* ProfileOrgsReducer.swift */; };
+		BEA22CB921D15E5F00D453BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA22CB821D15E5F00D453BE /* ProfileViewController.swift */; };
 		BEA22CBC21D3BCC600D453BE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA22CBB21D3BCC600D453BE /* DesignableView.swift */; };
+		BECD5BD421D90B9D00923D25 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD5BD321D90B9D00923D25 /* AdminViewController.swift */; };
+		BECD5BD621D9146A00923D25 /* SignInState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD5BD521D9146A00923D25 /* SignInState.swift */; };
+		BECD5BD821D9151F00923D25 /* SignInReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD5BD721D9151F00923D25 /* SignInReducer.swift */; };
+		BECD5BDA21D9164C00923D25 /* SignInActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD5BD921D9164C00923D25 /* SignInActions.swift */; };
+		BECD5BDC21D952F800923D25 /* ActivityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD5BDB21D952F800923D25 /* ActivityButton.swift */; };
+		BECD5BDE21D981FF00923D25 /* UrlMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD5BDD21D981FF00923D25 /* UrlMaker.swift */; };
+		BED9944621D457A000106291 /* ForgotPasswordStepOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED9944521D457A000106291 /* ForgotPasswordStepOneViewController.swift */; };
+		BED9944821D4682C00106291 /* ForgotPasswordStepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED9944721D4682C00106291 /* ForgotPasswordStepTwoViewController.swift */; };
 		BED9D8D721CEEC56003455E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED9D8D621CEEC56003455E6 /* AppDelegate.swift */; };
 		BED9D8DC21CEEC56003455E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED9D8DA21CEEC56003455E6 /* Main.storyboard */; };
 		BED9D8DE21CEEC56003455E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED9D8DD21CEEC56003455E6 /* Assets.xcassets */; };
@@ -39,8 +51,20 @@
 		BE0DADDD21D421BE003C2B43 /* RegistrationStepTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationStepTwoViewController.swift; sourceTree = "<group>"; };
 		BE0F039421D0322F00D6178D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BE4772CA21D071A000C12763 /* TextFieldHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldHelper.swift; sourceTree = "<group>"; };
-		BEA22CB821D15E5F00D453BE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BE6327D321D9AA03008AB53B /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		BE6327D521D9B462008AB53B /* ProfileOrgsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsState.swift; sourceTree = "<group>"; };
+		BE6327D721D9B541008AB53B /* ProfileOrgsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsActions.swift; sourceTree = "<group>"; };
+		BE6327D921D9B592008AB53B /* ProfileOrgsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsReducer.swift; sourceTree = "<group>"; };
+		BEA22CB821D15E5F00D453BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BEA22CBB21D3BCC600D453BE /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		BECD5BD321D90B9D00923D25 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		BECD5BD521D9146A00923D25 /* SignInState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInState.swift; sourceTree = "<group>"; };
+		BECD5BD721D9151F00923D25 /* SignInReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInReducer.swift; sourceTree = "<group>"; };
+		BECD5BD921D9164C00923D25 /* SignInActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInActions.swift; sourceTree = "<group>"; };
+		BECD5BDB21D952F800923D25 /* ActivityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityButton.swift; sourceTree = "<group>"; };
+		BECD5BDD21D981FF00923D25 /* UrlMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlMaker.swift; sourceTree = "<group>"; };
+		BED9944521D457A000106291 /* ForgotPasswordStepOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordStepOneViewController.swift; sourceTree = "<group>"; };
+		BED9944721D4682C00106291 /* ForgotPasswordStepTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordStepTwoViewController.swift; sourceTree = "<group>"; };
 		BED9D8D321CEEC56003455E6 /* BroncoCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BroncoCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED9D8D621CEEC56003455E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BED9D8DB21CEEC56003455E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				BE0DADCD21D3E903003C2B43 /* NavigationAction.swift */,
+				BECD5BD921D9164C00923D25 /* SignInActions.swift */,
+				BE6327D721D9B541008AB53B /* ProfileOrgsActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -94,6 +120,8 @@
 			children = (
 				BE0DADD221D3ED32003C2B43 /* AppState.swift */,
 				BE0DADD421D3EF21003C2B43 /* NavigationState.swift */,
+				BECD5BD521D9146A00923D25 /* SignInState.swift */,
+				BE6327D521D9B462008AB53B /* ProfileOrgsState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -103,6 +131,8 @@
 			children = (
 				BE0DADD721D3EFB0003C2B43 /* NavigationReducer.swift */,
 				BE0DADD921D3FE41003C2B43 /* AppReducer.swift */,
+				BECD5BD721D9151F00923D25 /* SignInReducer.swift */,
+				BE6327D921D9B592008AB53B /* ProfileOrgsReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -111,9 +141,13 @@
 			isa = PBXGroup;
 			children = (
 				BE0F039421D0322F00D6178D /* SignInViewController.swift */,
-				BEA22CB821D15E5F00D453BE /* MainViewController.swift */,
+				BEA22CB821D15E5F00D453BE /* ProfileViewController.swift */,
 				BE0DADDB21D4040B003C2B43 /* RegistrationStepOneViewController.swift */,
 				BE0DADDD21D421BE003C2B43 /* RegistrationStepTwoViewController.swift */,
+				BED9944521D457A000106291 /* ForgotPasswordStepOneViewController.swift */,
+				BED9944721D4682C00106291 /* ForgotPasswordStepTwoViewController.swift */,
+				BECD5BD321D90B9D00923D25 /* AdminViewController.swift */,
+				BE6327D321D9AA03008AB53B /* MainTabBarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -122,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				BEA22CBB21D3BCC600D453BE /* DesignableView.swift */,
+				BECD5BDB21D952F800923D25 /* ActivityButton.swift */,
+				BECD5BDD21D981FF00923D25 /* UrlMaker.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -265,15 +301,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BroncoCast/Pods-BroncoCast-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alertift/Alertift.framework",
 				"${BUILT_PRODUCTS_DIR}/InputMask/InputMask.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alertift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InputMask.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -288,18 +330,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0DADD321D3ED32003C2B43 /* AppState.swift in Sources */,
+				BED9944621D457A000106291 /* ForgotPasswordStepOneViewController.swift in Sources */,
+				BE6327D621D9B462008AB53B /* ProfileOrgsState.swift in Sources */,
 				BE0DADDA21D3FE41003C2B43 /* AppReducer.swift in Sources */,
+				BE6327D421D9AA03008AB53B /* MainTabBarViewController.swift in Sources */,
 				BE0DADDC21D4040B003C2B43 /* RegistrationStepOneViewController.swift in Sources */,
 				BE0DADD521D3EF21003C2B43 /* NavigationState.swift in Sources */,
 				BE0F039521D0322F00D6178D /* SignInViewController.swift in Sources */,
+				BE6327D821D9B541008AB53B /* ProfileOrgsActions.swift in Sources */,
 				BED9D8EB21CEED97003455E6 /* Input.swift in Sources */,
 				BED9D8D721CEEC56003455E6 /* AppDelegate.swift in Sources */,
+				BECD5BDC21D952F800923D25 /* ActivityButton.swift in Sources */,
 				BE4772CB21D071A000C12763 /* TextFieldHelper.swift in Sources */,
 				BEA22CBC21D3BCC600D453BE /* DesignableView.swift in Sources */,
+				BECD5BDE21D981FF00923D25 /* UrlMaker.swift in Sources */,
+				BECD5BD821D9151F00923D25 /* SignInReducer.swift in Sources */,
 				BE0DADDE21D421BE003C2B43 /* RegistrationStepTwoViewController.swift in Sources */,
+				BED9944821D4682C00106291 /* ForgotPasswordStepTwoViewController.swift in Sources */,
+				BECD5BD421D90B9D00923D25 /* AdminViewController.swift in Sources */,
 				BE0DADCE21D3E903003C2B43 /* NavigationAction.swift in Sources */,
 				BE0DADD821D3EFB0003C2B43 /* NavigationReducer.swift in Sources */,
-				BEA22CB921D15E5F00D453BE /* MainViewController.swift in Sources */,
+				BECD5BD621D9146A00923D25 /* SignInState.swift in Sources */,
+				BEA22CB921D15E5F00D453BE /* ProfileViewController.swift in Sources */,
+				BE6327DA21D9B592008AB53B /* ProfileOrgsReducer.swift in Sources */,
+				BECD5BDA21D9164C00923D25 /* SignInActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

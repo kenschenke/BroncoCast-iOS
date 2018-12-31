@@ -9,7 +9,8 @@
 import Foundation
 import ReSwift
 
-
 struct AppState : StateType {
     var navigationState: NavigationState
+    var signInState : SignInState
+    var profileOrgsState : ProfileOrgsState
 }

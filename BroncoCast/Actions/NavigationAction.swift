@@ -9,30 +9,12 @@
 import Foundation
 import ReSwift
 
+struct NavigateToCheckAuthAction: Action {
+}
+
 struct NavigateToSignInAction: Action {
 }
 
-struct NavigationToMainAction: Action {
+struct NavigateToMainAction: Action {
 }
-
-/*
-public enum Screen {
-    case signIn
-    case register
-    case userProfile
-}
-
-public struct NavigationState: StateType {
-    var transition: Bool
-    var transitionData: [AnyHashable: Any]
-    var newScreen: Screen?
-    var newScreenHierarchy: [Screen]
-    var deepLink: Bool
-    var transitionInProgress: Bool
-}
-
-public enum NavigationAction: Action {
-    case transition(screen: Screen, data: [AnyHashable: Any])
-}
-*/
 

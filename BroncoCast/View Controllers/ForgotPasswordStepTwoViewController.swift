@@ -1,14 +1,14 @@
 //
-//  MainViewController.swift
+//  ForgotPasswordStepTwoViewController.swift
 //  BroncoCast
 //
-//  Created by Ken Schenke on 12/24/18.
+//  Created by Ken Schenke on 12/26/18.
 //  Copyright © 2018 Ken Schenke. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class ForgotPasswordStepTwoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,10 +17,6 @@ class MainViewController: UIViewController {
     }
     
 
-    @IBAction func signOutPressed(_ sender: Any) {
-        store.dispatch(NavigateToSignInAction())
-    }
-    
     /*
     // MARK: - Navigation
 

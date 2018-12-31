@@ -10,6 +10,7 @@ import Foundation
 import ReSwift
 
 enum Screen {
+    case checkAuth
     case signIn
     case main
 }

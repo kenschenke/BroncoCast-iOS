@@ -1,5 +1,5 @@
 //
-//  RegistrationStepTwoViewController.swift
+//  ForgotPasswordStepOneViewController.swift
 //  BroncoCast
 //
 //  Created by Ken Schenke on 12/26/18.
@@ -9,54 +9,37 @@
 import UIKit
 import InputMask
 
-class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, TextFieldHelperDelegate, MaskedTextFieldDelegateListener {
+class ForgotPasswordStepOneViewController: UIViewController, UITextFieldDelegate, TextFieldHelperDelegate,
+    MaskedTextFieldDelegateListener {
 
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var nameHelpText: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailHelpText: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var phoneHelpText: UILabel!
-    @IBOutlet var phoneTextFieldListener: MaskedTextFieldDelegate!
     
-    var nameHelper : TextFieldHelper?
+    var emailHelper : TextFieldHelper?
     var phoneHelper : TextFieldHelper?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        nameTextField.delegate = self
+        emailTextField.delegate = self
         
-        nameHelper = TextFieldHelper(nameTextField)
-        nameHelper?.delegate = self
-        nameHelper?.label = nameLabel
-        nameHelper?.helpTextLabel = nameHelpText
+        emailHelper = TextFieldHelper(emailTextField)
+        emailHelper?.delegate = self
+        emailHelper?.label = emailLabel
+        emailHelper?.helpTextLabel = emailHelpText
         
         phoneHelper = TextFieldHelper(phoneTextField)
         phoneHelper?.delegate = self
         phoneHelper?.label = phoneLabel
         phoneHelper?.helpTextLabel = phoneHelpText
         
-        nameHelpText.text = ""
+        emailHelpText.text = ""
         phoneHelpText.text = ""
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if nameTextField.isFirstResponder {
-            phoneTextField.becomeFirstResponder()
-        } else if phoneTextField.isFirstResponder {
-            phoneTextField.resignFirstResponder()
-        }
-        
-        return true
-    }
-    
-    func textField(_ textField: UITextField, didFillMandatoryCharacters complete: Bool,
-                   didExtractValue value: String) {
-        if textField == phoneTextField {
-            phoneHelper?.textFieldChanged()
-        }
     }
     
     func getPhoneNumberDigitsOnly() -> String {
@@ -71,9 +54,12 @@ class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, 
         return phoneRegex.stringByReplacingMatches(in: value, options: [], range: range, withTemplate: "")
     }
     
-    func isNameValid() -> Bool {
-        let value = nameTextField.text!
-        return value.count >= 5
+    func isEmailAddressValid() -> Bool {
+        let value = emailTextField.text!
+        let emailRegex = try! NSRegularExpression(pattern:
+            "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b")
+        let range = NSRange(location: 0, length: value.utf16.count)
+        return emailRegex.firstMatch(in: value, options: [], range: range) != nil
     }
     
     func isPhoneValid() -> Bool {
@@ -86,9 +72,9 @@ class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, 
         return phone.count == 10
     }
     
-    func setNameInvalid() {
-        nameHelper?.validContext = .invalid
-        nameHelpText.text = "Name must be at least 5 characters long"
+    func setEmailInvalid() {
+        emailHelper?.validContext = .invalid
+        emailHelpText.text = "Email address not valid"
     }
     
     func setPhoneInvalid() {
@@ -97,9 +83,9 @@ class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, 
     }
     
     func textFieldHelper(_ textField: UITextField, idleTimeout value: String) {
-        if textField == nameTextField {
-            if !isNameValid() {
-                setNameInvalid()
+        if textField == emailTextField {
+            if !isEmailAddressValid() {
+                setEmailInvalid()
             }
         } else if textField == phoneTextField {
             if !isPhoneValid() {
@@ -107,11 +93,23 @@ class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, 
             }
         }
     }
-
-    @IBAction func registerPressed(_ sender: Any) {
-        store.dispatch(NavigateToMainAction())
+    
+    func textField(_ textField: UITextField, didFillMandatoryCharacters complete: Bool, didExtractValue value: String) {
+        if textField == phoneTextField {
+            phoneHelper?.textFieldChanged()
+        }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if emailTextField.isFirstResponder {
+            emailTextField.resignFirstResponder()
+        } else if phoneTextField.isFirstResponder {
+            phoneTextField.resignFirstResponder()
+        }
+        
+        return true
+    }
+
     /*
     // MARK: - Navigation
 

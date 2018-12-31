@@ -7,17 +7,29 @@
 //
 
 import UIKit
+import ReSwift
+import Alertift
 
-class SignInViewController: UIViewController, UITextFieldDelegate {
+class SignInViewController: UIViewController, UITextFieldDelegate, StoreSubscriber {
 
+    var signingIn = false
+    var errorMsg = ""
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signInButton: ActivityButton!
+    @IBOutlet weak var registerButton: DesignableButton!
+    @IBOutlet weak var forgotPasswordButton: DesignableButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         usernameTextField.delegate = self
         passwordTextField.delegate = self
+        
+        store.subscribe(self)
+
+        signInButton.activityLabel = "Signing In"
     }
     
     @IBAction func showPasswordChanged(_ sender: Any) {
@@ -35,7 +47,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signInPressed(_ sender: Any) {
-        store.dispatch(NavigationToMainAction())
+        store.dispatch(SetSigningInUsername(username: usernameTextField.text!))
+        store.dispatch(SetSigningInPassword(password: passwordTextField.text!))
+        store.dispatch(signIn)
     }
     
     /*
@@ -48,4 +62,25 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
+    func newState(state: AppState) {
+        if state.signInState.signingIn != signingIn {
+            signingIn = state.signInState.signingIn
+            if signingIn {
+                signInButton.showActivity()
+            } else {
+                signInButton.hideActivity()
+            }
+            registerButton.isHidden = signingIn
+            forgotPasswordButton.isHidden = signingIn
+        }
+        
+        if state.signInState.errorMsg != errorMsg {
+            errorMsg = state.signInState.errorMsg
+            if !errorMsg.isEmpty {
+                Alertift.alert(title: "An Error Occurred", message: errorMsg)
+                    .action(.default("Ok"))
+                    .show()
+            }
+        }
+    }
 }

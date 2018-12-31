@@ -18,9 +18,12 @@ func navigationReducer(_ action: Action, state: NavigationState?) -> NavigationS
     if action is NavigateToSignInAction {
         navScreen = .signIn
         navIdentifier = "SignInNavigationController"
-    } else if action is NavigationToMainAction {
+    } else if action is NavigateToMainAction {
         navScreen = .main
         navIdentifier = "MainNavigationController"
+    } else if action is NavigateToCheckAuthAction {
+        navScreen = .checkAuth
+        navIdentifier = "CheckAuthScreen"
     } else {
         return newState
     }
