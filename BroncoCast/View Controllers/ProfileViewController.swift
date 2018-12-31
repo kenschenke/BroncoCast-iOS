@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import ReSwift
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, StoreSubscriber {
 
+    var viewHasAppeared = false
+    var segmentPath : SegmentNavigationPath = .segment_none
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var contactInfoView: UIView!
@@ -19,37 +23,33 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        nameView.alpha = 1.0
-        contactInfoView.alpha = 0.0
-        organizationsView.alpha = 0.0
+        nameView.isHidden = false
+        contactInfoView.isHidden = true
+        organizationsView.isHidden = true
+        
+        store.subscribe(self)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        viewHasAppeared = true
+        if segmentPath != .segment_none {
+            switchSegment()
+        }
+    }
+    
+    @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            store.dispatch(navigateTo(path: .profile_name))
+            
+        case 1:
+            store.dispatch(navigateTo(path: .profile_contacts))
 
-    @IBAction func signOutPressed(_ sender: Any) {
-        store.dispatch(NavigateToSignInAction())
-    }
-    
-    @IBAction func segmentValueChanged(_ sender: Any) {
-        if let segmentedControl = sender as? UISegmentedControl {
-            switch segmentedControl.selectedSegmentIndex {
-            case 0:
-                nameView.alpha = 1.0
-                contactInfoView.alpha = 0.0
-                organizationsView.alpha = 0.0
-                
-            case 1:
-                nameView.alpha = 0.0
-                contactInfoView.alpha = 1.0
-                organizationsView.alpha = 0.0
-                
-            case 2:
-                nameView.alpha = 0.0
-                contactInfoView.alpha = 0.0
-                organizationsView.alpha = 1.0
-                
-            default:
-                break
-            }
+        case 2:
+            store.dispatch(navigateTo(path: .profile_orgs))
+
+        default:
+            break
         }
     }
     
@@ -63,4 +63,55 @@ class ProfileViewController: UIViewController {
     }
     */
 
+    func switchSegment() {
+        var segment = segmentedControl.selectedSegmentIndex
+        
+        switch segmentPath {
+        case .profile_name_segment:
+            segment = 0
+            
+        case .profile_contacts_segment:
+            segment = 1
+            
+        case .profile_orgs_segment:
+            segment = 2
+            
+        default:
+            break
+        }
+        
+        segmentedControl.selectedSegmentIndex = segment
+        updateViewFromSegmentValue()
+    }
+    
+    func updateViewFromSegmentValue() {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            nameView.isHidden = false
+            contactInfoView.isHidden = true
+            organizationsView.isHidden = true
+            
+        case 1:
+            nameView.isHidden = true
+            contactInfoView.isHidden = false
+            organizationsView.isHidden = true
+            
+        case 2:
+            nameView.isHidden = true
+            contactInfoView.isHidden = true
+            organizationsView.isHidden = false
+            
+        default:
+            break
+        }
+    }
+    
+    func newState(state: AppState) {
+        if state.navigationState.pathSegment != segmentPath {
+            segmentPath = state.navigationState.pathSegment
+            if viewHasAppeared {
+                switchSegment()
+            }
+        }
+    }
 }

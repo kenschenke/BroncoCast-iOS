@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        store.dispatch(NavigateToCheckAuthAction())
+//        store.dispatch(NavigateToCheckAuthAction())
+        store.dispatch(navigateTo(path: .checkauth))
         store.dispatch(isAuth)
         
         self.window?.makeKeyAndVisible()

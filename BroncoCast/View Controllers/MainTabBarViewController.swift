@@ -18,6 +18,8 @@ class MainTabBarViewController: UITabBarController, StoreSubscriber {
 
         // Do any additional setup after loading the view.
         store.subscribe(self)
+        
+        print("MainTabBarViewController::viewDidLoad()")
     }
     
 

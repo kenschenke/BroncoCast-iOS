@@ -796,7 +796,7 @@
                                     <segment title="Organizations"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentValueChanged:" destination="JXn-FQ-B5R" eventType="valueChanged" id="wb3-BF-VF6"/>
+                                    <action selector="segmentValueChanged:" destination="JXn-FQ-B5R" eventType="valueChanged" id="SYD-wY-D2b"/>
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qch-HL-uCM" userLabel="Name Container View">
@@ -841,17 +841,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="3Ze-F4-Trx"/>
                     <navigationItem key="navigationItem" id="SHK-wc-D9o">
-                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="ZsB-NX-bI0">
-                            <connections>
-                                <action selector="signOutPressed:" destination="JXn-FQ-B5R" id="EJL-iB-UgH"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="ZsB-NX-bI0"/>
                     </navigationItem>
                     <connections>
                         <outlet property="contactInfoView" destination="Z7t-X3-e6u" id="BSW-3k-Cey"/>
                         <outlet property="nameView" destination="qch-HL-uCM" id="a6Z-Pk-Kqz"/>
                         <outlet property="organizationsView" destination="zaj-EJ-IWO" id="cY4-Hb-x8S"/>
-                        <outlet property="segmentedControl" destination="TGU-ry-Snq" id="RMM-Gt-gpY"/>
+                        <outlet property="segmentedControl" destination="TGU-ry-Snq" id="hKy-du-5qf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHe-lr-yBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -874,7 +870,7 @@
                                     <segment title="Broadcasts"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentValueChanged:" destination="r59-H0-mn7" eventType="valueChanged" id="Vee-fh-A8Z"/>
+                                    <action selector="segmentValueChanged:" destination="r59-H0-mn7" eventType="valueChanged" id="oYQ-88-EX2"/>
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nrj-5f-L3K" userLabel="Users Container View">

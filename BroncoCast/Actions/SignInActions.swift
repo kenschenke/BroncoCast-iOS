@@ -33,13 +33,13 @@ func isAuth(state : AppState, store : Store<AppState>) -> Action? {
         if response.result.isSuccess {
             let responseJSON : JSON = JSON(response.result.value!)
             if responseJSON["IsAuth"].bool ?? false {
-                store.dispatch(NavigateToMainAction())
+                store.dispatch(navigateTo(path: .profile_name))
                 setAdminOrgData(store: store, responseJSON: responseJSON)
                 return
             }
         }
         
-        store.dispatch(NavigateToSignInAction())
+        store.dispatch(navigateTo(path: .auth_signin))
     }
 
     return nil
@@ -51,7 +51,7 @@ func logout(state : AppState, store : Store<AppState>) -> Action? {
         if response.result.isSuccess {
             let responseJSON : JSON = JSON(response.result.value!)
             if responseJSON["Success"].bool ?? false {
-                store.dispatch(NavigateToSignInAction())
+                store.dispatch(navigateTo(path: .auth_signin))
             }
         }
     }
@@ -82,7 +82,7 @@ func signIn(state : AppState, store : Store<AppState>) -> Action? {
         if response.result.isSuccess {
             let responseJSON : JSON = JSON(response.result.value!)
             if responseJSON["Success"].bool! {
-                store.dispatch(NavigateToMainAction())
+                store.dispatch(navigateTo(path: .profile_name))
                 setAdminOrgData(store: store, responseJSON: responseJSON)
             } else {
                 store.dispatch(SetSigningInErrorMsg(errorMsg: responseJSON["Error"].string!))

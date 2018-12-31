@@ -109,7 +109,7 @@ class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, 
     }
 
     @IBAction func registerPressed(_ sender: Any) {
-        store.dispatch(NavigateToMainAction())
+        store.dispatch(navigateTo(path: .profile_name))
     }
     
     /*

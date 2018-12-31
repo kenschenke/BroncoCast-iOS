@@ -18,32 +18,36 @@ class AdminViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        usersView.alpha = 1.0
-        groupsView.alpha = 0.0
-        broadcastsView.alpha = 0.0
+        usersView.isHidden = false
+        groupsView.isHidden = true
+        broadcastsView.isHidden = true
+        
+        print("AdminViewController::viewDidLoad()")
     }
     
-    @IBAction func segmentValueChanged(_ sender: Any) {
-        if let segmentedControl = sender as? UISegmentedControl {
-            switch segmentedControl.selectedSegmentIndex {
-            case 0:
-                usersView.alpha = 1.0
-                groupsView.alpha = 0.0
-                broadcastsView.alpha = 0.0
-                
-            case 1:
-                usersView.alpha = 0.0
-                groupsView.alpha = 1.0
-                broadcastsView.alpha = 0.0
-                
-            case 2:
-                usersView.alpha = 0.0
-                groupsView.alpha = 0.0
-                broadcastsView.alpha = 1.0
-                
-            default:
-                break
-            }
+    override func viewWillAppear(_ animated: Bool) {
+        print("AdminViewController::viewWillAppear()")
+    }
+    
+    @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            usersView.isHidden = false
+            groupsView.isHidden = true
+            broadcastsView.isHidden = true
+            
+        case 1:
+            usersView.isHidden = true
+            groupsView.isHidden = false
+            broadcastsView.isHidden = true
+            
+        case 2:
+            usersView.isHidden = true
+            groupsView.isHidden = true
+            broadcastsView.isHidden = false
+            
+        default:
+            break
         }
     }
     

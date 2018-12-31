@@ -12,26 +12,35 @@ import ReSwift
 func navigationReducer(_ action: Action, state: NavigationState?) -> NavigationState {
     var newState = state ?? NavigationState()
     
-    var navIdentifier : String
-    var navScreen : Screen
-    
-    if action is NavigateToSignInAction {
-        navScreen = .signIn
-        navIdentifier = "SignInNavigationController"
-    } else if action is NavigateToMainAction {
-        navScreen = .main
-        navIdentifier = "MainNavigationController"
-    } else if action is NavigateToCheckAuthAction {
-        navScreen = .checkAuth
-        navIdentifier = "CheckAuthScreen"
-    } else {
-        return newState
+    if let navigateToPath = action as? NavigateToPath {
+        newState.pathBase = navigateToPath.base
+        newState.pathTab = navigateToPath.tab
+        newState.pathSegment = navigateToPath.segment
+        newState.pathDetail = navigateToPath.detail
+        
+        let currentBase = state?.pathBase
+        let newBase = navigateToPath.base
+
+        if currentBase != newBase {
+            var navIdentifier : String
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            switch newBase {
+            case .basepath_checkauth:
+                navIdentifier = "CheckAuthScreen"
+                
+            case .basepath_main:
+                navIdentifier = "MainNavigationController"
+                
+            case .basepath_auth:
+                navIdentifier = "SignInNavigationController"
+                
+            default:
+                return newState
+            }
+            let nav = appDelegate.storyboard.instantiateViewController(withIdentifier: navIdentifier)
+            appDelegate.window?.rootViewController = nav
+        }
     }
-
-    newState.screen = navScreen
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let nav = appDelegate.storyboard.instantiateViewController(withIdentifier: navIdentifier)
-    appDelegate.window?.rootViewController = nav
-
+    
     return newState
 }
