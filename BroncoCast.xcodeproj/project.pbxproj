@@ -20,6 +20,7 @@
 		BE6327D621D9B462008AB53B /* ProfileOrgsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327D521D9B462008AB53B /* ProfileOrgsState.swift */; };
 		BE6327D821D9B541008AB53B /* ProfileOrgsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327D721D9B541008AB53B /* ProfileOrgsActions.swift */; };
 		BE6327DA21D9B592008AB53B /* ProfileOrgsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327D921D9B592008AB53B /* ProfileOrgsReducer.swift */; };
+		BE6327DC21DAD126008AB53B /* ProfileNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327DB21DAD126008AB53B /* ProfileNameViewController.swift */; };
 		BEA22CB921D15E5F00D453BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA22CB821D15E5F00D453BE /* ProfileViewController.swift */; };
 		BEA22CBC21D3BCC600D453BE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA22CBB21D3BCC600D453BE /* DesignableView.swift */; };
 		BECD5BD421D90B9D00923D25 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD5BD321D90B9D00923D25 /* AdminViewController.swift */; };
@@ -55,6 +56,7 @@
 		BE6327D521D9B462008AB53B /* ProfileOrgsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsState.swift; sourceTree = "<group>"; };
 		BE6327D721D9B541008AB53B /* ProfileOrgsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsActions.swift; sourceTree = "<group>"; };
 		BE6327D921D9B592008AB53B /* ProfileOrgsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsReducer.swift; sourceTree = "<group>"; };
+		BE6327DB21DAD126008AB53B /* ProfileNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNameViewController.swift; sourceTree = "<group>"; };
 		BEA22CB821D15E5F00D453BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BEA22CBB21D3BCC600D453BE /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		BECD5BD321D90B9D00923D25 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				BED9944721D4682C00106291 /* ForgotPasswordStepTwoViewController.swift */,
 				BECD5BD321D90B9D00923D25 /* AdminViewController.swift */,
 				BE6327D321D9AA03008AB53B /* MainTabBarViewController.swift */,
+				BE6327DB21DAD126008AB53B /* ProfileNameViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				BE6327D421D9AA03008AB53B /* MainTabBarViewController.swift in Sources */,
 				BE0DADDC21D4040B003C2B43 /* RegistrationStepOneViewController.swift in Sources */,
 				BE0DADD521D3EF21003C2B43 /* NavigationState.swift in Sources */,
+				BE6327DC21DAD126008AB53B /* ProfileNameViewController.swift in Sources */,
 				BE0F039521D0322F00D6178D /* SignInViewController.swift in Sources */,
 				BE6327D821D9B541008AB53B /* ProfileOrgsActions.swift in Sources */,
 				BED9D8EB21CEED97003455E6 /* Input.swift in Sources */,

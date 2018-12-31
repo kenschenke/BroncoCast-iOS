@@ -10,70 +10,58 @@ import Foundation
 import ReSwift
 
 /**
- Root path is one of /checkauth, /auth, or /main
- 
- Auth Paths
- /auth/signin
- /auth/forgot/step1
- /auth/forgot/step2
- /auth/register/step1
- /auth/register/step2
- 
- If navigating to anything in /auth from NavigateToPath, just switch to to the
- SignInNavigationController and be done.
- 
- Main Paths
- /main/profile/name
- /main/profile/contacts
- /main/profile/orgs
- /main/mybroadcasts
- /main/admin/users
- /main/admin/groups
- /main/admin/broadcasts
- 
- UIViewController.navigationController is an optional that contains a reference to
- the containing UINavigationController.
- 
- If navigating to /main/profile/??
-    1) If not already in /main/??, switch to MainNavigationController
-    2) If not already in /main/profile/??, switch tab to Profile tab
-    3) If not already at correct path, switch segment control to correct index
- 
- 
- 
- **/
+ This enum is the primary means of navigating to any
+ screen in the app.
+ */
 
-enum BaseNavigationPath : String {
-    case basepath_none = "none"
-    case basepath_main = "main"
-    case basepath_auth = "auth"
-    case basepath_checkauth = "checkauth"
-}
-
-enum TabNavigationPath : String {
-    case tab_none = "none"
-    case tab_signin = "signin"
-    case main_profile_tab = "profile"
-    case main_mybroadcasts_tab = "mybroadcasts"
-    case main_admin_tab = "admin"
-}
-
-enum SegmentNavigationPath : String {
-    case segment_none = "none"
-    case profile_name_segment = "name"
-    case profile_contacts_segment = "contacts"
-    case profile_orgs_segment = "orgs"
-}
-
-enum NavigationPath : String {
-    case checkauth = "/checkauth"
+enum NavigationPath {
+    case checkauth
     
-    case auth_signin = "/auth/signin"
+    case auth_signin
     
-    case profile_name = "/main/profile/name"
-    case profile_contacts = "/main/profile/contacts"
-    case profile_orgs = "/main/profile/orgs"
+    case profile_name
+    case profile_contacts
+    case profile_orgs
 }
+
+/**
+ This enum represents the top level of navigation
+ */
+
+enum BaseNavigationPath {
+    case basepath_none
+    case basepath_main
+    case basepath_auth
+    case basepath_checkauth
+}
+
+/**
+ This enum represents the middle level of navigation
+ */
+
+enum TabNavigationPath {
+    case tab_none
+    case tab_signin
+    case main_profile_tab
+    case main_mybroadcasts_tab
+    case main_admin_tab
+}
+
+/**
+ This enum represents the lowest level of nativation
+ */
+
+enum SegmentNavigationPath {
+    case segment_none
+    case profile_name_segment
+    case profile_contacts_segment
+    case profile_orgs_segment
+}
+
+/**
+ This action creator is the primary means to navigate to
+ any screen in the app.
+ */
 
 func navigateTo(path : NavigationPath, withDetail : String = "") -> Action {
     var basePath : BaseNavigationPath
@@ -106,6 +94,10 @@ func navigateTo(path : NavigationPath, withDetail : String = "") -> Action {
     return NavigateToPath(base: basePath, tab: tabPath, segment: segmentPath, detail: withDetail)
 }
 
+/**
+ This is the action passed into the navigation reducer
+ */
+
 struct NavigateToPath : Action {
     var base : BaseNavigationPath
     var tab : TabNavigationPath
@@ -113,6 +105,9 @@ struct NavigateToPath : Action {
     var detail : String
 }
 
-struct NavigateToPathStr : Action {
-    var path : String
+struct setDataRefreshNeeded : Action {
 }
+
+struct clearDataRefreshNeeded : Action {
+}
+

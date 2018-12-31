@@ -18,6 +18,7 @@ enum Screen {
 struct NavigationState : StateType {
     var screen: Screen = .signIn
     
+    var dataRefreshNeeded = false
     var pathBase : BaseNavigationPath = .basepath_none
     var pathTab : TabNavigationPath = .tab_none
     var pathSegment : SegmentNavigationPath = .segment_none

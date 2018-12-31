@@ -1096,10 +1096,10 @@
             </objects>
             <point key="canvasLocation" x="2341.5999999999999" y="703.89805097451278"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile Name View Controller-->
         <scene sceneID="Vsy-74-p1B">
             <objects>
-                <viewController id="lCw-7R-KTH" sceneMemberID="viewController">
+                <viewController id="lCw-7R-KTH" customClass="ProfileNameViewController" customModule="BroncoCast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ep7-QT-5mI">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="510"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1118,6 +1118,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gPv-xf-w2f"/>
                     </view>
+                    <connections>
+                        <outlet property="myLabel" destination="FXP-Ia-Tqn" id="LR7-9b-kme"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUK-IN-Q1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

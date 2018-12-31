@@ -12,11 +12,18 @@ import ReSwift
 func navigationReducer(_ action: Action, state: NavigationState?) -> NavigationState {
     var newState = state ?? NavigationState()
     
-    if let navigateToPath = action as? NavigateToPath {
+    if action is setDataRefreshNeeded {
+        newState.dataRefreshNeeded = true
+    }
+    else if action is clearDataRefreshNeeded {
+        newState.dataRefreshNeeded = false
+    }
+    else if let navigateToPath = action as? NavigateToPath {
         newState.pathBase = navigateToPath.base
         newState.pathTab = navigateToPath.tab
         newState.pathSegment = navigateToPath.segment
         newState.pathDetail = navigateToPath.detail
+        newState.dataRefreshNeeded = true
         
         let currentBase = state?.pathBase
         let newBase = navigateToPath.base
