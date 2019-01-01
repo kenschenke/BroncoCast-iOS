@@ -13,4 +13,5 @@ struct AppState : StateType {
     var navigationState: NavigationState
     var signInState : SignInState
     var profileOrgsState : ProfileOrgsState
+    var profileNameState : ProfileNameState
 }

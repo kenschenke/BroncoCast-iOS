@@ -21,6 +21,9 @@
 		BE6327D821D9B541008AB53B /* ProfileOrgsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327D721D9B541008AB53B /* ProfileOrgsActions.swift */; };
 		BE6327DA21D9B592008AB53B /* ProfileOrgsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327D921D9B592008AB53B /* ProfileOrgsReducer.swift */; };
 		BE6327DC21DAD126008AB53B /* ProfileNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327DB21DAD126008AB53B /* ProfileNameViewController.swift */; };
+		BE6327DE21DB3133008AB53B /* ProfileNameActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327DD21DB3133008AB53B /* ProfileNameActions.swift */; };
+		BE6327E021DB3206008AB53B /* ProfileNameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327DF21DB3206008AB53B /* ProfileNameState.swift */; };
+		BE6327E221DB33A7008AB53B /* ProfileNameReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327E121DB33A7008AB53B /* ProfileNameReducer.swift */; };
 		BEA22CB921D15E5F00D453BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA22CB821D15E5F00D453BE /* ProfileViewController.swift */; };
 		BEA22CBC21D3BCC600D453BE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA22CBB21D3BCC600D453BE /* DesignableView.swift */; };
 		BECD5BD421D90B9D00923D25 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD5BD321D90B9D00923D25 /* AdminViewController.swift */; };
@@ -57,6 +60,9 @@
 		BE6327D721D9B541008AB53B /* ProfileOrgsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsActions.swift; sourceTree = "<group>"; };
 		BE6327D921D9B592008AB53B /* ProfileOrgsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsReducer.swift; sourceTree = "<group>"; };
 		BE6327DB21DAD126008AB53B /* ProfileNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNameViewController.swift; sourceTree = "<group>"; };
+		BE6327DD21DB3133008AB53B /* ProfileNameActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNameActions.swift; sourceTree = "<group>"; };
+		BE6327DF21DB3206008AB53B /* ProfileNameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNameState.swift; sourceTree = "<group>"; };
+		BE6327E121DB33A7008AB53B /* ProfileNameReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNameReducer.swift; sourceTree = "<group>"; };
 		BEA22CB821D15E5F00D453BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BEA22CBB21D3BCC600D453BE /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		BECD5BD321D90B9D00923D25 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 				BE0DADCD21D3E903003C2B43 /* NavigationAction.swift */,
 				BECD5BD921D9164C00923D25 /* SignInActions.swift */,
 				BE6327D721D9B541008AB53B /* ProfileOrgsActions.swift */,
+				BE6327DD21DB3133008AB53B /* ProfileNameActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -124,6 +131,7 @@
 				BE0DADD421D3EF21003C2B43 /* NavigationState.swift */,
 				BECD5BD521D9146A00923D25 /* SignInState.swift */,
 				BE6327D521D9B462008AB53B /* ProfileOrgsState.swift */,
+				BE6327DF21DB3206008AB53B /* ProfileNameState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -135,6 +143,7 @@
 				BE0DADD921D3FE41003C2B43 /* AppReducer.swift */,
 				BECD5BD721D9151F00923D25 /* SignInReducer.swift */,
 				BE6327D921D9B592008AB53B /* ProfileOrgsReducer.swift */,
+				BE6327E121DB33A7008AB53B /* ProfileNameReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -337,9 +346,11 @@
 				BE6327D621D9B462008AB53B /* ProfileOrgsState.swift in Sources */,
 				BE0DADDA21D3FE41003C2B43 /* AppReducer.swift in Sources */,
 				BE6327D421D9AA03008AB53B /* MainTabBarViewController.swift in Sources */,
+				BE6327E221DB33A7008AB53B /* ProfileNameReducer.swift in Sources */,
 				BE0DADDC21D4040B003C2B43 /* RegistrationStepOneViewController.swift in Sources */,
 				BE0DADD521D3EF21003C2B43 /* NavigationState.swift in Sources */,
 				BE6327DC21DAD126008AB53B /* ProfileNameViewController.swift in Sources */,
+				BE6327E021DB3206008AB53B /* ProfileNameState.swift in Sources */,
 				BE0F039521D0322F00D6178D /* SignInViewController.swift in Sources */,
 				BE6327D821D9B541008AB53B /* ProfileOrgsActions.swift in Sources */,
 				BED9D8EB21CEED97003455E6 /* Input.swift in Sources */,
@@ -357,6 +368,7 @@
 				BECD5BD621D9146A00923D25 /* SignInState.swift in Sources */,
 				BEA22CB921D15E5F00D453BE /* ProfileViewController.swift in Sources */,
 				BE6327DA21D9B592008AB53B /* ProfileOrgsReducer.swift in Sources */,
+				BE6327DE21DB3133008AB53B /* ProfileNameActions.swift in Sources */,
 				BECD5BDA21D9164C00923D25 /* SignInActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1104,27 +1104,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="343" height="510"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXP-Ia-Tqn">
-                                <rect key="frame" x="122" y="244.5" width="99" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPV-Qo-XJj">
+                                <rect key="frame" x="16" y="20" width="311" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vDZ-aN-0dY">
+                                <rect key="frame" x="16" y="49" width="311" height="30"/>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Cv-ki-lHt">
+                                <rect key="frame" x="16" y="87" width="311" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="FXP-Ia-Tqn" firstAttribute="centerX" secondItem="Ep7-QT-5mI" secondAttribute="centerX" id="HMa-33-gzi"/>
-                            <constraint firstItem="FXP-Ia-Tqn" firstAttribute="centerY" secondItem="Ep7-QT-5mI" secondAttribute="centerY" id="w7J-31-UtM"/>
+                            <constraint firstItem="vDZ-aN-0dY" firstAttribute="trailing" secondItem="hPV-Qo-XJj" secondAttribute="trailing" id="9ka-gf-OKy"/>
+                            <constraint firstItem="6Cv-ki-lHt" firstAttribute="leading" secondItem="hPV-Qo-XJj" secondAttribute="leading" id="D9U-DD-LLc"/>
+                            <constraint firstItem="6Cv-ki-lHt" firstAttribute="trailing" secondItem="hPV-Qo-XJj" secondAttribute="trailing" id="FHg-cI-wLl"/>
+                            <constraint firstItem="6Cv-ki-lHt" firstAttribute="top" secondItem="vDZ-aN-0dY" secondAttribute="bottom" constant="8" id="O8A-k6-YKC"/>
+                            <constraint firstItem="vDZ-aN-0dY" firstAttribute="top" secondItem="hPV-Qo-XJj" secondAttribute="bottom" constant="8" id="XE7-Cz-5e4"/>
+                            <constraint firstItem="gPv-xf-w2f" firstAttribute="trailing" secondItem="hPV-Qo-XJj" secondAttribute="trailing" constant="16" id="bDg-Jy-akT"/>
+                            <constraint firstItem="hPV-Qo-XJj" firstAttribute="top" secondItem="gPv-xf-w2f" secondAttribute="top" id="cQg-er-QPV"/>
+                            <constraint firstItem="vDZ-aN-0dY" firstAttribute="leading" secondItem="hPV-Qo-XJj" secondAttribute="leading" id="kjc-dO-9l4"/>
+                            <constraint firstItem="hPV-Qo-XJj" firstAttribute="leading" secondItem="gPv-xf-w2f" secondAttribute="leading" constant="16" id="xNP-J7-vZT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gPv-xf-w2f"/>
                     </view>
                     <connections>
-                        <outlet property="myLabel" destination="FXP-Ia-Tqn" id="LR7-9b-kme"/>
+                        <outlet property="nameHelpText" destination="6Cv-ki-lHt" id="45Y-bO-Tra"/>
+                        <outlet property="nameLabel" destination="hPV-Qo-XJj" id="v4r-pO-8nH"/>
+                        <outlet property="nameTextField" destination="vDZ-aN-0dY" id="yJK-nw-mED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUK-IN-Q1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4090" y="1027"/>
+            <point key="canvasLocation" x="4088.8000000000002" y="1026.3868065967017"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RYY-4U-Qds">
