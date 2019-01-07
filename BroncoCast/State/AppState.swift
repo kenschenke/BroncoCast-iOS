@@ -14,4 +14,6 @@ struct AppState : StateType {
     var signInState : SignInState
     var profileOrgsState : ProfileOrgsState
     var profileNameState : ProfileNameState
+    var userBroadcastsState : UserBroadcastsState
+    var userBroadcastDetailState : UserBroadcastDetailState
 }

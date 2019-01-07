@@ -15,6 +15,8 @@ struct UrlMaker {
         case logout = "logout?applogout"
         
         case profile = "api/profile"
+        
+        case user_broadcasts = "api/broadcasts"
     }
     
     static func makeUrl(_ url : UrlConstant) -> String {

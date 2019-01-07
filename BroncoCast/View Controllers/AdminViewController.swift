@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import ReSwift
 
-class AdminViewController: UIViewController {
+class AdminViewController: UIViewController, StoreSubscriber {
 
+    var viewHasAppeared = false
+    var segmentPath : SegmentNavigationPath = .segment_none
+    
     @IBOutlet weak var usersView: UIView!
     @IBOutlet weak var groupsView: UIView!
     @IBOutlet weak var broadcastsView: UIView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +27,55 @@ class AdminViewController: UIViewController {
         groupsView.isHidden = true
         broadcastsView.isHidden = true
         
-        print("AdminViewController::viewDidLoad()")
+        store.subscribe(self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        print("AdminViewController::viewWillAppear()")
+    override func viewDidAppear(_ animated: Bool) {
+        viewHasAppeared = true
+        if segmentPath != .segment_none {
+            switchSegment()
+        }
+    }
+    
+    func switchSegment() {
+        var segment = segmentedControl.selectedSegmentIndex
+        
+        switch segmentPath {
+        case .admin_users_segment:
+            segment = 0
+            
+        case .admin_groups_segment:
+            segment = 1
+            
+        case .admin_broadcasts_segment:
+            segment = 2
+            
+        default:
+            break
+        }
+        
+        segmentedControl.selectedSegmentIndex = segment
+        updateViewFromSegmentValue()
     }
     
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
+        case 0:
+            store.dispatch(navigateTo(path: .admin_users))
+            
+        case 1:
+            store.dispatch(navigateTo(path: .admin_groups))
+            
+        case 2:
+            store.dispatch(navigateTo(path: .admin_broadcasts))
+
+        default:
+            break
+        }
+    }
+
+    func updateViewFromSegmentValue() {
+        switch segmentedControl.selectedSegmentIndex {
         case 0:
             usersView.isHidden = false
             groupsView.isHidden = true
@@ -45,12 +90,12 @@ class AdminViewController: UIViewController {
             usersView.isHidden = true
             groupsView.isHidden = true
             broadcastsView.isHidden = false
-            
+
         default:
             break
         }
     }
-    
+
     /*
     // MARK: - Navigation
 
@@ -61,4 +106,12 @@ class AdminViewController: UIViewController {
     }
     */
 
+    func newState(state: AppState) {
+        if state.navigationState.pathSegment != segmentPath {
+            segmentPath = state.navigationState.pathSegment
+            if viewHasAppeared {
+                switchSegment()
+            }
+        }
+    }
 }

@@ -9,15 +9,17 @@
 import UIKit
 import ReSwift
 
-class MainTabBarViewController: UITabBarController, StoreSubscriber {
+class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, StoreSubscriber {
     
     var notAdmin = false
+    var navigationTab : TabNavigationPath = .tab_none
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         store.subscribe(self)
+        delegate = self
     }
     
 
@@ -38,9 +40,45 @@ class MainTabBarViewController: UITabBarController, StoreSubscriber {
                 viewControllers?.remove(at: 2)
             }
         }
+        
+        if state.navigationState.pathTab != navigationTab {
+            navigationTab = state.navigationState.pathTab
+            switch navigationTab {
+            case .main_profile_tab:
+                selectedIndex = 0
+                
+            case .main_mybroadcasts_tab:
+                selectedIndex = 1
+                
+            case .main_admin_tab:
+                selectedIndex = 2
+                
+            case .tab_signin:
+                break
+                
+            case .tab_none:
+                break
+            }
+        }
     }
     
     @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
         store.dispatch(logout)
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        switch selectedIndex {
+        case 0:  // Profile
+            store.dispatch(navigateTo(path: .profile_name))
+            
+        case 1:
+            store.dispatch(navigateTo(path: .mybroadcasts))
+            
+        case 2:
+            store.dispatch(navigateTo(path: .admin_users))
+            
+        default:
+            break
+        }
     }
 }

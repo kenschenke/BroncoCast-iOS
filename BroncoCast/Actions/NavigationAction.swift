@@ -22,6 +22,12 @@ enum NavigationPath {
     case profile_name
     case profile_contacts
     case profile_orgs
+    
+    case mybroadcasts
+    
+    case admin_users
+    case admin_groups
+    case admin_broadcasts
 }
 
 /**
@@ -56,6 +62,9 @@ enum SegmentNavigationPath {
     case profile_name_segment
     case profile_contacts_segment
     case profile_orgs_segment
+    case admin_users_segment
+    case admin_groups_segment
+    case admin_broadcasts_segment
 }
 
 /**
@@ -89,6 +98,26 @@ func navigateTo(path : NavigationPath, withDetail : String = "") -> Action {
         basePath = .basepath_main
         tabPath = .main_profile_tab
         segmentPath = .profile_orgs_segment
+        
+    case .mybroadcasts:
+        basePath = .basepath_main
+        tabPath = .main_mybroadcasts_tab
+        segmentPath = .segment_none
+        
+    case .admin_users:
+        basePath = .basepath_main
+        tabPath = .main_admin_tab
+        segmentPath = .admin_users_segment
+        
+    case .admin_groups:
+        basePath = .basepath_main
+        tabPath = .main_admin_tab
+        segmentPath = .admin_groups_segment
+        
+    case .admin_broadcasts:
+        basePath = .basepath_main
+        tabPath = .main_admin_tab
+        segmentPath = .admin_broadcasts_segment
     }
     
     return NavigateToPath(base: basePath, tab: tabPath, segment: segmentPath, detail: withDetail)
