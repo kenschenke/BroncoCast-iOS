@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (4.8.0)
+  - Alertift (4.0)
+  - InputMask (4.0.2)
+  - ReSwift (4.0.1)
+  - SwiftyJSON (4.2.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4)
+  - Alertift
+  - InputMask
+  - ReSwift
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Alertift
+    - InputMask
+    - ReSwift
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Alertift: 393ace2617e96e95b4e85c88e80a85bf2d85c698
+  InputMask: b9df7a44c044f59485b2d596661e6bd4334bddb4
+  ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+
+PODFILE CHECKSUM: 19b42343b9e4f87d80c87f951112870d365156ef
+
+COCOAPODS: 1.5.3
