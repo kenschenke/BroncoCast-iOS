@@ -11,4 +11,5 @@ target 'BroncoCast' do
   pod 'Alertift'
   pod 'Alamofire', '~> 4'
   pod 'SwiftyJSON'
+  pod 'FontAwesome.swift'
 end

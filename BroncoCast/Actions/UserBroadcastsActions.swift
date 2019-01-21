@@ -54,7 +54,7 @@ func getUserBroadcasts(state : AppState, store : Store<AppState>) -> Action? {
                 store.dispatch(SetUserBroadcastsErrorMsg(errorMsg: responseJSON["Error"].string ?? ""))
             }
         } else {
-            store.dispatch(SetUserBroadcastsErrorMsg(errorMsg: "Unable to retrieve profile information"))
+            store.dispatch(SetUserBroadcastsErrorMsg(errorMsg: "Unable to retrieve broadcasts"))
         }
     }
     

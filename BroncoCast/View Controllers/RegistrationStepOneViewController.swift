@@ -51,14 +51,6 @@ class RegistrationStepOneViewController: UIViewController, UITextFieldDelegate, 
         return true
     }
     
-    func isEmailAddressValid() -> Bool {
-        let value = emailTextField.text!
-        let emailRegex = try! NSRegularExpression(pattern:
-            "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b")
-        let range = NSRange(location: 0, length: value.utf16.count)
-        return emailRegex.firstMatch(in: value, options: [], range: range) != nil
-    }
-    
     func isPasswordValid() -> Bool {
         let value = passwordTextField.text!
         return value.count >= 5
@@ -76,7 +68,7 @@ class RegistrationStepOneViewController: UIViewController, UITextFieldDelegate, 
     
     func textFieldHelper(_ textField: UITextField, idleTimeout value: String) {
         if textField == emailTextField {
-            if !isEmailAddressValid() {
+            if !isEmailAddressValid(emailTextField.text!) {
                 setEmailInvalid()
             }
         } else if textField == passwordTextField {
@@ -87,7 +79,7 @@ class RegistrationStepOneViewController: UIViewController, UITextFieldDelegate, 
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if !isEmailAddressValid() {
+        if !isEmailAddressValid(emailTextField.text!) {
             setEmailInvalid()
             return false
         }

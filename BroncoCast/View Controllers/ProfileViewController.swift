@@ -44,6 +44,7 @@ class ProfileViewController: UIViewController, StoreSubscriber {
             
         case 1:
             store.dispatch(navigateTo(path: .profile_contacts))
+//            performSegue(withIdentifier: "ShowTestTable", sender: self)
 
         case 2:
             store.dispatch(navigateTo(path: .profile_orgs))

@@ -59,25 +59,13 @@ class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, 
         }
     }
     
-    func getPhoneNumberDigitsOnly() -> String {
-        let value = phoneTextField.text!
-        
-        if value.isEmpty {
-            return ""
-        }
-        
-        let phoneRegex = try! NSRegularExpression(pattern: "[^0-9]")
-        let range = NSRange(location: 0, length: value.utf16.count)
-        return phoneRegex.stringByReplacingMatches(in: value, options: [], range: range, withTemplate: "")
-    }
-    
     func isNameValid() -> Bool {
         let value = nameTextField.text!
         return value.count >= 5
     }
     
     func isPhoneValid() -> Bool {
-        let phone = getPhoneNumberDigitsOnly()
+        let phone = getPhoneNumberDigitsOnly(phoneTextField.text!)
         
         if phone.isEmpty {
             return true

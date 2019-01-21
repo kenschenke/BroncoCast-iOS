@@ -8,6 +8,7 @@
 
 import UIKit
 import ReSwift
+import FontAwesome_swift
 
 class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, StoreSubscriber {
     
@@ -20,6 +21,14 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
         // Do any additional setup after loading the view.
         store.subscribe(self)
         delegate = self
+        
+        let size = CGSize(width: 32, height: 32)
+        tabBar.items?[0].image = UIImage.fontAwesomeIcon(name: .user, style: .solid,
+                                                         textColor: UIColor.blue, size: size)
+        tabBar.items?[1].image = UIImage.fontAwesomeIcon(name: .broadcastTower, style: .solid,
+                                                         textColor: UIColor.blue, size: size)
+        tabBar.items?[2].image = UIImage.fontAwesomeIcon(name: .userCog, style: .solid,
+                                                         textColor: UIColor.blue, size: size)
     }
     
 
