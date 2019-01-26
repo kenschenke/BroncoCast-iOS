@@ -31,7 +31,6 @@ func getUserBroadcasts(state : AppState, store : Store<AppState>) -> Action? {
         response in
         store.dispatch(SetUserBroadcastsFetching(fetching: false))
         if response.result.isSuccess {
-//            print(response.result.value)
             let responseJSON : JSON = JSON(response.result.value!)
             
             if responseJSON["Success"].bool ?? false {

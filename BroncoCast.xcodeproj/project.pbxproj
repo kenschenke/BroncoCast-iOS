@@ -39,6 +39,7 @@
 		BE717C9B21F5786600F081DB /* ProfileContactsEditState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE717C9A21F5786600F081DB /* ProfileContactsEditState.swift */; };
 		BE717C9D21F578A800F081DB /* ProfileContactsEditReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE717C9C21F578A800F081DB /* ProfileContactsEditReducer.swift */; };
 		BE9DE0B721F405DB00068A2B /* ProfileContactErrorMsgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9DE0B621F405DB00068A2B /* ProfileContactErrorMsgCell.swift */; };
+		BE9F144D21F7F94400D1A386 /* ProfileOrgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F144C21F7F94400D1A386 /* ProfileOrgTableViewCell.swift */; };
 		BEA22CB921D15E5F00D453BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA22CB821D15E5F00D453BE /* ProfileViewController.swift */; };
 		BEA22CBC21D3BCC600D453BE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA22CBB21D3BCC600D453BE /* DesignableView.swift */; };
 		BECCCE1521F3792F00B37D3B /* ProfileContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCCE1421F3792F00B37D3B /* ProfileContactsState.swift */; };
@@ -62,6 +63,8 @@
 		BED9D8DE21CEEC56003455E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED9D8DD21CEEC56003455E6 /* Assets.xcassets */; };
 		BED9D8E121CEEC56003455E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED9D8DF21CEEC56003455E6 /* LaunchScreen.storyboard */; };
 		BEE35C7821F65225003F33AD /* ProfileContactsSingleMsgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE35C7721F65225003F33AD /* ProfileContactsSingleMsgTableViewCell.swift */; };
+		BEE35C8821F68C7E003F33AD /* ProfileOrgsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE35C8721F68C7E003F33AD /* ProfileOrgsViewController.swift */; };
+		BEE35C8A21F6A846003F33AD /* ProfileOrgsErrorMsgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE35C8921F6A846003F33AD /* ProfileOrgsErrorMsgTableViewCell.swift */; };
 		BEFB3E4721E561AA00CE9426 /* ProfileContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB3E4621E561AA00CE9426 /* ProfileContactsViewController.swift */; };
 		DA8E9C846812FE5B08CC5A32 /* Pods_BroncoCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B86554F42ACB63E79C9E93 /* Pods_BroncoCast.framework */; };
 /* End PBXBuildFile section */
@@ -101,6 +104,7 @@
 		BE717C9A21F5786600F081DB /* ProfileContactsEditState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactsEditState.swift; sourceTree = "<group>"; };
 		BE717C9C21F578A800F081DB /* ProfileContactsEditReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactsEditReducer.swift; sourceTree = "<group>"; };
 		BE9DE0B621F405DB00068A2B /* ProfileContactErrorMsgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactErrorMsgCell.swift; sourceTree = "<group>"; };
+		BE9F144C21F7F94400D1A386 /* ProfileOrgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgTableViewCell.swift; sourceTree = "<group>"; };
 		BEA22CB821D15E5F00D453BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BEA22CBB21D3BCC600D453BE /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		BECCCE1421F3792F00B37D3B /* ProfileContactsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactsState.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 		BED9D8E021CEEC56003455E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BED9D8E221CEEC56003455E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEE35C7721F65225003F33AD /* ProfileContactsSingleMsgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactsSingleMsgTableViewCell.swift; sourceTree = "<group>"; };
+		BEE35C8721F68C7E003F33AD /* ProfileOrgsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsViewController.swift; sourceTree = "<group>"; };
+		BEE35C8921F6A846003F33AD /* ProfileOrgsErrorMsgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsErrorMsgTableViewCell.swift; sourceTree = "<group>"; };
 		BEFB3E4621E561AA00CE9426 /* ProfileContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactsViewController.swift; sourceTree = "<group>"; };
 		C84058CC7F8957F4A1EEB5E2 /* Pods-BroncoCast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroncoCast.release.xcconfig"; path = "Pods/Target Support Files/Pods-BroncoCast/Pods-BroncoCast.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +172,8 @@
 				BE05505621F035050051877C /* ProfileAddContactTableViewCell.swift */,
 				BE9DE0B621F405DB00068A2B /* ProfileContactErrorMsgCell.swift */,
 				BEE35C7721F65225003F33AD /* ProfileContactsSingleMsgTableViewCell.swift */,
+				BEE35C8921F6A846003F33AD /* ProfileOrgsErrorMsgTableViewCell.swift */,
+				BE9F144C21F7F94400D1A386 /* ProfileOrgTableViewCell.swift */,
 			);
 			path = "Table Views";
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 				BEFB3E4621E561AA00CE9426 /* ProfileContactsViewController.swift */,
 				BECCCE1E21F3BA3800B37D3B /* ProfileContactEmailViewController.swift */,
 				BECCCE2021F3BA4400B37D3B /* ProfileContactPhoneViewController.swift */,
+				BEE35C8721F68C7E003F33AD /* ProfileOrgsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -432,11 +441,13 @@
 				BE05505721F035050051877C /* ProfileAddContactTableViewCell.swift in Sources */,
 				BE717C9B21F5786600F081DB /* ProfileContactsEditState.swift in Sources */,
 				BE63280221DC421C008AB53B /* UserBroadcastDetailReducer.swift in Sources */,
+				BEE35C8821F68C7E003F33AD /* ProfileOrgsViewController.swift in Sources */,
 				BE6327E421DBC4CB008AB53B /* MyBroadcastsViewController.swift in Sources */,
 				BE717C9D21F578A800F081DB /* ProfileContactsEditReducer.swift in Sources */,
 				BE0DADDC21D4040B003C2B43 /* RegistrationStepOneViewController.swift in Sources */,
 				BE6327E621DBC56E008AB53B /* UserBroadcastsState.swift in Sources */,
 				BE0DADD521D3EF21003C2B43 /* NavigationState.swift in Sources */,
+				BEE35C8A21F6A846003F33AD /* ProfileOrgsErrorMsgTableViewCell.swift in Sources */,
 				BEE35C7821F65225003F33AD /* ProfileContactsSingleMsgTableViewCell.swift in Sources */,
 				BEFB3E4721E561AA00CE9426 /* ProfileContactsViewController.swift in Sources */,
 				BE05505521F02BA20051877C /* ProfileContactsTableViewCell.swift in Sources */,
@@ -445,6 +456,7 @@
 				BE6327E021DB3206008AB53B /* ProfileNameState.swift in Sources */,
 				BECCCE1D21F38D2500B37D3B /* PhoneFormatter.swift in Sources */,
 				BE0F039521D0322F00D6178D /* SignInViewController.swift in Sources */,
+				BE9F144D21F7F94400D1A386 /* ProfileOrgTableViewCell.swift in Sources */,
 				BE6327D821D9B541008AB53B /* ProfileOrgsActions.swift in Sources */,
 				BE63280021DC41E6008AB53B /* UserBroadcastDetailState.swift in Sources */,
 				BED9D8D721CEEC56003455E6 /* AppDelegate.swift in Sources */,

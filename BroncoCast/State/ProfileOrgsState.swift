@@ -16,7 +16,23 @@ struct AdminOrg {
     var OrgName = ""
 }
 
+struct UserOrg : Equatable {
+    var OrgId = 0
+    var OrgName = ""
+    var IsAdmin = false
+    var MemberId = 0
+}
+
 struct ProfileOrgsState : StateType {
     var adminOrgs : [AdminOrg] = []
     var notAdmin = false
+    var userOrgs : [UserOrg] = []
+    var userOrgsFetching = false
+    var userOrgsErrorMsg = ""
+    var joinTag = ""
+    var joining = false
+    var joiningErrorMsg = ""
+    var dropMemberId = 0
+    var dropping = false
+    var droppingErrorMsg = ""
 }

@@ -19,6 +19,8 @@ struct UrlMaker {
         case user_broadcasts = "api/broadcasts"
         
         case profile_contacts = "api/contacts"
+        
+        case user_orgs = "api/orgs"
     }
     
     static func makeUrl(_ url : UrlConstant) -> String {
