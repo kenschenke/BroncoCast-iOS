@@ -18,6 +18,9 @@ func appReducer(_ action: Action, _ state : AppState?) -> AppState {
         profileContactsState: profileContactsReducer(action, state: state?.profileContactsState),
         profileContactsEditState: profileContactsEditReducer(action, state: state?.profileContactsEditState),
         userBroadcastsState: userBroadcastsReducer(action, state: state?.userBroadcastsState),
-        userBroadcastDetailState: userBroadcastDetailReducer(action, state: state?.userBroadcastDetailState)
+        userBroadcastDetailState: userBroadcastDetailReducer(action, state: state?.userBroadcastDetailState),
+        adminUsersState: adminUsersReducer(action, state: state?.adminUsersState),
+        adminOrgState: adminOrgReducer(action, state: state?.adminOrgState),
+        adminUserDetailState: adminUserDetailReducer(action, state: state?.adminUserDetailState)
     )
 }

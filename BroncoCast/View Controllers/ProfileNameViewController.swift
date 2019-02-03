@@ -17,6 +17,7 @@ class ProfileNameViewController: UIViewController, StoreSubscriber, TextFieldHel
     var updating = false
     var saved = false
     var errorMsg = ""
+    var onScreen = false
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
@@ -40,7 +41,15 @@ class ProfileNameViewController: UIViewController, StoreSubscriber, TextFieldHel
 
             store.dispatch(clearDataRefreshNeeded())
             store.dispatch(getProfile)
-
+            onScreen = true
+        }
+        
+        if state.navigationState.pathTab != .main_profile_tab ||
+            state.navigationState.pathSegment != .profile_name_segment {
+            if onScreen {
+                onScreen = false
+                nameTextField.resignFirstResponder()
+            }
         }
         
         if state.profileNameState.name != name {
@@ -79,6 +88,7 @@ class ProfileNameViewController: UIViewController, StoreSubscriber, TextFieldHel
     
     func textFieldHelper(_ textField: UITextField, idleTimeout value: String) {
         name = value
+        nameTextField.resignFirstResponder()
         store.dispatch(SetProfileName(name: value))
         if value.isEmpty {
             nameHelpText.text = "Name cannot be empty"
@@ -88,14 +98,4 @@ class ProfileNameViewController: UIViewController, StoreSubscriber, TextFieldHel
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

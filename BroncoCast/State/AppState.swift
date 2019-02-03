@@ -18,4 +18,7 @@ struct AppState : StateType {
     var profileContactsEditState : ProfileContactsEditState
     var userBroadcastsState : UserBroadcastsState
     var userBroadcastDetailState : UserBroadcastDetailState
+    var adminUsersState : AdminUsersState
+    var adminOrgState : AdminOrgState
+    var adminUserDetailState : AdminUserDetailState
 }

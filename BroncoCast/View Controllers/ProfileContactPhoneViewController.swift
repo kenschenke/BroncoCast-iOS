@@ -38,9 +38,6 @@ class ProfileContactPhoneViewController: UIViewController, UITextFieldDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        phoneField.delegate = phoneTextFieldListener
-//        phoneField.delegate = self
-
         phoneHelper = TextFieldHelper(phoneField)
         phoneHelper?.delegate = self
         phoneHelper?.label = phoneLabel

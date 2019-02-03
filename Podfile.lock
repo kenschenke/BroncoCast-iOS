@@ -5,6 +5,7 @@ PODS:
   - InputMask (4.0.2)
   - ReSwift (4.0.1)
   - SwiftyJSON (4.2.0)
+  - SwiftyPickerPopover (6.6.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4)
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - InputMask
   - ReSwift
   - SwiftyJSON
+  - SwiftyPickerPopover
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -22,6 +24,7 @@ SPEC REPOS:
     - InputMask
     - ReSwift
     - SwiftyJSON
+    - SwiftyPickerPopover
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -30,7 +33,8 @@ SPEC CHECKSUMS:
   InputMask: b9df7a44c044f59485b2d596661e6bd4334bddb4
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  SwiftyPickerPopover: 6d08cbae133c80743654f4e977607cd1553947e6
 
-PODFILE CHECKSUM: f82308b08d6dc4edb993192e4f0d55c13b1944a6
+PODFILE CHECKSUM: d2faa45c296c2e013a5b7920029ec45e65c5891f
 
 COCOAPODS: 1.5.3

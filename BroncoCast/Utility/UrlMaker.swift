@@ -21,6 +21,14 @@ struct UrlMaker {
         case profile_contacts = "api/contacts"
         
         case user_orgs = "api/orgs"
+        
+        case admin_users = "api/admin/users"
+        case admin_users_hide = "api/admin/users/hide"
+        case admin_users_unhide = "api/admin/users/unhide"
+        case admin_users_admin = "api/admin/users/admin"
+        case admin_users_name = "api/admin/users/name"
+        case admin_users_remove = "api/admin/users/remove"
+        case admin_users_approve = "api/admin/users/approve"
     }
     
     static func makeUrl(_ url : UrlConstant) -> String {

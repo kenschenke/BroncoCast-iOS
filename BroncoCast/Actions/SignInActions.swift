@@ -102,12 +102,23 @@ func setAdminOrgData(store : Store<AppState>, responseJSON : JSON) {
         var adminOrgs : [AdminOrg] = []
 
         for (_, object) in responseJSON["AdminOrgs"] {
+            let AdminDefault = object["AdminDefault"].bool ?? false
+            let OrgId = object["OrgId"].int ?? 0
+            let OrgName = object["OrgName"].string ?? ""
+            
             adminOrgs.append(AdminOrg(
-                AdminDefault: object["AdminDefault"].bool ?? false,
-                OrgId: object["OrgId"].int ?? 0,
+                AdminDefault: AdminDefault,
+                OrgId: OrgId,
                 DefaultTZ: object["DefaultTZ"].string ?? "",
-                OrgName: object["OrgName"].string ?? ""
+                OrgName: OrgName
             ))
+            
+            if AdminDefault {
+                store.dispatch(SetAdminOrg(
+                    adminOrgId: OrgId,
+                    adminOrgName: OrgName)
+                )
+            }
         }
         
         store.dispatch(SetAdminOrgs(adminOrgs: adminOrgs, notAdmin: adminOrgs.isEmpty))

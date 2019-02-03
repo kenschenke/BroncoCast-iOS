@@ -9,7 +9,7 @@
 import Foundation
 import ReSwift
 
-struct AdminOrg {
+struct AdminOrg : Equatable {
     var AdminDefault = false
     var OrgId = 0
     var DefaultTZ = ""

@@ -12,4 +12,5 @@ target 'BroncoCast' do
   pod 'Alamofire', '~> 4'
   pod 'SwiftyJSON'
   pod 'FontAwesome.swift'
+  pod 'SwiftyPickerPopover'
 end

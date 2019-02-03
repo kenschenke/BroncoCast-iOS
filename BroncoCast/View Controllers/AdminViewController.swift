@@ -8,16 +8,22 @@
 
 import UIKit
 import ReSwift
+import SwiftyPickerPopover
 
 class AdminViewController: UIViewController, StoreSubscriber {
 
     var viewHasAppeared = false
     var segmentPath : SegmentNavigationPath = .segment_none
-    
+    var adminOrgs : [AdminOrg] = []
+    var adminOrgNames : [String] = []
+    var adminOrgId = 0
+    var adminOrgName = ""
+
     @IBOutlet weak var usersView: UIView!
     @IBOutlet weak var groupsView: UIView!
     @IBOutlet weak var broadcastsView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var adminOrgButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,22 +102,49 @@ class AdminViewController: UIViewController, StoreSubscriber {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func adminOrgButtonPressed(_ sender: Any) {
+        var adminOrgRow = 0
+        var row = 0
+        for org in adminOrgs {
+            if org.OrgId == adminOrgId {
+                adminOrgRow = row
+            }
+            row += 1
+        }
+        StringPickerPopover(title: "Select Admin Organization", choices: adminOrgNames)
+            .setFontSize(17)
+            .setSelectedRow(adminOrgRow)
+            .setDoneButton(action: { (popover, selectedRow, selectedString) in
+                store.dispatch(SetAdminOrg(
+                    adminOrgId: self.adminOrgs[selectedRow].OrgId,
+                    adminOrgName: self.adminOrgs[selectedRow].OrgName)
+                )
+            })
+            .setCancelButton(action: { (_, _, _) in print("cancel")}
+            )
+            .appear(originView: adminOrgButton, baseViewController: self)
     }
-    */
-
+    
     func newState(state: AppState) {
         if state.navigationState.pathSegment != segmentPath {
             segmentPath = state.navigationState.pathSegment
             if viewHasAppeared {
                 switchSegment()
             }
+        }
+
+        if state.profileOrgsState.adminOrgs != adminOrgs {
+            adminOrgs = state.profileOrgsState.adminOrgs
+            adminOrgNames = adminOrgs.map { $0.OrgName }
+        }
+        
+        if adminOrgId != state.adminOrgState.adminOrgId {
+            adminOrgId = state.adminOrgState.adminOrgId
+        }
+        
+        if adminOrgName != state.adminOrgState.adminOrgName {
+            adminOrgName = state.adminOrgState.adminOrgName
+            adminOrgButton.setTitle(adminOrgName, for: .normal)
         }
     }
 }
