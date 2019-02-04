@@ -17,6 +17,16 @@
 		BE0DADDC21D4040B003C2B43 /* RegistrationStepOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0DADDB21D4040B003C2B43 /* RegistrationStepOneViewController.swift */; };
 		BE0DADDE21D421BE003C2B43 /* RegistrationStepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0DADDD21D421BE003C2B43 /* RegistrationStepTwoViewController.swift */; };
 		BE0F039521D0322F00D6178D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F039421D0322F00D6178D /* SignInViewController.swift */; };
+		BE1FD3CD2207848E00F23AE2 /* AdminGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD3CC2207848E00F23AE2 /* AdminGroupsViewController.swift */; };
+		BE1FD3CF220785C400F23AE2 /* AdminGroupsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD3CE220785C400F23AE2 /* AdminGroupsState.swift */; };
+		BE1FD3D12207872D00F23AE2 /* AdminGroupsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD3D02207872D00F23AE2 /* AdminGroupsActions.swift */; };
+		BE1FD3D3220787AB00F23AE2 /* AdminGroupsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD3D2220787AB00F23AE2 /* AdminGroupsReducer.swift */; };
+		BE1FD3D522078FC200F23AE2 /* AdminGroupsErrorMsgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD3D422078FC200F23AE2 /* AdminGroupsErrorMsgTableViewCell.swift */; };
+		BE1FD3D72207919500F23AE2 /* AdminGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD3D62207919500F23AE2 /* AdminGroupsTableViewCell.swift */; };
+		BE1FD3D92207A5D300F23AE2 /* AdminGroupsNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD3D82207A5D300F23AE2 /* AdminGroupsNameViewController.swift */; };
+		BE1FD3DB2207BAA800F23AE2 /* AdminGroupNameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD3DA2207BAA800F23AE2 /* AdminGroupNameState.swift */; };
+		BE1FD3DD2207BB4C00F23AE2 /* AdminGroupNameActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD3DC2207BB4C00F23AE2 /* AdminGroupNameActions.swift */; };
+		BE1FD3DF2207BBB700F23AE2 /* AdminGroupNameReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD3DE2207BBB700F23AE2 /* AdminGroupNameReducer.swift */; };
 		BE41A64821FE0FC600A9A41D /* AdminUsersState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41A64721FE0FC600A9A41D /* AdminUsersState.swift */; };
 		BE41A64A21FE10E000A9A41D /* AdminUsersActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41A64921FE10E000A9A41D /* AdminUsersActions.swift */; };
 		BE41A64C21FE114400A9A41D /* AdminUsersReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41A64B21FE114400A9A41D /* AdminUsersReducer.swift */; };
@@ -95,6 +105,16 @@
 		BE0DADDB21D4040B003C2B43 /* RegistrationStepOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationStepOneViewController.swift; sourceTree = "<group>"; };
 		BE0DADDD21D421BE003C2B43 /* RegistrationStepTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationStepTwoViewController.swift; sourceTree = "<group>"; };
 		BE0F039421D0322F00D6178D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		BE1FD3CC2207848E00F23AE2 /* AdminGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupsViewController.swift; sourceTree = "<group>"; };
+		BE1FD3CE220785C400F23AE2 /* AdminGroupsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupsState.swift; sourceTree = "<group>"; };
+		BE1FD3D02207872D00F23AE2 /* AdminGroupsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupsActions.swift; sourceTree = "<group>"; };
+		BE1FD3D2220787AB00F23AE2 /* AdminGroupsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupsReducer.swift; sourceTree = "<group>"; };
+		BE1FD3D422078FC200F23AE2 /* AdminGroupsErrorMsgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupsErrorMsgTableViewCell.swift; sourceTree = "<group>"; };
+		BE1FD3D62207919500F23AE2 /* AdminGroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupsTableViewCell.swift; sourceTree = "<group>"; };
+		BE1FD3D82207A5D300F23AE2 /* AdminGroupsNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupsNameViewController.swift; sourceTree = "<group>"; };
+		BE1FD3DA2207BAA800F23AE2 /* AdminGroupNameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupNameState.swift; sourceTree = "<group>"; };
+		BE1FD3DC2207BB4C00F23AE2 /* AdminGroupNameActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupNameActions.swift; sourceTree = "<group>"; };
+		BE1FD3DE2207BBB700F23AE2 /* AdminGroupNameReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupNameReducer.swift; sourceTree = "<group>"; };
 		BE41A64721FE0FC600A9A41D /* AdminUsersState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUsersState.swift; sourceTree = "<group>"; };
 		BE41A64921FE10E000A9A41D /* AdminUsersActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUsersActions.swift; sourceTree = "<group>"; };
 		BE41A64B21FE114400A9A41D /* AdminUsersReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUsersReducer.swift; sourceTree = "<group>"; };
@@ -202,6 +222,8 @@
 				BE9F144C21F7F94400D1A386 /* ProfileOrgTableViewCell.swift */,
 				BE41A64D21FE1C9100A9A41D /* AdminUsersErrorMsgTableViewCell.swift */,
 				BE41A65521FE41C300A9A41D /* AdminUsersTableViewCell.swift */,
+				BE1FD3D422078FC200F23AE2 /* AdminGroupsErrorMsgTableViewCell.swift */,
+				BE1FD3D62207919500F23AE2 /* AdminGroupsTableViewCell.swift */,
 			);
 			path = "Table Views";
 			sourceTree = "<group>";
@@ -219,6 +241,8 @@
 				BE41A64921FE10E000A9A41D /* AdminUsersActions.swift */,
 				BE41A65321FE3B0F00A9A41D /* AdminOrgActions.swift */,
 				BE59E044220621EC00945AA1 /* AdminUserDetailActions.swift */,
+				BE1FD3D02207872D00F23AE2 /* AdminGroupsActions.swift */,
+				BE1FD3DC2207BB4C00F23AE2 /* AdminGroupNameActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -240,6 +264,8 @@
 				BE41A64721FE0FC600A9A41D /* AdminUsersState.swift */,
 				BE41A64F21FE3A3A00A9A41D /* AdminOrgState.swift */,
 				BE59E042220620BE00945AA1 /* AdminUserDetailState.swift */,
+				BE1FD3CE220785C400F23AE2 /* AdminGroupsState.swift */,
+				BE1FD3DA2207BAA800F23AE2 /* AdminGroupNameState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -259,6 +285,8 @@
 				BE41A64B21FE114400A9A41D /* AdminUsersReducer.swift */,
 				BE41A65121FE3A8B00A9A41D /* AdminOrgReducer.swift */,
 				BE59E0462206228E00945AA1 /* AdminUserDetailReducer.swift */,
+				BE1FD3D2220787AB00F23AE2 /* AdminGroupsReducer.swift */,
+				BE1FD3DE2207BBB700F23AE2 /* AdminGroupNameReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -283,6 +311,8 @@
 				BEE35C8721F68C7E003F33AD /* ProfileOrgsViewController.swift */,
 				BEA5388121FD50AB006511C4 /* AdminUsersViewController.swift */,
 				BE7D5BDB2205EC9B005110DC /* AdminUsersDetailViewController.swift */,
+				BE1FD3CC2207848E00F23AE2 /* AdminGroupsViewController.swift */,
+				BE1FD3D82207A5D300F23AE2 /* AdminGroupsNameViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -470,7 +500,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE7D5BDC2205EC9B005110DC /* AdminUsersDetailViewController.swift in Sources */,
+				BE1FD3D3220787AB00F23AE2 /* AdminGroupsReducer.swift in Sources */,
 				BE0DADD321D3ED32003C2B43 /* AppState.swift in Sources */,
+				BE1FD3D72207919500F23AE2 /* AdminGroupsTableViewCell.swift in Sources */,
 				BE6327EA21DBC6C2008AB53B /* UserBroadcastsActions.swift in Sources */,
 				BED9944621D457A000106291 /* ForgotPasswordStepOneViewController.swift in Sources */,
 				BE6327EC21DBF0B4008AB53B /* UserBroadcastsReducer.swift in Sources */,
@@ -479,9 +511,11 @@
 				BE41A65621FE41C300A9A41D /* AdminUsersTableViewCell.swift in Sources */,
 				BE0DADDA21D3FE41003C2B43 /* AppReducer.swift in Sources */,
 				BECCCE1921F37A6D00B37D3B /* ProfileContactsReducer.swift in Sources */,
+				BE1FD3DD2207BB4C00F23AE2 /* AdminGroupNameActions.swift in Sources */,
 				BE41A65021FE3A3A00A9A41D /* AdminOrgState.swift in Sources */,
 				BE6327D421D9AA03008AB53B /* MainTabBarViewController.swift in Sources */,
 				BE6327E221DB33A7008AB53B /* ProfileNameReducer.swift in Sources */,
+				BE1FD3D92207A5D300F23AE2 /* AdminGroupsNameViewController.swift in Sources */,
 				BE05505721F035050051877C /* ProfileAddContactTableViewCell.swift in Sources */,
 				BE717C9B21F5786600F081DB /* ProfileContactsEditState.swift in Sources */,
 				BE41A64A21FE10E000A9A41D /* AdminUsersActions.swift in Sources */,
@@ -490,6 +524,7 @@
 				BE6327E421DBC4CB008AB53B /* MyBroadcastsViewController.swift in Sources */,
 				BE717C9D21F578A800F081DB /* ProfileContactsEditReducer.swift in Sources */,
 				BE41A65421FE3B0F00A9A41D /* AdminOrgActions.swift in Sources */,
+				BE1FD3D522078FC200F23AE2 /* AdminGroupsErrorMsgTableViewCell.swift in Sources */,
 				BE0DADDC21D4040B003C2B43 /* RegistrationStepOneViewController.swift in Sources */,
 				BE6327E621DBC56E008AB53B /* UserBroadcastsState.swift in Sources */,
 				BE0DADD521D3EF21003C2B43 /* NavigationState.swift in Sources */,
@@ -510,14 +545,17 @@
 				BECD5BDC21D952F800923D25 /* ActivityButton.swift in Sources */,
 				BE41A65221FE3A8B00A9A41D /* AdminOrgReducer.swift in Sources */,
 				BECCCE1521F3792F00B37D3B /* ProfileContactsState.swift in Sources */,
+				BE1FD3DF2207BBB700F23AE2 /* AdminGroupNameReducer.swift in Sources */,
 				BE41A64C21FE114400A9A41D /* AdminUsersReducer.swift in Sources */,
 				BE4772CB21D071A000C12763 /* TextFieldHelper.swift in Sources */,
 				BEA22CBC21D3BCC600D453BE /* DesignableView.swift in Sources */,
 				BE6327FC21DBFE23008AB53B /* UserBroadcastTableViewCell.swift in Sources */,
+				BE1FD3D12207872D00F23AE2 /* AdminGroupsActions.swift in Sources */,
 				BECCCE1721F379AF00B37D3B /* Contact.swift in Sources */,
 				BE6327FE21DC4124008AB53B /* UserBroadcastDetailViewController.swift in Sources */,
 				BECD5BDE21D981FF00923D25 /* UrlMaker.swift in Sources */,
 				BE41A64821FE0FC600A9A41D /* AdminUsersState.swift in Sources */,
+				BE1FD3CF220785C400F23AE2 /* AdminGroupsState.swift in Sources */,
 				BEA5388221FD50AB006511C4 /* AdminUsersViewController.swift in Sources */,
 				BECCCE1B21F37B0500B37D3B /* ProfileContactsActions.swift in Sources */,
 				BE59E045220621EC00945AA1 /* AdminUserDetailActions.swift in Sources */,
@@ -533,8 +571,10 @@
 				BE0DADCE21D3E903003C2B43 /* NavigationAction.swift in Sources */,
 				BE0DADD821D3EFB0003C2B43 /* NavigationReducer.swift in Sources */,
 				BECD5BD621D9146A00923D25 /* SignInState.swift in Sources */,
+				BE1FD3CD2207848E00F23AE2 /* AdminGroupsViewController.swift in Sources */,
 				BEA22CB921D15E5F00D453BE /* ProfileViewController.swift in Sources */,
 				BE6327DA21D9B592008AB53B /* ProfileOrgsReducer.swift in Sources */,
+				BE1FD3DB2207BAA800F23AE2 /* AdminGroupNameState.swift in Sources */,
 				BE6327E821DBC5CA008AB53B /* Broadcast.swift in Sources */,
 				BE6327DE21DB3133008AB53B /* ProfileNameActions.swift in Sources */,
 				BECD5BDA21D9164C00923D25 /* SignInActions.swift in Sources */,
