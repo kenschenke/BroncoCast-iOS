@@ -33,6 +33,10 @@ struct RenameGroup : Action {
     var groupName : String
 }
 
+struct DeleteGroup : Action {
+    var groupId : Int
+}
+
 func getAdminGroups(state : AppState, store : Store<AppState>) -> Action? {
     store.dispatch(SetAdminGroupsFetching(fetching: true))
     store.dispatch(SetAdminGroupsFetchingErrorMsg(fetchingErrorMsg: ""))

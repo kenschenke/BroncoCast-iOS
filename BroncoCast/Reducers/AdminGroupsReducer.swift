@@ -36,6 +36,10 @@ func adminGroupsReducer(_ action : Action, state: AdminGroupsState?) -> AdminGro
             return value
         })
         newState.groups.sort(by: { $0.GroupName < $1.GroupName })
+    } else if let deleteGroup = action as? DeleteGroup {
+        newState.groups = newState.groups.filter({(value: Group) -> Bool in
+            return deleteGroup.groupId != value.GroupId
+        })
     }
     
     return newState

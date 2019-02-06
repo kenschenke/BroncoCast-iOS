@@ -122,6 +122,15 @@ extension AdminGroupsViewController: UITableViewDelegate, UITableViewDataSource 
         
         return tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
     }
-    
+ 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        store.dispatch(InitAdminGroupDetail(
+            groupId: groups[indexPath.row].GroupId,
+            groupName: groups[indexPath.row].GroupName
+        ))
+        store.dispatch(getAdminGroupMembers)
+        
+        performSegue(withIdentifier: "showGroupDetail", sender: self)
+    }
     
 }

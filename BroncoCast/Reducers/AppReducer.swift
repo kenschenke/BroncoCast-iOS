@@ -23,6 +23,7 @@ func appReducer(_ action: Action, _ state : AppState?) -> AppState {
         adminOrgState: adminOrgReducer(action, state: state?.adminOrgState),
         adminUserDetailState: adminUserDetailReducer(action, state: state?.adminUserDetailState),
         adminGroupsState: adminGroupsReducer(action, state: state?.adminGroupsState),
-        adminGroupNameState: adminGroupNameReducer(action, state: state?.adminGroupNameState)
+        adminGroupNameState: adminGroupNameReducer(action, state: state?.adminGroupNameState),
+        adminGroupDetailState: adminGroupDetailReducer(action, state: state?.adminGroupDetailState)
     )
 }
