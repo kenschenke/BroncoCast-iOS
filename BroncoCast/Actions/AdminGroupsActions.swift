@@ -38,6 +38,7 @@ struct DeleteGroup : Action {
 }
 
 func getAdminGroups(state : AppState, store : Store<AppState>) -> Action? {
+    store.dispatch(SetAdminGroups(groups: []))
     store.dispatch(SetAdminGroupsFetching(fetching: true))
     store.dispatch(SetAdminGroupsFetchingErrorMsg(fetchingErrorMsg: ""))
 
