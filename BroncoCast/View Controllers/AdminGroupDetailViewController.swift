@@ -12,6 +12,8 @@ import Alertift
 
 class AdminGroupDetailViewController: UIViewController, StoreSubscriber {
     
+    var groupId = 0
+    var groupName = ""
     var members : [GroupMember] = []
     var fetching = false
     var fetchingErrorMsg = ""
@@ -34,6 +36,14 @@ class AdminGroupDetailViewController: UIViewController, StoreSubscriber {
     }
     
     func newState(state: AppState) {
+        if groupId != state.adminGroupDetailState.groupId {
+            groupId = state.adminGroupDetailState.groupId
+        }
+        
+        if groupName != state.adminGroupDetailState.groupName {
+            groupName = state.adminGroupDetailState.groupName
+        }
+        
         if members != state.adminGroupDetailState.members {
             members = state.adminGroupDetailState.members
             tableView.reloadData()
@@ -94,6 +104,13 @@ class AdminGroupDetailViewController: UIViewController, StoreSubscriber {
     }
     
     @IBAction func renameGroupPressed(_ sender: Any) {
+        store.dispatch(SetAdminGroupNameId(groupId: groupId))
+        store.dispatch(SetAdminGroupName(groupName: groupName))
+        store.dispatch(SetAdminGroupNameSaving(saving: false))
+        store.dispatch(SetAdminGroupNameSavingErrorMsg(errorMsg: ""))
+        store.dispatch(SetAdminGroupNameGoBack(goBack: false))
+        
+        performSegue(withIdentifier: "showRenameGroupName", sender: self)
     }
 }
 

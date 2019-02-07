@@ -74,7 +74,7 @@ func getAdminGroups(state : AppState, store : Store<AppState>) -> Action? {
 
 func adminGroupSaveName(state : AppState, store : Store<AppState>) -> Action? {
     if state.adminGroupNameState.groupId != 0 {
-        
+        store.dispatch(adminGroupRenameGroup)
     } else {
         store.dispatch(adminGroupAddGroup)
     }
@@ -117,7 +117,8 @@ func adminGroupRenameGroup(state : AppState, store : Store<AppState>) -> Action?
     store.dispatch(SetAdminGroupNameSavingErrorMsg(errorMsg: ""))
     
     let groupName = state.adminGroupNameState.groupName
-    let url = UrlMaker.makeUrl(.admin_groups_rename) + "/\(state.adminOrgState.adminOrgId)"
+    let groupId = state.adminGroupDetailState.groupId
+    let url = UrlMaker.makeUrl(.admin_groups_rename) + "/\(groupId)"
     let params : [String : String] = [
         "Name" : groupName,
         ]
@@ -128,14 +129,13 @@ func adminGroupRenameGroup(state : AppState, store : Store<AppState>) -> Action?
             let responseJSON : JSON = JSON(response.result.value!)
             
             if responseJSON["Success"].bool ?? false {
-                let groupId = responseJSON["GroupId"].int ?? 0
                 store.dispatch(RenameGroup(groupId: groupId, groupName: groupName))
                 store.dispatch(SetAdminGroupNameGoBack(goBack: true))
             } else {
                 store.dispatch(SetAdminGroupNameSavingErrorMsg(errorMsg: responseJSON["Error"].string ?? ""))
             }
         } else {
-            store.dispatch(SetAdminGroupNameSavingErrorMsg(errorMsg: "Unable to add grouo"))
+            store.dispatch(SetAdminGroupNameSavingErrorMsg(errorMsg: "Unable to rename grouo"))
         }
     }
     

@@ -1532,7 +1532,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="I1Q-T3-MEy" id="E8a-ou-i7L"/>
-                        <segue destination="jqa-S4-36X" kind="show" identifier="showGroupName" id="idX-HW-Vjm"/>
+                        <segue destination="jqa-S4-36X" kind="show" identifier="showAddGroupName" id="idX-HW-Vjm"/>
                         <segue destination="Y7B-1f-2Ek" kind="show" identifier="showGroupDetail" id="L3g-ti-b2Q"/>
                     </connections>
                 </viewController>
@@ -1794,6 +1794,7 @@
                         <outlet property="tableView" destination="B2S-oN-pa6" id="T5n-Ty-6tu"/>
                         <segue destination="xWD-cb-p1o" kind="show" identifier="showGroupAddMembers" id="CMl-72-eOQ"/>
                         <segue destination="O1b-nR-1Qw" kind="show" identifier="showGroupRemoveMembers" id="SrY-L6-e2Y"/>
+                        <segue destination="jqa-S4-36X" kind="show" identifier="showRenameGroupName" id="Fcj-dq-giQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvo-UE-73G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3337,4 +3338,7 @@
             <point key="canvasLocation" x="1404" y="-713"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fcj-dq-giQ"/>
+    </inferredMetricsTieBreakers>
 </document>

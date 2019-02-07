@@ -65,7 +65,7 @@ class AdminGroupsViewController: UIViewController, StoreSubscriber {
         store.dispatch(SetAdminGroupNameSavingErrorMsg(errorMsg: ""))
         store.dispatch(SetAdminGroupNameGoBack(goBack: false))
         
-        performSegue(withIdentifier: "showGroupName", sender: self)
+        performSegue(withIdentifier: "showAddGroupName", sender: self)
     }
     
 }
