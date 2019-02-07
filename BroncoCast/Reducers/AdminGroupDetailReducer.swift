@@ -30,13 +30,38 @@ func adminGroupDetailReducer(_ action : Action, state: AdminGroupDetailState?) -
         newState.groupId = initAdminGroupDetail.groupId
         newState.groupName = initAdminGroupDetail.groupName
         newState.members = []
+        newState.nonMembers = []
         newState.fetching = false
         newState.fetchingErrorMsg = ""
         newState.deleting = false
         newState.deletingErrorMsg = ""
         newState.goBack = false
+        newState.fetchingNonMembers = false
+        newState.fetchingNonMembersErrorMsg = ""
+        newState.adding = false
+        newState.addingErrorMsg = ""
+        newState.addingUserId = 0
     } else if let setAdminGroupDetailGoBack = action as? SetAdminGroupDetailGoBack {
         newState.goBack = setAdminGroupDetailGoBack.goBack
+    } else if let setAdminGroupDetailNonMembers = action as? SetAdminGroupDetailNonMembers {
+        newState.nonMembers = setAdminGroupDetailNonMembers.nonMembers
+    } else if let setAdminGroupDetailFetchingNonMembers = action as? SetAdminGroupDetailFetchingNonMembers {
+        newState.fetchingNonMembers = setAdminGroupDetailFetchingNonMembers.fetching
+    } else if let setAdminGroupDetailFetchingNonMembersErrorMsg = action as? SetAdminGroupDetailFetchingNonMembersErrorMsg {
+        newState.fetchingNonMembersErrorMsg = setAdminGroupDetailFetchingNonMembersErrorMsg.fetchingErrorMsg
+    } else if let setAdminGroupDetailAdding = action as? SetAdminGroupDetailAdding {
+        newState.adding = setAdminGroupDetailAdding.adding
+    } else if let setAdminGroupDetailAddingErrorMsg = action as? SetAdminGroupDetailAddingErrorMsg {
+        newState.addingErrorMsg = setAdminGroupDetailAddingErrorMsg.addingErrorMsg
+    } else if let setAdminGroupDetailAddingUserId = action as? SetAdminGroupDetailAddingUserId {
+        newState.addingUserId = setAdminGroupDetailAddingUserId.addingUserId
+    } else if let addAction = action as? AddGroupMember {
+        newState.members.append(GroupMember(
+            MemberId: addAction.memberId,
+            MemberName: addAction.userName
+        ))
+        newState.members.sort(by: { $0.MemberName < $1.MemberName })
+        newState.nonMembers = newState.nonMembers.filter { $0.UserId != addAction.userId }
     }
     
     return newState

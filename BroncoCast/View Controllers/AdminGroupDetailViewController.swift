@@ -83,6 +83,17 @@ class AdminGroupDetailViewController: UIViewController, StoreSubscriber {
             .action(.cancel("Cancel"))
             .show()
     }
+    
+    @IBAction func addMembersPressed(_ sender: Any) {
+        store.dispatch(getAdminGroupNonMembers)
+        performSegue(withIdentifier: "showGroupAddMembers", sender: self)
+    }
+    
+    @IBAction func removeMembersPressed(_ sender: Any) {
+    }
+    
+    @IBAction func renameGroupPressed(_ sender: Any) {
+    }
 }
 
 extension AdminGroupDetailViewController : UITableViewDelegate, UITableViewDataSource {

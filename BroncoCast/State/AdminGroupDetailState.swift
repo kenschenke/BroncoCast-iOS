@@ -14,13 +14,24 @@ struct GroupMember : Equatable {
     var MemberName = ""
 }
 
+struct NonMember : Equatable {
+    var UserId = 0
+    var UserName = ""
+}
+
 struct AdminGroupDetailState : StateType {
     var groupId = 0
     var groupName = ""
     var members : [GroupMember] = []
+    var nonMembers : [NonMember] = []
     var fetching = false
     var fetchingErrorMsg = ""
     var deleting = false
     var deletingErrorMsg = ""
     var goBack = false
+    var fetchingNonMembers = false
+    var fetchingNonMembersErrorMsg = ""
+    var adding = false
+    var addingErrorMsg = ""
+    var addingUserId = 0
 }
