@@ -39,6 +39,8 @@
 		BE59E043220620BE00945AA1 /* AdminUserDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE59E042220620BE00945AA1 /* AdminUserDetailState.swift */; };
 		BE59E045220621EC00945AA1 /* AdminUserDetailActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE59E044220621EC00945AA1 /* AdminUserDetailActions.swift */; };
 		BE59E0472206228E00945AA1 /* AdminUserDetailReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE59E0462206228E00945AA1 /* AdminUserDetailReducer.swift */; };
+		BE5D0DD2220C96F1009B6BD2 /* AdminGroupRemoveMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D0DD1220C96F1009B6BD2 /* AdminGroupRemoveMembersViewController.swift */; };
+		BE5D0DD4220C975C009B6BD2 /* AdminGroupRemoveMembersDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D0DD3220C975C009B6BD2 /* AdminGroupRemoveMembersDetailTableViewCell.swift */; };
 		BE6327D421D9AA03008AB53B /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327D321D9AA03008AB53B /* MainTabBarViewController.swift */; };
 		BE6327D621D9B462008AB53B /* ProfileOrgsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327D521D9B462008AB53B /* ProfileOrgsState.swift */; };
 		BE6327D821D9B541008AB53B /* ProfileOrgsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6327D721D9B541008AB53B /* ProfileOrgsActions.swift */; };
@@ -136,6 +138,8 @@
 		BE59E042220620BE00945AA1 /* AdminUserDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUserDetailState.swift; sourceTree = "<group>"; };
 		BE59E044220621EC00945AA1 /* AdminUserDetailActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUserDetailActions.swift; sourceTree = "<group>"; };
 		BE59E0462206228E00945AA1 /* AdminUserDetailReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUserDetailReducer.swift; sourceTree = "<group>"; };
+		BE5D0DD1220C96F1009B6BD2 /* AdminGroupRemoveMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupRemoveMembersViewController.swift; sourceTree = "<group>"; };
+		BE5D0DD3220C975C009B6BD2 /* AdminGroupRemoveMembersDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupRemoveMembersDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BE6327D321D9AA03008AB53B /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		BE6327D521D9B462008AB53B /* ProfileOrgsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsState.swift; sourceTree = "<group>"; };
 		BE6327D721D9B541008AB53B /* ProfileOrgsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsActions.swift; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 				BEB5AFB02209140F003F53D5 /* AdminGroupDetailTableViewCell.swift */,
 				BED89760220A9043006DE525 /* AdminGroupAddMembersErrorMsgTableViewCell.swift */,
 				BED89762220A90C2006DE525 /* AdminGroupAddMembersDetailTableViewCell.swift */,
+				BE5D0DD3220C975C009B6BD2 /* AdminGroupRemoveMembersDetailTableViewCell.swift */,
 			);
 			path = "Table Views";
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				BE1FD3D82207A5D300F23AE2 /* AdminGroupsNameViewController.swift */,
 				BEB5AFAC22091383003F53D5 /* AdminGroupDetailViewController.swift */,
 				BED8975E220A8E20006DE525 /* AdminGroupAddMembersViewController.swift */,
+				BE5D0DD1220C96F1009B6BD2 /* AdminGroupRemoveMembersViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -584,12 +590,14 @@
 				BEA22CBC21D3BCC600D453BE /* DesignableView.swift in Sources */,
 				BE6327FC21DBFE23008AB53B /* UserBroadcastTableViewCell.swift in Sources */,
 				BE1FD3D12207872D00F23AE2 /* AdminGroupsActions.swift in Sources */,
+				BE5D0DD4220C975C009B6BD2 /* AdminGroupRemoveMembersDetailTableViewCell.swift in Sources */,
 				BECCCE1721F379AF00B37D3B /* Contact.swift in Sources */,
 				BE6327FE21DC4124008AB53B /* UserBroadcastDetailViewController.swift in Sources */,
 				BECD5BDE21D981FF00923D25 /* UrlMaker.swift in Sources */,
 				BE41A64821FE0FC600A9A41D /* AdminUsersState.swift in Sources */,
 				BE1FD3CF220785C400F23AE2 /* AdminGroupsState.swift in Sources */,
 				BEA5388221FD50AB006511C4 /* AdminUsersViewController.swift in Sources */,
+				BE5D0DD2220C96F1009B6BD2 /* AdminGroupRemoveMembersViewController.swift in Sources */,
 				BECCCE1B21F37B0500B37D3B /* ProfileContactsActions.swift in Sources */,
 				BE59E045220621EC00945AA1 /* AdminUserDetailActions.swift in Sources */,
 				BED89761220A9043006DE525 /* AdminGroupAddMembersErrorMsgTableViewCell.swift in Sources */,

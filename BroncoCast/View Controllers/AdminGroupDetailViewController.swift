@@ -90,6 +90,7 @@ class AdminGroupDetailViewController: UIViewController, StoreSubscriber {
     }
     
     @IBAction func removeMembersPressed(_ sender: Any) {
+        performSegue(withIdentifier: "showGroupRemoveMembers", sender: self)
     }
     
     @IBAction func renameGroupPressed(_ sender: Any) {

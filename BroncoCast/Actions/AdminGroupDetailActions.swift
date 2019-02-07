@@ -78,6 +78,24 @@ struct AddGroupMember : Action {
     var userName : String
 }
 
+struct SetAdminGroupDetailRemoving : Action {
+    var removing : Bool
+}
+
+struct SetAdminGroupDetailRemovingErrorMsg : Action {
+    var removingErrorMsg : String
+}
+
+struct SetAdminGroupDetailRemovingMemberId : Action {
+    var removingMemberId : Int
+}
+
+struct RemoveGroupMember : Action {
+    var memberId : Int
+    var userId : Int
+    var userName : String
+}
+
 func addGroupMember(state : AppState, store : Store<AppState>) -> Action? {
     store.dispatch(SetAdminGroupDetailAdding(adding: true))
     store.dispatch(SetAdminGroupDetailAddingErrorMsg(addingErrorMsg: ""))
@@ -217,3 +235,40 @@ func getAdminGroupNonMembers(state : AppState, store : Store<AppState>) -> Actio
  
     return nil
 }
+
+func removeGroupMember(state : AppState, store : Store<AppState>) -> Action? {
+    store.dispatch(SetAdminGroupDetailRemoving(removing: true))
+    store.dispatch(SetAdminGroupDetailRemovingErrorMsg(removingErrorMsg: ""))
+    
+    let users = state.adminGroupDetailState.members.filter {
+        $0.MemberId == state.adminGroupDetailState.removingMemberId
+    }
+    if users.count != 1 {
+        return nil
+    }
+    
+    let url = UrlMaker.makeUrl(.admin_group_members) + "/\(state.adminGroupDetailState.removingMemberId)"
+    Alamofire.request(url, method: .delete).responseJSON {
+        response in
+        store.dispatch(SetAdminGroupDetailRemoving(removing: false))
+        if response.result.isSuccess {
+            let responseJSON : JSON = JSON(response.result.value!)
+            
+            if responseJSON["Success"].bool ?? false {
+                store.dispatch(RemoveGroupMember(
+                    memberId: state.adminGroupDetailState.removingMemberId,
+                    userId: state.adminGroupDetailState.addingUserId,
+                    userName: users[0].MemberName)
+                )
+                store.dispatch(SetAdminGroupDetailRemovingMemberId(removingMemberId: 0))
+            } else {
+                store.dispatch(SetAdminGroupDetailRemovingErrorMsg(removingErrorMsg: responseJSON["Error"].string ?? ""))
+            }
+        } else {
+            store.dispatch(SetAdminGroupDetailRemovingErrorMsg(removingErrorMsg: "Unable to remove group member"))
+        }
+    }
+    
+    return nil
+}
+

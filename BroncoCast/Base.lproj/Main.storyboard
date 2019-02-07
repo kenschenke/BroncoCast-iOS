@@ -1793,6 +1793,7 @@
                         <outlet property="deleteButton" destination="2TS-Zg-i6p" id="O1O-88-tzO"/>
                         <outlet property="tableView" destination="B2S-oN-pa6" id="T5n-Ty-6tu"/>
                         <segue destination="xWD-cb-p1o" kind="show" identifier="showGroupAddMembers" id="CMl-72-eOQ"/>
+                        <segue destination="O1b-nR-1Qw" kind="show" identifier="showGroupRemoveMembers" id="SrY-L6-e2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvo-UE-73G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1886,7 +1887,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="22" id="Dwp-N0-ohg"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button">
+                                                    <state key="normal" title="+">
                                                         <color key="titleColor" red="0.31180845419999997" green="0.71235196300000003" blue="0.19526454639999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
                                                     <connections>
@@ -1932,6 +1933,97 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="275-pP-FLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7192.8000000000002" y="800.14992503748135"/>
+        </scene>
+        <!--Admin Group Remove Members View Controller-->
+        <scene sceneID="qY8-8n-WRR">
+            <objects>
+                <viewController id="O1b-nR-1Qw" customClass="AdminGroupRemoveMembersViewController" customModule="BroncoCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gge-Sx-XUW">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="481"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KMI-6K-ufD">
+                                <rect key="frame" x="16" y="20" width="311" height="441"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminGroupRemoveMembersEmptyCell" id="PdU-yu-JFQ">
+                                        <rect key="frame" x="0.0" y="28" width="311" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PdU-yu-JFQ" id="Ims-Pj-hHc">
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Members Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eiz-mH-1Dk">
+                                                    <rect key="frame" x="80" y="11.5" width="151" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Eiz-mH-1Dk" firstAttribute="centerY" secondItem="Ims-Pj-hHc" secondAttribute="centerY" id="3IQ-L2-VLQ"/>
+                                                <constraint firstItem="Eiz-mH-1Dk" firstAttribute="centerX" secondItem="Ims-Pj-hHc" secondAttribute="centerX" id="aLA-Hf-DtA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminGroupRemoveMembersDetailCell" id="gEU-Td-bWW" customClass="AdminGroupRemoveMembersDetailTableViewCell" customModule="BroncoCast" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="311" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gEU-Td-bWW" id="rSv-Co-Udc">
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Znk-r4-mhi">
+                                                    <rect key="frame" x="15" y="7" width="22" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="22" id="oPj-un-4Bq"/>
+                                                    </constraints>
+                                                    <state key="normal" title="-">
+                                                        <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="removeButtonPressed:" destination="gEU-Td-bWW" eventType="touchUpInside" id="T3f-bx-NnO"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmC-dR-yL6">
+                                                    <rect key="frame" x="45" y="11.5" width="250" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Znk-r4-mhi" firstAttribute="centerY" secondItem="rSv-Co-Udc" secondAttribute="centerY" id="AwK-JM-IzI"/>
+                                                <constraint firstItem="tmC-dR-yL6" firstAttribute="centerY" secondItem="rSv-Co-Udc" secondAttribute="centerY" id="Bca-oe-jUX"/>
+                                                <constraint firstAttribute="trailing" secondItem="tmC-dR-yL6" secondAttribute="trailing" constant="16" id="N3d-B7-oBd"/>
+                                                <constraint firstItem="tmC-dR-yL6" firstAttribute="leading" secondItem="Znk-r4-mhi" secondAttribute="trailing" constant="8" id="pZh-NF-cUu"/>
+                                                <constraint firstItem="Znk-r4-mhi" firstAttribute="leading" secondItem="rSv-Co-Udc" secondAttribute="leading" constant="15" id="vRa-GK-Ul9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="memberNameLabel" destination="tmC-dR-yL6" id="K7Y-9n-6yE"/>
+                                            <outlet property="removeButton" destination="Znk-r4-mhi" id="uxz-wo-94r"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xaW-Qy-WgX" firstAttribute="bottom" secondItem="KMI-6K-ufD" secondAttribute="bottom" constant="20" id="7E2-8q-hvz"/>
+                            <constraint firstItem="KMI-6K-ufD" firstAttribute="top" secondItem="xaW-Qy-WgX" secondAttribute="top" id="Jb1-iA-H59"/>
+                            <constraint firstItem="xaW-Qy-WgX" firstAttribute="trailing" secondItem="KMI-6K-ufD" secondAttribute="trailing" constant="16" id="WJu-Zd-bs1"/>
+                            <constraint firstItem="KMI-6K-ufD" firstAttribute="leading" secondItem="xaW-Qy-WgX" secondAttribute="leading" constant="16" id="gl7-pF-aem"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xaW-Qy-WgX"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="KMI-6K-ufD" id="GZk-k2-7QE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b3t-Eo-ie6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7213.6000000000004" y="1396.5517241379312"/>
         </scene>
         <!--Admin Groups Name View Controller-->
         <scene sceneID="pMc-cF-t2U">

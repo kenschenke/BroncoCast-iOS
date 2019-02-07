@@ -34,4 +34,7 @@ struct AdminGroupDetailState : StateType {
     var adding = false
     var addingErrorMsg = ""
     var addingUserId = 0
+    var removing = false
+    var removingErrorMsg = ""
+    var removingMemberId = 0
 }

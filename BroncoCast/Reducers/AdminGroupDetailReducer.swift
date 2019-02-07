@@ -41,6 +41,9 @@ func adminGroupDetailReducer(_ action : Action, state: AdminGroupDetailState?) -
         newState.adding = false
         newState.addingErrorMsg = ""
         newState.addingUserId = 0
+        newState.removing = false
+        newState.removingErrorMsg = ""
+        newState.removingMemberId = 0
     } else if let setAdminGroupDetailGoBack = action as? SetAdminGroupDetailGoBack {
         newState.goBack = setAdminGroupDetailGoBack.goBack
     } else if let setAdminGroupDetailNonMembers = action as? SetAdminGroupDetailNonMembers {
@@ -62,6 +65,19 @@ func adminGroupDetailReducer(_ action : Action, state: AdminGroupDetailState?) -
         ))
         newState.members.sort(by: { $0.MemberName < $1.MemberName })
         newState.nonMembers = newState.nonMembers.filter { $0.UserId != addAction.userId }
+    } else if let setAdminGroupDetailRemoving = action as? SetAdminGroupDetailRemoving {
+        newState.removing = setAdminGroupDetailRemoving.removing
+    } else if let setAdminGroupDetailRemovingErrorMsg = action as? SetAdminGroupDetailRemovingErrorMsg {
+        newState.removingErrorMsg = setAdminGroupDetailRemovingErrorMsg.removingErrorMsg
+    } else if let setAdminGroupDetailRemovingMemberId = action as? SetAdminGroupDetailRemovingMemberId {
+        newState.removingMemberId = setAdminGroupDetailRemovingMemberId.removingMemberId
+    } else if let removeAction = action as? RemoveGroupMember {
+        newState.nonMembers.append(NonMember(
+            UserId: removeAction.userId,
+            UserName: removeAction.userName
+        ))
+        newState.nonMembers.sort(by: { $0.UserName < $1.UserName })
+        newState.members = newState.members.filter { $0.MemberId != removeAction.memberId }
     }
     
     return newState
