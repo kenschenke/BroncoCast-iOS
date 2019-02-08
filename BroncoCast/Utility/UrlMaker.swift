@@ -36,6 +36,8 @@ struct UrlMaker {
         
         case admin_group_members = "api/admin/groups/members"
         case admin_group_nonmembers = "api/admin/groups/nonmembers"
+        
+        case admin_broadcasts = "api/admin/broadcasts"
     }
     
     static func makeUrl(_ url : UrlConstant) -> String {

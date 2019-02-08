@@ -1336,34 +1336,314 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PxY-PG-B3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6586" y="80"/>
+            <point key="canvasLocation" x="6585" y="-172"/>
         </scene>
-        <!--View Controller-->
+        <!--Admin Broadcasts View Controller-->
         <scene sceneID="h3C-pa-XTS">
             <objects>
-                <viewController id="Nny-mJ-z5Y" sceneMemberID="viewController">
+                <viewController id="Nny-mJ-z5Y" customClass="AdminBroadcastsViewController" customModule="BroncoCast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0ml-e9-ASE">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="481"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Broadcasts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L34-yH-AKd">
-                                <rect key="frame" x="128.5" y="230" width="86" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW7-uc-T1i" customClass="DesignableButton" customModule="BroncoCast" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="311" height="38"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                <state key="normal" title="New Broadcast">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.75"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="newBroadcastPressed:" destination="Nny-mJ-z5Y" eventType="touchUpInside" id="SOw-bR-Kgh"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8aA-n0-bun">
+                                <rect key="frame" x="16" y="66" width="311" height="395"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminBroadcastsFetchingCell" id="ak2-Yc-0wR">
+                                        <rect key="frame" x="0.0" y="28" width="311" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ak2-Yc-0wR" id="7e5-AX-Yy9">
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retrieving Broadcasts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAW-T9-2Uu">
+                                                    <rect key="frame" x="55.5" y="11.5" width="168" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DAW-T9-2Uu" firstAttribute="centerX" secondItem="7e5-AX-Yy9" secondAttribute="centerX" id="6xy-E7-0Q4"/>
+                                                <constraint firstItem="DAW-T9-2Uu" firstAttribute="centerY" secondItem="7e5-AX-Yy9" secondAttribute="centerY" id="TBi-wA-Kzz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminBroadcastsEmptyCell" id="dsO-Hp-iZ6">
+                                        <rect key="frame" x="0.0" y="72" width="311" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dsO-Hp-iZ6" id="6kB-d3-rE7">
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Broadcasts Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4Q-nh-UXP">
+                                                    <rect key="frame" x="57" y="11.5" width="165" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="R4Q-nh-UXP" firstAttribute="centerX" secondItem="6kB-d3-rE7" secondAttribute="centerX" id="pce-q7-vUU"/>
+                                                <constraint firstItem="R4Q-nh-UXP" firstAttribute="centerY" secondItem="6kB-d3-rE7" secondAttribute="centerY" id="txT-sS-op6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminBroadcastsErrorMsgCell" id="4yV-fR-7id" customClass="AdminBroadcastsErrorMsgTableViewCell" customModule="BroncoCast" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="116" width="311" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4yV-fR-7id" id="W9q-Jl-J0o">
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kj1-zN-Rkw">
+                                                    <rect key="frame" x="118.5" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Kj1-zN-Rkw" firstAttribute="centerX" secondItem="W9q-Jl-J0o" secondAttribute="centerX" id="2ya-yh-ghE"/>
+                                                <constraint firstItem="Kj1-zN-Rkw" firstAttribute="centerY" secondItem="W9q-Jl-J0o" secondAttribute="centerY" id="IL6-qj-cFy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="errorMsgLabel" destination="Kj1-zN-Rkw" id="qZ1-DB-qlY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdminBroadcastsDetailCell" rowHeight="83" id="5bv-Cj-Cvb" customClass="AdminBroadcastsDetailTableViewCell" customModule="BroncoCast" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="160" width="311" height="83"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5bv-Cj-Cvb" id="kRV-aF-A7j">
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="83"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOg-hE-eLO" customClass="DesignableView" customModule="BroncoCast" customModuleProvider="target">
+                                                    <rect key="frame" x="5" y="5" width="301" height="73"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKd-9Q-7Z6">
+                                                            <rect key="frame" x="8" y="8" width="285" height="31"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mn-PP-2Ij">
+                                                            <rect key="frame" x="8" y="47" width="285" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="7Mn-PP-2Ij" firstAttribute="top" secondItem="QKd-9Q-7Z6" secondAttribute="bottom" constant="8" id="1WI-Ko-Eem"/>
+                                                        <constraint firstItem="QKd-9Q-7Z6" firstAttribute="top" secondItem="ZOg-hE-eLO" secondAttribute="top" constant="8" id="P0v-Kk-omR"/>
+                                                        <constraint firstItem="QKd-9Q-7Z6" firstAttribute="leading" secondItem="ZOg-hE-eLO" secondAttribute="leading" constant="8" id="UJ4-cL-MRl"/>
+                                                        <constraint firstAttribute="trailing" secondItem="7Mn-PP-2Ij" secondAttribute="trailing" constant="8" id="dwb-Hi-cH9"/>
+                                                        <constraint firstAttribute="bottom" secondItem="7Mn-PP-2Ij" secondAttribute="bottom" constant="8" id="eAD-YR-YC4"/>
+                                                        <constraint firstAttribute="trailing" secondItem="QKd-9Q-7Z6" secondAttribute="trailing" constant="8" id="mAm-xb-Vxa"/>
+                                                        <constraint firstItem="7Mn-PP-2Ij" firstAttribute="leading" secondItem="ZOg-hE-eLO" secondAttribute="leading" constant="8" id="o2W-Lg-cmP"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="0.75"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                            <size key="value" width="1" height="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZOg-hE-eLO" firstAttribute="leading" secondItem="kRV-aF-A7j" secondAttribute="leading" constant="5" id="3I8-Ey-gFY"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZOg-hE-eLO" secondAttribute="trailing" constant="5" id="HrL-C1-cXo"/>
+                                                <constraint firstItem="ZOg-hE-eLO" firstAttribute="top" secondItem="kRV-aF-A7j" secondAttribute="top" constant="5" id="mGq-UQ-lRj"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZOg-hE-eLO" secondAttribute="bottom" constant="5" id="pFL-3X-WKl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="sentLabel" destination="QKd-9Q-7Z6" id="39N-YV-KpM"/>
+                                            <outlet property="shortMsgLabel" destination="7Mn-PP-2Ij" id="m6A-na-HPs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="L34-yH-AKd" firstAttribute="centerX" secondItem="0ml-e9-ASE" secondAttribute="centerX" id="XTU-6Y-yJd"/>
-                            <constraint firstItem="L34-yH-AKd" firstAttribute="centerY" secondItem="0ml-e9-ASE" secondAttribute="centerY" id="wT1-i4-VCr"/>
+                            <constraint firstItem="JNK-gd-seW" firstAttribute="trailing" secondItem="DW7-uc-T1i" secondAttribute="trailing" constant="16" id="1H1-bZ-uUd"/>
+                            <constraint firstItem="8aA-n0-bun" firstAttribute="top" secondItem="DW7-uc-T1i" secondAttribute="bottom" constant="8" id="5fe-bW-eNY"/>
+                            <constraint firstItem="8aA-n0-bun" firstAttribute="leading" secondItem="JNK-gd-seW" secondAttribute="leading" constant="16" id="RdB-qB-FEb"/>
+                            <constraint firstItem="JNK-gd-seW" firstAttribute="bottom" secondItem="8aA-n0-bun" secondAttribute="bottom" constant="20" id="VvD-xo-pug"/>
+                            <constraint firstItem="DW7-uc-T1i" firstAttribute="leading" secondItem="JNK-gd-seW" secondAttribute="leading" constant="16" id="mfk-74-sbn"/>
+                            <constraint firstItem="DW7-uc-T1i" firstAttribute="top" secondItem="JNK-gd-seW" secondAttribute="top" id="rSc-cs-jg0"/>
+                            <constraint firstItem="JNK-gd-seW" firstAttribute="trailing" secondItem="8aA-n0-bun" secondAttribute="trailing" constant="16" id="x60-bu-eZa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JNK-gd-seW"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="8aA-n0-bun" id="NKc-Ui-6Tp"/>
+                        <segue destination="atn-55-0Vz" kind="show" identifier="showAdminBroadcastDetail" id="1ho-Ja-uYh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WcD-gc-EGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5730" y="570"/>
+            <point key="canvasLocation" x="6648.8000000000002" y="598.65067466266873"/>
+        </scene>
+        <!--Admin Broadcast Detail View Controller-->
+        <scene sceneID="j3J-3m-Btw">
+            <objects>
+                <viewController id="atn-55-0Vz" customClass="AdminBroadcastDetailViewController" customModule="BroncoCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZXx-2t-QXg">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="481"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4ff-IS-gKu">
+                                <rect key="frame" x="16" y="28" width="311" height="387"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BroadcastDetailCell" rowHeight="181" id="jUQ-2E-hKa" customClass="AdminBroadcastDetailDataCell" customModule="BroncoCast" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="311" height="181"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jUQ-2E-hKa" id="sM1-96-7Vt">
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="181"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCY-mw-0VP" customClass="DesignableView" customModule="BroncoCast" customModuleProvider="target">
+                                                    <rect key="frame" x="5" y="5" width="301" height="171"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kt3-Ab-JQL">
+                                                            <rect key="frame" x="8" y="8" width="277" height="126.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXu-lb-ti2">
+                                                            <rect key="frame" x="8" y="142.5" width="277" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Kt3-Ab-JQL" secondAttribute="trailing" constant="16" id="8rQ-b6-ePv"/>
+                                                        <constraint firstAttribute="trailing" secondItem="BXu-lb-ti2" secondAttribute="trailing" constant="16" id="DEa-jG-ZTS"/>
+                                                        <constraint firstItem="Kt3-Ab-JQL" firstAttribute="top" secondItem="lCY-mw-0VP" secondAttribute="top" constant="8" id="ISz-Gf-w1t"/>
+                                                        <constraint firstItem="Kt3-Ab-JQL" firstAttribute="leading" secondItem="lCY-mw-0VP" secondAttribute="leading" constant="8" id="TLw-Y3-5G6"/>
+                                                        <constraint firstItem="BXu-lb-ti2" firstAttribute="top" secondItem="Kt3-Ab-JQL" secondAttribute="bottom" constant="8" id="VJ0-kV-3NH"/>
+                                                        <constraint firstAttribute="bottom" secondItem="BXu-lb-ti2" secondAttribute="bottom" constant="8" id="aPD-28-7Kh"/>
+                                                        <constraint firstItem="BXu-lb-ti2" firstAttribute="leading" secondItem="lCY-mw-0VP" secondAttribute="leading" constant="8" id="mk9-Sm-FvG"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="0.75"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                            <size key="value" width="1" height="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="lCY-mw-0VP" secondAttribute="trailing" constant="5" id="RU5-Vb-gQR"/>
+                                                <constraint firstItem="lCY-mw-0VP" firstAttribute="leading" secondItem="sM1-96-7Vt" secondAttribute="leading" constant="5" id="ck6-N5-cCO"/>
+                                                <constraint firstAttribute="bottom" secondItem="lCY-mw-0VP" secondAttribute="bottom" constant="5" id="pzI-CI-wFR"/>
+                                                <constraint firstItem="lCY-mw-0VP" firstAttribute="top" secondItem="sM1-96-7Vt" secondAttribute="top" constant="5" id="zsf-NF-aYr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="BXu-lb-ti2" id="X0h-Ly-1ON"/>
+                                            <outlet property="titleLabel" destination="Kt3-Ab-JQL" id="TaI-jo-cvZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EL-mx-3ZV" customClass="ActivityButton" customModule="BroncoCast" customModuleProvider="target">
+                                <rect key="frame" x="16" y="423" width="311" height="38"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                <state key="normal" title="Cancel Broadcast">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.75"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="atn-55-0Vz" eventType="touchUpInside" id="23l-GV-mbv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fB7-UW-yEo" firstAttribute="trailing" secondItem="0EL-mx-3ZV" secondAttribute="trailing" constant="16" id="3rY-Rc-s13"/>
+                            <constraint firstItem="fB7-UW-yEo" firstAttribute="bottom" secondItem="0EL-mx-3ZV" secondAttribute="bottom" constant="20" id="IOm-3g-LVm"/>
+                            <constraint firstItem="0EL-mx-3ZV" firstAttribute="leading" secondItem="fB7-UW-yEo" secondAttribute="leading" constant="16" id="JHu-hz-85N"/>
+                            <constraint firstItem="fB7-UW-yEo" firstAttribute="trailing" secondItem="4ff-IS-gKu" secondAttribute="trailing" constant="16" id="a8b-9x-SWd"/>
+                            <constraint firstItem="0EL-mx-3ZV" firstAttribute="top" secondItem="4ff-IS-gKu" secondAttribute="bottom" constant="8" id="afb-ud-Clb"/>
+                            <constraint firstItem="4ff-IS-gKu" firstAttribute="top" secondItem="fB7-UW-yEo" secondAttribute="top" constant="8" id="lbx-lz-1S2"/>
+                            <constraint firstItem="4ff-IS-gKu" firstAttribute="leading" secondItem="fB7-UW-yEo" secondAttribute="leading" constant="16" id="uuh-8l-VzC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fB7-UW-yEo"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="0EL-mx-3ZV" id="84p-LQ-Pk7"/>
+                        <outlet property="tableView" destination="4ff-IS-gKu" id="Agl-UI-Qz2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U9D-w4-dPf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7456.8000000000002" y="222.63868065967017"/>
         </scene>
         <!--Admin Groups View Controller-->
         <scene sceneID="fiH-9k-7uM">
@@ -1799,7 +2079,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvo-UE-73G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6445.6000000000004" y="1044.8275862068967"/>
+            <point key="canvasLocation" x="6726" y="1363"/>
         </scene>
         <!--Admin Group Add Members View Controller-->
         <scene sceneID="4Wh-cy-0IS">
@@ -1876,7 +2156,7 @@
                                             <outlet property="errorMsgLabel" destination="boE-OR-gME" id="nLd-xu-067"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminGroupAddMembersDetailCell" id="6eM-Eu-U5K" customClass="AdminGroupAddMembersDetailTableViewCell" customModule="BroncoCast" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminGroupAddMembersDetailCell" id="6eM-Eu-U5K" customClass="AdminGroupAddMembersDetailTableViewCell" customModule="BroncoCast" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="160" width="311" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6eM-Eu-U5K" id="mnb-OR-f9W">
@@ -1896,7 +2176,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBu-bk-W9c">
-                                                    <rect key="frame" x="45" y="11.5" width="250" height="21"/>
+                                                    <rect key="frame" x="45" y="11.5" width="218" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1933,7 +2213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="275-pP-FLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7192.8000000000002" y="800.14992503748135"/>
+            <point key="canvasLocation" x="7679" y="1364"/>
         </scene>
         <!--Admin Group Remove Members View Controller-->
         <scene sceneID="qY8-8n-WRR">
@@ -1947,7 +2227,7 @@
                                 <rect key="frame" x="16" y="20" width="311" height="441"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminGroupRemoveMembersEmptyCell" id="PdU-yu-JFQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminGroupRemoveMembersEmptyCell" id="PdU-yu-JFQ">
                                         <rect key="frame" x="0.0" y="28" width="311" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PdU-yu-JFQ" id="Ims-Pj-hHc">
@@ -1955,7 +2235,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Members Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eiz-mH-1Dk">
-                                                    <rect key="frame" x="80" y="11.5" width="151" height="21"/>
+                                                    <rect key="frame" x="64" y="11.5" width="151" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1967,7 +2247,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminGroupRemoveMembersDetailCell" id="gEU-Td-bWW" customClass="AdminGroupRemoveMembersDetailTableViewCell" customModule="BroncoCast" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminGroupRemoveMembersDetailCell" id="gEU-Td-bWW" customClass="AdminGroupRemoveMembersDetailTableViewCell" customModule="BroncoCast" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="311" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gEU-Td-bWW" id="rSv-Co-Udc">
@@ -1987,7 +2267,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmC-dR-yL6">
-                                                    <rect key="frame" x="45" y="11.5" width="250" height="21"/>
+                                                    <rect key="frame" x="45" y="11.5" width="218" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2024,7 +2304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3t-Eo-ie6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7213.6000000000004" y="1396.5517241379312"/>
+            <point key="canvasLocation" x="7582" y="1981"/>
         </scene>
         <!--Admin Groups Name View Controller-->
         <scene sceneID="pMc-cF-t2U">
@@ -2106,7 +2386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxQ-Lz-r70" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6450" y="1691"/>
+            <point key="canvasLocation" x="6726" y="2124"/>
         </scene>
         <!--User Broadcast Detail View Controller-->
         <scene sceneID="O1V-cV-CzZ">
@@ -2353,7 +2633,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xst-Zv-Yd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="1569"/>
+            <point key="canvasLocation" x="2342" y="2386"/>
         </scene>
         <!--My Broadcasts-->
         <scene sceneID="awR-qu-nhS">
