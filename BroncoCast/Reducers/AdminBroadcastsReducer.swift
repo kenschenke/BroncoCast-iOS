@@ -32,6 +32,20 @@ func adminBroadcastsReducer(_ action : Action, state: AdminBroadcastsState?) -> 
         ))
 
         newState.broadcasts.sort(by: { $0.Timestamp >= $1.Timestamp })
+    } else if let setBroadcastCancelled = action as? SetBroadcastCancelled {
+        newState.broadcasts = newState.broadcasts.map({(value: AdminBroadcast) -> AdminBroadcast in
+            return AdminBroadcast(
+                BroadcastId: value.BroadcastId,
+                SentBy: value.SentBy,
+                Time: value.Time,
+                Timestamp: value.Timestamp,
+                IsDelivered: value.IsDelivered,
+                IsCancelled: setBroadcastCancelled.broadcastId == value.BroadcastId ? true : value.IsCancelled,
+                ShortMsg: value.ShortMsg,
+                LongMsg: value.LongMsg,
+                Recipients: value.Recipients
+            )
+        })
     }
     
     return newState

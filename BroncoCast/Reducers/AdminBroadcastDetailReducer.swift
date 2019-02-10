@@ -24,6 +24,12 @@ func adminBroadcastDetailReducer(_ action : Action, state: AdminBroadcastDetailS
         newState.recipients = setAdminBroadcastDetails.recipients
         newState.cancelling = false
         newState.cancellingErrorMsg = ""
+    } else if let setAdminBroadcastCancelling = action as? SetAdminBroadcastCancelling {
+        newState.cancelling = setAdminBroadcastCancelling.cancelling
+    } else if let setAdminBroadcastCancellingErrorMsg = action as? SetAdminBroadcastCancellingErrorMsg {
+        newState.cancellingErrorMsg = setAdminBroadcastCancellingErrorMsg.cancellingErrorMsg
+    } else if let setAdminBroadcastIsCancelled = action as? SetAdminBroadcastIsCancelled {
+        newState.isCancelled = setAdminBroadcastIsCancelled.isCancelled
     }
     
     return newState

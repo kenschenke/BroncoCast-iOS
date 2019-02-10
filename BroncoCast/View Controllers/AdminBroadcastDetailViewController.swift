@@ -8,6 +8,7 @@
 
 import UIKit
 import ReSwift
+import Alertift
 
 class AdminBroadcastDetailViewController: UIViewController, StoreSubscriber {
     
@@ -18,6 +19,8 @@ class AdminBroadcastDetailViewController: UIViewController, StoreSubscriber {
     var isDelivered = false
     var isCancelled = false
     var recipients : [String] = []
+    var cancelling = false
+    var cancellingErrorMsg = ""
     var originalCancelButtonBkColor : UIColor = .clear
 
     @IBOutlet weak var tableView: UITableView!
@@ -29,6 +32,8 @@ class AdminBroadcastDetailViewController: UIViewController, StoreSubscriber {
         store.subscribe(self)
         tableView.delegate = self
         tableView.dataSource = self
+        
+        cancelButton.activityLabel = "Cancelling"
         
         originalCancelButtonBkColor = cancelButton.backgroundColor!
     }
@@ -71,9 +76,28 @@ class AdminBroadcastDetailViewController: UIViewController, StoreSubscriber {
             recipients = state.adminBroadcastDetailState.recipients
             tableView.reloadData()
         }
+        
+        if cancelling != state.adminBroadcastDetailState.cancelling {
+            cancelling = state.adminBroadcastDetailState.cancelling
+            if cancelling {
+                cancelButton.showActivity()
+            } else {
+                cancelButton.hideActivity()
+            }
+        }
+        
+        if cancellingErrorMsg != state.adminBroadcastDetailState.cancellingErrorMsg {
+            cancellingErrorMsg = state.adminBroadcastDetailState.cancellingErrorMsg
+            if !cancellingErrorMsg.isEmpty {
+                Alertift.alert(title: "An Error Occurred", message: cancellingErrorMsg)
+                    .action(.default("Ok"))
+                    .show()
+            }
+        }
     }
 
     @IBAction func cancelButtonPressed(_ sender: Any) {
+        store.dispatch(cancelBroadcast)
     }
 }
 
