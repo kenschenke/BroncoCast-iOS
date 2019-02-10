@@ -59,6 +59,10 @@ class AdminBroadcastsViewController: UIViewController, StoreSubscriber {
     }
     
     @IBAction func newBroadcastPressed(_ sender: Any) {
+        store.dispatch(InitNewBroadcast())
+        store.dispatch(getAdminBroadcastGroupMembers)
+        
+        performSegue(withIdentifier: "showNewBroadcast", sender: self)
     }
     
 }

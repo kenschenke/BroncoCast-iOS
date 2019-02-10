@@ -26,4 +26,5 @@ struct AppState : StateType {
     var adminGroupDetailState : AdminGroupDetailState
     var adminBroadcastsState : AdminBroadcastsState
     var adminBroadcastDetailState : AdminBroadcastDetailState
+    var adminNewBroadcastState : AdminNewBroadcastState
 }

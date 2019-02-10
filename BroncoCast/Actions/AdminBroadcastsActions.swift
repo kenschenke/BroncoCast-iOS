@@ -63,13 +63,15 @@ func getAdminBroadcasts(state : AppState, store : Store<AppState>) -> Action? {
                         ))
                     }
                     
+                    broadcasts.sort(by: { $0.Timestamp >= $1.Timestamp })
+                    
                     store.dispatch(SetAdminBroadcasts(broadcasts: broadcasts))
                 }
             } else {
                 store.dispatch(SetAdminBroadcastsFetchingErrorMsg(fetchingErrorMsg: responseJSON["Error"].string ?? ""))
             }
         } else {
-            store.dispatch(SetAdminBroadcastsFetchingErrorMsg(fetchingErrorMsg: "Unable to retriece broadcasts"))
+            store.dispatch(SetAdminBroadcastsFetchingErrorMsg(fetchingErrorMsg: "Unable to retrieve broadcasts"))
         }
     }
  
