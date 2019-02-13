@@ -9,6 +9,7 @@
 import UIKit
 import ReSwift
 import Alertift
+import FontAwesome_swift
 
 class SignInViewController: UIViewController, UITextFieldDelegate, StoreSubscriber {
 
@@ -20,6 +21,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, StoreSubscrib
     @IBOutlet weak var signInButton: ActivityButton!
     @IBOutlet weak var registerButton: DesignableButton!
     @IBOutlet weak var forgotPasswordButton: DesignableButton!
+    @IBOutlet weak var optionsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate, StoreSubscrib
         store.subscribe(self)
 
         signInButton.activityLabel = "Signing In"
+
+        optionsButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 22, style: .solid)
+        optionsButton.setTitle(String.fontAwesomeIcon(name: .cogs), for: .normal)
     }
     
     @IBAction func showPasswordChanged(_ sender: Any) {
@@ -52,15 +57,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate, StoreSubscrib
         store.dispatch(signIn)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func optionsButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "showSignInOptions", sender: self)
     }
-    */
 
     func newState(state: AppState) {
         if state.signInState.signingIn != signingIn {

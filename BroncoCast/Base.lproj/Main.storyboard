@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email or phone number (digits only)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57f-iK-lcL" userLabel="Username Label">
-                                <rect key="frame" x="16" y="89" width="343" height="21"/>
+                                <rect key="frame" x="16" y="109" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Es-bb-RSp" userLabel="Username Text Field">
-                                <rect key="frame" x="16" y="118" width="343" height="30"/>
+                                <rect key="frame" x="16" y="138" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -42,13 +42,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLx-eu-CY5" userLabel="Password Label">
-                                <rect key="frame" x="16" y="173" width="343" height="21"/>
+                                <rect key="frame" x="16" y="193" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wgx-G0-5AU" userLabel="Password Text Field">
-                                <rect key="frame" x="16" y="202" width="343" height="30"/>
+                                <rect key="frame" x="16" y="222" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
@@ -65,19 +65,19 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QY1-wG-UmB" userLabel="Show Password Label">
-                                <rect key="frame" x="16" y="257" width="120.5" height="21"/>
+                                <rect key="frame" x="16" y="277" width="120.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1dC-W7-gtY" userLabel="Show Password Switch">
-                                <rect key="frame" x="310" y="252" width="51" height="31"/>
+                                <rect key="frame" x="310" y="272" width="51" height="31"/>
                                 <connections>
                                     <action selector="showPasswordChanged:" destination="qnN-ED-ESb" eventType="valueChanged" id="BvF-5I-NwX"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgM-aA-54f" customClass="DesignableButton" customModule="BroncoCast" customModuleProvider="target">
-                                <rect key="frame" x="16" y="371" width="159" height="38"/>
+                                <rect key="frame" x="16" y="391" width="159" height="38"/>
                                 <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 <state key="normal" title="Register">
@@ -102,7 +102,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEw-2k-eW7" customClass="DesignableButton" customModule="BroncoCast" customModuleProvider="target">
-                                <rect key="frame" x="200" y="371" width="159" height="38"/>
+                                <rect key="frame" x="200" y="391" width="159" height="38"/>
                                 <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 <state key="normal" title="Forgot Password">
@@ -127,7 +127,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4E-he-iDN" customClass="ActivityButton" customModule="BroncoCast" customModuleProvider="target">
-                                <rect key="frame" x="16" y="308" width="343" height="38"/>
+                                <rect key="frame" x="16" y="328" width="343" height="38"/>
                                 <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 <state key="normal" title="Sign In">
@@ -151,13 +151,22 @@
                                     <action selector="signInPressed:" destination="qnN-ED-ESb" eventType="touchUpInside" id="ouc-O4-gAt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSS-pp-ga3">
+                                <rect key="frame" x="313" y="72" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="optionsButtonPressed:" destination="qnN-ED-ESb" eventType="touchUpInside" id="rTx-R3-rsK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1dC-W7-gtY" firstAttribute="centerY" secondItem="QY1-wG-UmB" secondAttribute="centerY" id="11b-Zv-k35"/>
                             <constraint firstItem="IgM-aA-54f" firstAttribute="centerY" secondItem="LEw-2k-eW7" secondAttribute="centerY" id="54T-YJ-NPE"/>
                             <constraint firstItem="QY1-wG-UmB" firstAttribute="leading" secondItem="57f-iK-lcL" secondAttribute="leading" id="5wS-fy-3tr"/>
-                            <constraint firstItem="57f-iK-lcL" firstAttribute="top" secondItem="RtL-t6-p5i" secondAttribute="top" constant="25" id="CLe-lw-EfV"/>
+                            <constraint firstItem="57f-iK-lcL" firstAttribute="top" secondItem="RtL-t6-p5i" secondAttribute="top" constant="45" id="CLe-lw-EfV"/>
                             <constraint firstItem="6Es-bb-RSp" firstAttribute="leading" secondItem="57f-iK-lcL" secondAttribute="leading" id="EiL-bp-wPR"/>
                             <constraint firstItem="6Es-bb-RSp" firstAttribute="trailing" secondItem="57f-iK-lcL" secondAttribute="trailing" id="IQe-7q-Ccb"/>
                             <constraint firstItem="BLx-eu-CY5" firstAttribute="trailing" secondItem="57f-iK-lcL" secondAttribute="trailing" id="Qxt-ZL-5Uo"/>
@@ -169,9 +178,11 @@
                             <constraint firstItem="LEw-2k-eW7" firstAttribute="trailing" secondItem="57f-iK-lcL" secondAttribute="trailing" id="dOV-9b-79i"/>
                             <constraint firstItem="IgM-aA-54f" firstAttribute="top" secondItem="R4E-he-iDN" secondAttribute="bottom" constant="25" id="dhD-fe-pei"/>
                             <constraint firstItem="wgx-G0-5AU" firstAttribute="trailing" secondItem="57f-iK-lcL" secondAttribute="trailing" id="fcv-mg-2YM"/>
+                            <constraint firstItem="XSS-pp-ga3" firstAttribute="top" secondItem="RtL-t6-p5i" secondAttribute="top" constant="8" id="fdE-gz-lgQ"/>
                             <constraint firstItem="LEw-2k-eW7" firstAttribute="width" secondItem="IgM-aA-54f" secondAttribute="width" id="ghT-S6-ZWd"/>
                             <constraint firstItem="R4E-he-iDN" firstAttribute="top" secondItem="QY1-wG-UmB" secondAttribute="bottom" constant="30" id="hOH-Yj-jyf"/>
                             <constraint firstItem="BLx-eu-CY5" firstAttribute="top" secondItem="6Es-bb-RSp" secondAttribute="bottom" constant="25" id="hlF-bS-IOy"/>
+                            <constraint firstItem="RtL-t6-p5i" firstAttribute="trailing" secondItem="XSS-pp-ga3" secondAttribute="trailing" constant="16" id="it7-or-arO"/>
                             <constraint firstItem="R4E-he-iDN" firstAttribute="leading" secondItem="57f-iK-lcL" secondAttribute="leading" id="kaT-1y-pC6"/>
                             <constraint firstItem="QY1-wG-UmB" firstAttribute="top" secondItem="wgx-G0-5AU" secondAttribute="bottom" constant="25" id="taY-Bs-CxM"/>
                             <constraint firstItem="6Es-bb-RSp" firstAttribute="top" secondItem="57f-iK-lcL" secondAttribute="bottom" constant="8" id="uVH-2g-igZ"/>
@@ -185,10 +196,12 @@
                     <navigationItem key="navigationItem" title="Sign In" id="U3q-iE-cKj"/>
                     <connections>
                         <outlet property="forgotPasswordButton" destination="LEw-2k-eW7" id="Cd4-IC-WEq"/>
+                        <outlet property="optionsButton" destination="XSS-pp-ga3" id="oL6-3D-haU"/>
                         <outlet property="passwordTextField" destination="wgx-G0-5AU" id="utp-be-RiQ"/>
                         <outlet property="registerButton" destination="IgM-aA-54f" id="R1B-p0-FLi"/>
                         <outlet property="signInButton" destination="R4E-he-iDN" id="QNq-zq-jYk"/>
                         <outlet property="usernameTextField" destination="6Es-bb-RSp" id="SEK-uX-KlQ"/>
+                        <segue destination="l7F-sB-T75" kind="show" identifier="showSignInOptions" id="EF1-78-dkg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QED-eN-gni" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -497,6 +510,87 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="4064.8000000000002" y="26.53673163418291"/>
+        </scene>
+        <!--Sign In Options View Controller-->
+        <scene sceneID="dre-j0-xPs">
+            <objects>
+                <viewController id="l7F-sB-T75" customClass="SignInOptionsViewController" customModule="BroncoCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3JC-kL-oXk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BroncoCast Server" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7PA-3z-eSH">
+                                <rect key="frame" x="16" y="80" width="144" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ePq-GC-9TV">
+                                <rect key="frame" x="16" y="109" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKv-sw-SPB" customClass="DesignableButton" customModule="BroncoCast" customModuleProvider="target">
+                                <rect key="frame" x="16" y="215" width="343" height="38"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.75"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="l7F-sB-T75" eventType="touchUpInside" id="x6s-M0-f7g"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIR-Cw-SPb">
+                                <rect key="frame" x="16" y="147" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="YnE-8T-huY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ewP-8L-3oj" firstAttribute="trailing" secondItem="yIR-Cw-SPb" secondAttribute="trailing" constant="16" id="30C-jb-SYh"/>
+                            <constraint firstItem="7PA-3z-eSH" firstAttribute="leading" secondItem="ewP-8L-3oj" secondAttribute="leading" constant="16" id="CQ7-fW-IGF"/>
+                            <constraint firstItem="yIR-Cw-SPb" firstAttribute="top" secondItem="ePq-GC-9TV" secondAttribute="bottom" constant="8" id="Dkt-PR-KM3"/>
+                            <constraint firstItem="ePq-GC-9TV" firstAttribute="top" secondItem="7PA-3z-eSH" secondAttribute="bottom" constant="8" id="FGW-6v-SPa"/>
+                            <constraint firstItem="7PA-3z-eSH" firstAttribute="top" secondItem="ewP-8L-3oj" secondAttribute="top" constant="16" id="P2z-Cq-BTh"/>
+                            <constraint firstItem="yIR-Cw-SPb" firstAttribute="leading" secondItem="ewP-8L-3oj" secondAttribute="leading" constant="16" id="ZsC-bO-46c"/>
+                            <constraint firstItem="fKv-sw-SPB" firstAttribute="leading" secondItem="ewP-8L-3oj" secondAttribute="leading" constant="16" id="Zv3-8V-MEd"/>
+                            <constraint firstItem="ePq-GC-9TV" firstAttribute="leading" secondItem="ewP-8L-3oj" secondAttribute="leading" constant="16" id="faw-Bw-DJE"/>
+                            <constraint firstItem="fKv-sw-SPB" firstAttribute="top" secondItem="yIR-Cw-SPb" secondAttribute="bottom" constant="47" id="gM7-FS-faG"/>
+                            <constraint firstItem="ewP-8L-3oj" firstAttribute="trailing" secondItem="fKv-sw-SPB" secondAttribute="trailing" constant="16" id="o66-vA-IAH"/>
+                            <constraint firstItem="ewP-8L-3oj" firstAttribute="trailing" secondItem="ePq-GC-9TV" secondAttribute="trailing" constant="16" id="pS9-Hp-kFY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ewP-8L-3oj"/>
+                    </view>
+                    <connections>
+                        <outlet property="helpTextField" destination="yIR-Cw-SPb" id="4Ps-ql-VYF"/>
+                        <outlet property="serverLabel" destination="7PA-3z-eSH" id="eOx-9L-pkV"/>
+                        <outlet property="serverTextField" destination="ePq-GC-9TV" id="MPh-Va-yY9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="af7-9B-aU4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2343" y="-714"/>
         </scene>
         <!--Delegate-->
         <scene sceneID="QLk-SR-guh">
@@ -1536,7 +1630,7 @@
                                 <rect key="frame" x="16" y="36" width="311" height="379"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdminNewBroadcastMsgCell" rowHeight="126" id="GEF-i3-Cv3" customClass="AdminNewBroadcastMsgTableViewCell" customModule="BroncoCast" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdminNewBroadcastMsgCell" rowHeight="126" id="GEF-i3-Cv3" customClass="AdminNewBroadcastMsgTableViewCell" customModule="BroncoCast" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="311" height="126"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GEF-i3-Cv3" id="O4Z-Ov-Ymk">
@@ -1544,16 +1638,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Uc-RG-eSg" customClass="DesignableView" customModule="BroncoCast" customModuleProvider="target">
-                                                    <rect key="frame" x="5" y="5" width="301" height="116"/>
+                                                    <rect key="frame" x="5" y="5" width="269" height="116"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkA-QQ-oEY">
-                                                            <rect key="frame" x="8" y="8" width="277" height="63.5"/>
+                                                            <rect key="frame" x="8" y="8" width="245" height="63.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLy-sd-L8b">
-                                                            <rect key="frame" x="8" y="79.5" width="277" height="20.5"/>
+                                                            <rect key="frame" x="8" y="79.5" width="245" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1597,7 +1691,7 @@
                                             <outlet property="titleLabel" destination="YkA-QQ-oEY" id="KcZ-tC-RIO"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminNewBroadcastRecipientsHeader" id="pP6-8o-nO6" customClass="AdminBroadcastRecipientsHeaderTableViewCell" customModule="BroncoCast" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminNewBroadcastRecipientsHeader" id="pP6-8o-nO6" customClass="AdminBroadcastRecipientsHeaderTableViewCell" customModule="BroncoCast" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="154" width="311" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pP6-8o-nO6" id="UTb-Tc-xTZ">
@@ -1605,7 +1699,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8N-Cr-HYG">
-                                                    <rect key="frame" x="15" y="8" width="280" height="28"/>
+                                                    <rect key="frame" x="15" y="8" width="248" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1630,16 +1724,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRw-W7-skD" customClass="DesignableView" customModule="BroncoCast" customModuleProvider="target">
-                                                    <rect key="frame" x="5" y="5" width="301" height="120"/>
+                                                    <rect key="frame" x="5" y="5" width="301" height="119.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdL-6U-wUM">
-                                                            <rect key="frame" x="8" y="8" width="285" height="79"/>
+                                                            <rect key="frame" x="8" y="8" width="285" height="78.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vML-No-YYx">
-                                                            <rect key="frame" x="8" y="95" width="285" height="17"/>
+                                                            <rect key="frame" x="8" y="94.5" width="285" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -2016,7 +2110,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdminNewBroadcastGroupMemberCell" id="9kt-zR-Agu" customClass="AdminNewBroadcastGroupMemberTableViewCell" customModule="BroncoCast" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdminNewBroadcastGroupMemberCell" id="9kt-zR-Agu" customClass="AdminNewBroadcastGroupMemberTableViewCell" customModule="BroncoCast" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="311" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9kt-zR-Agu" id="DmU-SQ-Oa2">
@@ -2033,7 +2127,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdt-G1-Dp7">
-                                                    <rect key="frame" x="45" y="11.5" width="250" height="21"/>
+                                                    <rect key="frame" x="45" y="11.5" width="218" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

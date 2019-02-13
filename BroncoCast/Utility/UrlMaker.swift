@@ -44,6 +44,6 @@ struct UrlMaker {
     }
     
     static func makeUrl(_ url : UrlConstant) -> String {
-        return "http://dev.broncocast.org/\(url.rawValue)"
+        return "\(appSettings.serverAddr)/\(url.rawValue)"
     }
 }

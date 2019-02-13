@@ -11,6 +11,8 @@ import ReSwift
 
 var store = Store<AppState>(reducer: appReducer, state: nil)
 
+var appSettings = AppSettings()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -25,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
+        appSettings.load()
+
         store.dispatch(navigateTo(path: .checkauth))
         store.dispatch(isAuth)
         
