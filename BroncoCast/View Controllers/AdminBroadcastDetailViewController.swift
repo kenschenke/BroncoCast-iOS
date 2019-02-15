@@ -10,6 +10,11 @@ import UIKit
 import ReSwift
 import Alertift
 
+struct AdminBroadcastDetailRow {
+    var Title : String
+    var Content : String
+}
+
 class AdminBroadcastDetailViewController: UIViewController, StoreSubscriber {
     
     var sentBy = ""
@@ -22,6 +27,7 @@ class AdminBroadcastDetailViewController: UIViewController, StoreSubscriber {
     var cancelling = false
     var cancellingErrorMsg = ""
     var originalCancelButtonBkColor : UIColor = .clear
+    var Rows : [AdminBroadcastDetailRow] = []
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cancelButton: ActivityButton!
@@ -41,26 +47,31 @@ class AdminBroadcastDetailViewController: UIViewController, StoreSubscriber {
     func newState(state: AppState) {
         if sentBy != state.adminBroadcastDetailState.sentBy {
             sentBy = state.adminBroadcastDetailState.sentBy
+            updateRows()
             tableView.reloadData()
         }
         
         if time != state.adminBroadcastDetailState.time {
             time = state.adminBroadcastDetailState.time
+            updateRows()
             tableView.reloadData()
         }
         
         if shortMsg != state.adminBroadcastDetailState.shortMsg {
             shortMsg = state.adminBroadcastDetailState.shortMsg
+            updateRows()
             tableView.reloadData()
         }
         
         if longMsg != state.adminBroadcastDetailState.longMsg {
             longMsg = state.adminBroadcastDetailState.longMsg
+            updateRows()
             tableView.reloadData()
         }
         
         if isDelivered != state.adminBroadcastDetailState.isDelivered {
             isDelivered = state.adminBroadcastDetailState.isDelivered
+            updateRows()
             tableView.reloadData()
             
             cancelButton.isEnabled = !isDelivered
@@ -69,11 +80,13 @@ class AdminBroadcastDetailViewController: UIViewController, StoreSubscriber {
         
         if isCancelled != state.adminBroadcastDetailState.isCancelled {
             isCancelled = state.adminBroadcastDetailState.isCancelled
+            updateRows()
             tableView.reloadData()
         }
         
         if recipients != state.adminBroadcastDetailState.recipients {
             recipients = state.adminBroadcastDetailState.recipients
+            updateRows()
             tableView.reloadData()
         }
         
@@ -103,50 +116,42 @@ class AdminBroadcastDetailViewController: UIViewController, StoreSubscriber {
 
 extension AdminBroadcastDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
-    // Row 0 - Status / Time
-    // Row 1 - Sent By
-    // Row 2 - Short Msg
-    // Row 3 - Long Msg
-    // Row 4 - Recipients
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return Rows.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BroadcastDetailCell", for: indexPath) as! AdminBroadcastDetailDataCell
         
-        switch indexPath.row {
-        case 0:  // status / time
-            cell.titleLabel.text = "Status"
-            if isCancelled {
-                cell.contentLabel.text = "Cancelled"
-            } else if isDelivered {
-                cell.contentLabel.text = "Delivered at \(time)"
-            } else {
-                cell.contentLabel.text = "Scheduled for \(time)"
-            }
-            
-        case 1:  // sent by
-            cell.titleLabel.text = "Sent By"
-            cell.contentLabel.text = sentBy
-            
-        case 2:  // short message
-            cell.titleLabel.text = "Short Message"
-            cell.contentLabel.text = shortMsg
-            
-        case 3:  // long message
-            cell.titleLabel.text = "Long Message"
-            cell.contentLabel.text = longMsg
-            
-        case 4:  // recipients
-            cell.titleLabel.text = "Recipients"
-            cell.contentLabel.text = recipients.joined(separator: ", ")
-            
-        default:
-            break
-        }
+        cell.titleLabel.text = Rows[indexPath.row].Title
+        cell.contentLabel.text = Rows[indexPath.row].Content
         
         return cell
+    }
+    
+    func updateRows() {
+        Rows = []
+        
+        var statusText = ""
+        if isCancelled {
+            statusText = "Cancelled"
+        } else if isDelivered {
+            statusText = "Delivered at \(time)"
+        } else {
+            statusText = "Scheduled for \(time)"
+        }
+        Rows.append(AdminBroadcastDetailRow(Title: "Status", Content: statusText))
+        Rows.append(AdminBroadcastDetailRow(Title: "Sent By", Content: sentBy))
+        Rows.append(AdminBroadcastDetailRow(Title: "Short Msg", Content: shortMsg))
+        
+        if !longMsg.isEmpty {
+            Rows.append(AdminBroadcastDetailRow(Title: "Long Msg", Content: longMsg))
+        }
+
+        Rows.append(AdminBroadcastDetailRow(
+            Title: "Recipients",
+            Content: recipients.joined(separator: ", ")
+        ))
     }
     
 }

@@ -9,34 +9,93 @@
 import UIKit
 import ReSwift
 
-class MyBroadcastsViewController: UIViewController, UITableViewDataSource, StoreSubscriber, UITableViewDelegate {
+class MyBroadcastsViewController: UIViewController, StoreSubscriber {
 
     var broadcasts : [Broadcast] = []
+    var fetching = false
+    var fetchingErrorMsg = ""
     
     @IBOutlet weak var broadcastsTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         broadcastsTable.dataSource = self
         broadcastsTable.delegate = self
         store.subscribe(self)
     }
     
+    func newState(state: AppState) {
+        if state.userBroadcastsState.broadcasts != broadcasts {
+            broadcasts = state.userBroadcastsState.broadcasts
+            broadcastsTable.reloadData()
+        }
+        
+        if fetching != state.userBroadcastsState.fetching {
+            fetching = state.userBroadcastsState.fetching
+            broadcastsTable.reloadData()
+        }
+        
+        if fetchingErrorMsg != state.userBroadcastsState.errorMsg {
+            fetchingErrorMsg = state.userBroadcastsState.errorMsg
+            broadcastsTable.reloadData()
+        }
+
+        if state.navigationState.dataRefreshNeeded &&
+            state.navigationState.pathSegment == .segment_none {
+            
+            store.dispatch(clearDataRefreshNeeded())
+            store.dispatch(getUserBroadcasts)
+        }
+    }
+
+}
+
+extension MyBroadcastsViewController: UITableViewDelegate, UITableViewDataSource {
+
+    // Sections:
+    //    0 - broadcasts
+    //    1 - fetching message
+    //    2 - empty table
+    //    3 - error message
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return broadcasts.count
+        if section == 0 {
+            return broadcasts.count
+        } else if section == 1 && fetching {
+            return 1
+        } else if section == 2 && broadcasts.isEmpty && !fetching && fetchingErrorMsg.isEmpty {
+            return 1
+        } else if section == 3 && !fetchingErrorMsg.isEmpty {
+            return 1
+        }
+        
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = broadcastsTable.dequeueReusableCell(withIdentifier: "UserBroadcastsTableCell",
-                                                       for: indexPath) as! UserBroadcastTableViewCell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UserBroadcastsTableCell",
+                                                           for: indexPath) as! UserBroadcastTableViewCell
+            
+            cell.sentLabel.text = broadcasts[indexPath.row].delivered
+            cell.shortMsgLabel.text = broadcasts[indexPath.row].shortMsg
+            
+            return cell
+        } else if indexPath.section == 1 {
+            return tableView.dequeueReusableCell(withIdentifier: "UserBroadcastsFetchingCell", for: indexPath)
+        } else if indexPath.section == 2 {
+            return tableView.dequeueReusableCell(withIdentifier: "UserBroadcastsEmptyCell", for: indexPath)
+        } else if indexPath.section == 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UserBroadcastsErrorCell", for: indexPath) as! UserBroadcastErrorTableViewCell
+            cell.errorLabel.text = fetchingErrorMsg
+            return cell
+        }
         
-        cell.sentLabel.text = broadcasts[indexPath.row].delivered
-        cell.shortMsgLabel.text = broadcasts[indexPath.row].shortMsg
-//        cell.textLabel?.text = broadcasts[indexPath.row].shortMsg
-        
-        return cell
+        return tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -44,32 +103,8 @@ class MyBroadcastsViewController: UIViewController, UITableViewDataSource, Store
         store.dispatch(SetUserBroadcastDetailDelivered(delivered: broadcasts[indexPath.row].delivered))
         store.dispatch(SetUserBroadcastDetailShortMsg(shortMsg: broadcasts[indexPath.row].shortMsg))
         store.dispatch(SetUserBroadcastDetailLongMsg(longMsg: broadcasts[indexPath.row].longMsg))
-
+        
         performSegue(withIdentifier: "UserBroadcastDetail", sender: self)
     }
-    
-    func newState(state: AppState) {
-        if state.navigationState.dataRefreshNeeded &&
-            state.navigationState.pathSegment == .segment_none {
-            
-            store.dispatch(clearDataRefreshNeeded())
-            store.dispatch(getUserBroadcasts)
-        }
-        
-        if state.userBroadcastsState.broadcasts != broadcasts {
-            broadcasts = state.userBroadcastsState.broadcasts
-            broadcastsTable.reloadData()
-        }
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
