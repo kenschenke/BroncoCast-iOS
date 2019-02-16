@@ -91,7 +91,8 @@ func dropUserOrg(state : AppState, store : Store<AppState>) -> Action? {
 func getUserOrgs(state : AppState, store : Store<AppState>) -> Action? {
     store.dispatch(SetUserOrgsFetching(fetching: true))
     store.dispatch(SetUserOrgsErrorMsg(errorMsg: ""))
-    
+    store.dispatch(SetUserOrgs(userOrgs: []))
+
     Alamofire.request(UrlMaker.makeUrl(.user_orgs), method: .get).responseJSON {
         response in
         store.dispatch(SetUserOrgsFetching(fetching: false))

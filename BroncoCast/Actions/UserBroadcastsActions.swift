@@ -26,7 +26,8 @@ struct SetUserBroadcastsBroadcasts : Action {
 func getUserBroadcasts(state : AppState, store : Store<AppState>) -> Action? {
     store.dispatch(SetUserBroadcastsErrorMsg(errorMsg: ""))
     store.dispatch(SetUserBroadcastsFetching(fetching: true))
-    
+    store.dispatch(SetUserBroadcastsBroadcasts(broadcasts: []))
+
     Alamofire.request(UrlMaker.makeUrl(.user_broadcasts), method: .get).responseJSON {
         response in
         store.dispatch(SetUserBroadcastsFetching(fetching: false))

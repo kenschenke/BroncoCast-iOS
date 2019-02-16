@@ -30,6 +30,7 @@ struct SetShowHiddenUsers : Action {
 func getAdminUsers(state : AppState, store : Store<AppState>) -> Action? {
     store.dispatch(SetAdminUsersFetching(fetching: true))
     store.dispatch(SetAdminUsersFetchingErrorMsg(errorMsg: ""))
+    store.dispatch(SetAdminUsers(users: []))
 
     let url = UrlMaker.makeUrl(.admin_users) + "/\(state.adminOrgState.adminOrgId)"
     Alamofire.request(url, method: .get).responseJSON {
