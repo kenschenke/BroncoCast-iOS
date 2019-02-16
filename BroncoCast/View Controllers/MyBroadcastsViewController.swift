@@ -46,6 +46,7 @@ class MyBroadcastsViewController: UIViewController, StoreSubscriber {
             
             store.dispatch(clearDataRefreshNeeded())
             store.dispatch(getUserBroadcasts)
+            self.navigationController?.navigationBar.topItem?.title = "Broadcasts"
         }
     }
 

@@ -41,6 +41,9 @@ class ProfileNameViewController: UIViewController, StoreSubscriber, TextFieldHel
 
             store.dispatch(clearDataRefreshNeeded())
             store.dispatch(getProfile)
+            self.title = "Name"
+            self.navigationItem.title = "Name"
+            self.navigationController?.navigationItem.title = "Name"
             onScreen = true
         }
         

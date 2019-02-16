@@ -32,7 +32,7 @@ class AdminViewController: UIViewController, StoreSubscriber {
         usersView.isHidden = false
         groupsView.isHidden = true
         broadcastsView.isHidden = true
-        
+
         store.subscribe(self)
     }
     
@@ -49,13 +49,16 @@ class AdminViewController: UIViewController, StoreSubscriber {
         switch segmentPath {
         case .admin_users_segment:
             segment = 0
-            
+            self.navigationController?.navigationBar.topItem?.title = "Users"
+
         case .admin_groups_segment:
             segment = 1
-            
+            self.navigationController?.navigationBar.topItem?.title = "Groups"
+
         case .admin_broadcasts_segment:
             segment = 2
-            
+            self.navigationController?.navigationBar.topItem?.title = "Broadcasts"
+
         default:
             break
         }

@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController, StoreSubscriber {
         nameView.isHidden = false
         contactInfoView.isHidden = true
         organizationsView.isHidden = true
-        
+
         store.subscribe(self)
     }
     
@@ -41,10 +41,9 @@ class ProfileViewController: UIViewController, StoreSubscriber {
         switch sender.selectedSegmentIndex {
         case 0:
             store.dispatch(navigateTo(path: .profile_name))
-            
+
         case 1:
             store.dispatch(navigateTo(path: .profile_contacts))
-//            performSegue(withIdentifier: "ShowTestTable", sender: self)
 
         case 2:
             store.dispatch(navigateTo(path: .profile_orgs))
@@ -54,29 +53,22 @@ class ProfileViewController: UIViewController, StoreSubscriber {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     func switchSegment() {
         var segment = segmentedControl.selectedSegmentIndex
         
         switch segmentPath {
         case .profile_name_segment:
             segment = 0
-            
+            self.navigationController?.navigationBar.topItem?.title = "Name"
+
         case .profile_contacts_segment:
             segment = 1
-            
+            self.navigationController?.navigationBar.topItem?.title = "Contacts"
+
         case .profile_orgs_segment:
             segment = 2
-            
+            self.navigationController?.navigationBar.topItem?.title = "Organizations"
+
         default:
             break
         }
