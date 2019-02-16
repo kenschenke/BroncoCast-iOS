@@ -61,6 +61,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate, StoreSubscrib
         performSegue(withIdentifier: "showSignInOptions", sender: self)
     }
 
+    @IBAction func registerButtonPressed(_ sender: Any) {
+        store.dispatch(RegistrationInit())
+        performSegue(withIdentifier: "showRegistrationStepOne", sender: self)
+    }
+    
     func newState(state: AppState) {
         if state.signInState.signingIn != signingIn {
             signingIn = state.signInState.signingIn

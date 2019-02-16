@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ReSwift
+import Alertift
 
 class RegistrationStepOneViewController: UIViewController, UITextFieldDelegate, TextFieldHelperDelegate {
     
@@ -78,32 +80,30 @@ class RegistrationStepOneViewController: UIViewController, UITextFieldDelegate, 
         }
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if !isEmailAddressValid(emailTextField.text!) {
-            setEmailInvalid()
-            return false
-        }
-        
-        if !isPasswordValid() {
-            setPasswordInvalid()
-            return false
-        }
-        
-        return true
-    }
-    
     @IBAction func showPasswordChanged(_ sender: Any) {
         passwordTextField.isSecureTextEntry.toggle()
     }
     
-    /*
-    // MARK: - Navigation
+    @IBAction func nextButtonPressed(_ sender: Any) {
+        if !isEmailAddressValid(emailTextField.text!) {
+            setEmailInvalid()
+            Alertift.alert(title: "Email Address", message: "Please enter a valid email address")
+                .action(.default("Ok"))
+                .show()
+            return
+        }
+        
+        if !isPasswordValid() {
+            setPasswordInvalid()
+            Alertift.alert(title: "Password", message: "Please enter a valid password")
+                .action(.default("Ok"))
+                .show()
+            return
+        }
+        
+        store.dispatch(SetRegistrationEmail(email: emailTextField.text!))
+        store.dispatch(SetRegistrationPassword(password: passwordTextField.text!))
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        performSegue(withIdentifier: "showRegistrationStepTwo", sender: self)
     }
-    */
-
 }

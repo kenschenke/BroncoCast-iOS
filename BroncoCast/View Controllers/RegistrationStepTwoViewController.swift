@@ -8,8 +8,13 @@
 
 import UIKit
 import InputMask
+import Alertift
+import ReSwift
 
-class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, TextFieldHelperDelegate, MaskedTextFieldDelegateListener {
+class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, TextFieldHelperDelegate, MaskedTextFieldDelegateListener, StoreSubscriber {
+    
+    var registering = false
+    var errorMsg = ""
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
@@ -18,14 +23,16 @@ class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, 
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var phoneHelpText: UILabel!
     @IBOutlet var phoneTextFieldListener: MaskedTextFieldDelegate!
+    @IBOutlet weak var registerButton: ActivityButton!
     
     var nameHelper : TextFieldHelper?
     var phoneHelper : TextFieldHelper?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        store.subscribe(self)
 
-        // Do any additional setup after loading the view.
         nameTextField.delegate = self
         
         nameHelper = TextFieldHelper(nameTextField)
@@ -40,8 +47,30 @@ class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, 
         
         nameHelpText.text = ""
         phoneHelpText.text = ""
+        
+        registerButton.activityLabel = "Registering"
     }
     
+    func newState(state: AppState) {
+        if registering != state.registrationState.registering {
+            registering = state.registrationState.registering
+            if registering {
+                registerButton.showActivity()
+            } else {
+                registerButton.hideActivity()
+            }
+        }
+        
+        if errorMsg != state.registrationState.errorMsg {
+            errorMsg = state.registrationState.errorMsg
+            if !errorMsg.isEmpty {
+                Alertift.alert(title: "An Error Occurred", message: errorMsg)
+                    .action(.default("Ok"))
+                    .show()
+            }
+        }
+    }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if nameTextField.isFirstResponder {
             phoneTextField.becomeFirstResponder()
@@ -97,17 +126,22 @@ class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, 
     }
 
     @IBAction func registerPressed(_ sender: Any) {
-        store.dispatch(navigateTo(path: .profile_name))
+        if !isNameValid() {
+            Alertift.alert(title: "Name", message: "Please enter a valid name")
+                .action(.default("Ok"))
+                .show()
+        }
+        
+        if !isPhoneValid() {
+            Alertift.alert(title: "Phone Number", message: "Please enter a valid phone number")
+                .action(.default("Ok"))
+                .show()
+        }
+        
+        store.dispatch(SetRegistrationName(name: nameTextField.text!))
+        store.dispatch(SetRegistrationPhone(phone: getPhoneNumberDigitsOnly(phoneTextField.text!)))
+        
+        store.dispatch(registerUser)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

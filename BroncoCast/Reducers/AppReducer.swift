@@ -13,6 +13,7 @@ func appReducer(_ action: Action, _ state : AppState?) -> AppState {
     return AppState(
         navigationState: navigationReducer(action, state: state?.navigationState),
         signInState: signInReducer(action, state: state?.signInState),
+        registrationState: registrationReducer(action, state: state?.registrationState),
         profileOrgsState: profileOrgsReducer(action, state: state?.profileOrgsState),
         profileNameState: profileNameReducer(action, state: state?.profileNameState),
         profileContactsState: profileContactsReducer(action, state: state?.profileContactsState),

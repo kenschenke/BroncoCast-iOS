@@ -27,21 +27,12 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate, 
                                                          textColor: UIColor.blue, size: size)
         tabBar.items?[1].image = UIImage.fontAwesomeIcon(name: .broadcastTower, style: .solid,
                                                          textColor: UIColor.blue, size: size)
-        tabBar.items?[2].image = UIImage.fontAwesomeIcon(name: .userCog, style: .solid,
-                                                         textColor: UIColor.blue, size: size)
+        if (tabBar.items?.count ?? 0) > 2 {
+            tabBar.items?[2].image = UIImage.fontAwesomeIcon(name: .userCog, style: .solid,
+                                                             textColor: UIColor.blue, size: size)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     func newState(state: AppState) {
         if state.profileOrgsState.notAdmin != notAdmin {
             notAdmin = state.profileOrgsState.notAdmin

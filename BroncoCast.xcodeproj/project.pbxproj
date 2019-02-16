@@ -92,6 +92,9 @@
 		BEAB04402213B0DA0000E8BE /* SignInOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAB043F2213B0DA0000E8BE /* SignInOptionsViewController.swift */; };
 		BEAB044222165EC30000E8BE /* UserBroadcastErrorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAB044122165EC30000E8BE /* UserBroadcastErrorTableViewCell.swift */; };
 		BEAB0444221665E20000E8BE /* UserBroadcastDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAB0443221665E20000E8BE /* UserBroadcastDetailTableViewCell.swift */; };
+		BEB0B67422186175000F3B59 /* RegistrationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0B67322186175000F3B59 /* RegistrationState.swift */; };
+		BEB0B67622186200000F3B59 /* RegistrationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0B67522186200000F3B59 /* RegistrationActions.swift */; };
+		BEB0B67822186283000F3B59 /* RegistrationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0B67722186283000F3B59 /* RegistrationReducer.swift */; };
 		BEB5AFAD22091383003F53D5 /* AdminGroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5AFAC22091383003F53D5 /* AdminGroupDetailViewController.swift */; };
 		BEB5AFAF220913FB003F53D5 /* AdminGroupDetailErrorMsgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5AFAE220913FB003F53D5 /* AdminGroupDetailErrorMsgTableViewCell.swift */; };
 		BEB5AFB12209140F003F53D5 /* AdminGroupDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5AFB02209140F003F53D5 /* AdminGroupDetailTableViewCell.swift */; };
@@ -216,6 +219,9 @@
 		BEAB043F2213B0DA0000E8BE /* SignInOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInOptionsViewController.swift; sourceTree = "<group>"; };
 		BEAB044122165EC30000E8BE /* UserBroadcastErrorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBroadcastErrorTableViewCell.swift; sourceTree = "<group>"; };
 		BEAB0443221665E20000E8BE /* UserBroadcastDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBroadcastDetailTableViewCell.swift; sourceTree = "<group>"; };
+		BEB0B67322186175000F3B59 /* RegistrationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationState.swift; sourceTree = "<group>"; };
+		BEB0B67522186200000F3B59 /* RegistrationActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationActions.swift; sourceTree = "<group>"; };
+		BEB0B67722186283000F3B59 /* RegistrationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationReducer.swift; sourceTree = "<group>"; };
 		BEB5AFAC22091383003F53D5 /* AdminGroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupDetailViewController.swift; sourceTree = "<group>"; };
 		BEB5AFAE220913FB003F53D5 /* AdminGroupDetailErrorMsgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupDetailErrorMsgTableViewCell.swift; sourceTree = "<group>"; };
 		BEB5AFB02209140F003F53D5 /* AdminGroupDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -334,6 +340,7 @@
 				BE5D0DD7220CB96F009B6BD2 /* AdminBroadcastsActions.swift */,
 				BE5D0DE5220DE62E009B6BD2 /* AdminBroadcastDetailActions.swift */,
 				BE5D0DEF220E1823009B6BD2 /* AdminNewBroadcastActions.swift */,
+				BEB0B67522186200000F3B59 /* RegistrationActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -361,6 +368,7 @@
 				BE5D0DD5220CB917009B6BD2 /* AdminBroadcastsState.swift */,
 				BE5D0DE3220DE587009B6BD2 /* AdminBroadcastDetailState.swift */,
 				BE5D0DED220E17B6009B6BD2 /* AdminNewBroadcastState.swift */,
+				BEB0B67322186175000F3B59 /* RegistrationState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -386,6 +394,7 @@
 				BE5D0DD9220CB9BF009B6BD2 /* AdminBroadcastsReducer.swift */,
 				BE5D0DE7220DE68C009B6BD2 /* AdminBroadcastDetailReducer.swift */,
 				BE5D0DF1220E18C0009B6BD2 /* AdminNewBroadcastReducer.swift */,
+				BEB0B67722186283000F3B59 /* RegistrationReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -624,11 +633,13 @@
 				BE5D0DEE220E17B6009B6BD2 /* AdminNewBroadcastState.swift in Sources */,
 				BE0DADDA21D3FE41003C2B43 /* AppReducer.swift in Sources */,
 				BE5D0DDC220CBD61009B6BD2 /* AdminBroadcastsViewController.swift in Sources */,
+				BEB0B67622186200000F3B59 /* RegistrationActions.swift in Sources */,
 				BECCCE1921F37A6D00B37D3B /* ProfileContactsReducer.swift in Sources */,
 				BEB5AFB722091721003F53D5 /* AdminGroupDetailActions.swift in Sources */,
 				BE1FD3DD2207BB4C00F23AE2 /* AdminGroupNameActions.swift in Sources */,
 				BE41A65021FE3A3A00A9A41D /* AdminOrgState.swift in Sources */,
 				BE6327D421D9AA03008AB53B /* MainTabBarViewController.swift in Sources */,
+				BEB0B67422186175000F3B59 /* RegistrationState.swift in Sources */,
 				BEAB0444221665E20000E8BE /* UserBroadcastDetailTableViewCell.swift in Sources */,
 				BE6327E221DB33A7008AB53B /* ProfileNameReducer.swift in Sources */,
 				BE1FD3D92207A5D300F23AE2 /* AdminGroupsNameViewController.swift in Sources */,
@@ -640,6 +651,7 @@
 				BEE35C8821F68C7E003F33AD /* ProfileOrgsViewController.swift in Sources */,
 				BEAB043E2213AAED0000E8BE /* AppSettings.swift in Sources */,
 				BEAB044222165EC30000E8BE /* UserBroadcastErrorTableViewCell.swift in Sources */,
+				BEB0B67822186283000F3B59 /* RegistrationReducer.swift in Sources */,
 				BE6327E421DBC4CB008AB53B /* MyBroadcastsViewController.swift in Sources */,
 				BEB5AFAD22091383003F53D5 /* AdminGroupDetailViewController.swift in Sources */,
 				BE717C9D21F578A800F081DB /* ProfileContactsEditReducer.swift in Sources */,

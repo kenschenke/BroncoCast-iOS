@@ -14,6 +14,8 @@ struct UrlMaker {
         case sign_in = "auth/login"
         case logout = "logout?applogout"
         
+        case register = "api/register"
+        
         case profile = "api/profile"
         
         case user_broadcasts = "api/broadcasts"

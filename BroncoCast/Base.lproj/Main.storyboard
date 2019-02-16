@@ -98,7 +98,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="jtQ-tG-nRT" kind="show" id="Bi5-ZH-LhR"/>
+                                    <action selector="registerButtonPressed:" destination="qnN-ED-ESb" eventType="touchUpInside" id="9Ys-fx-mo6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEw-2k-eW7" customClass="DesignableButton" customModule="BroncoCast" customModuleProvider="target">
@@ -204,6 +204,7 @@
                         <outlet property="signInButton" destination="R4E-he-iDN" id="QNq-zq-jYk"/>
                         <outlet property="usernameTextField" destination="6Es-bb-RSp" id="SEK-uX-KlQ"/>
                         <segue destination="l7F-sB-T75" kind="show" identifier="showSignInOptions" id="EF1-78-dkg"/>
+                        <segue destination="jtQ-tG-nRT" kind="show" identifier="showRegistrationStepOne" id="rZy-oi-IGG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QED-eN-gni" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -310,7 +311,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Ey9-OU-wdN" kind="show" id="UcK-1c-356"/>
+                                    <action selector="nextButtonPressed:" destination="jtQ-tG-nRT" eventType="touchUpInside" id="W27-jZ-2uA"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z6q-bp-zKC">
@@ -358,6 +359,7 @@
                         <outlet property="passwordHelpText" destination="UmR-ws-waz" id="wTB-18-ICh"/>
                         <outlet property="passwordLabel" destination="7jX-VC-nRX" id="yXg-So-8OL"/>
                         <outlet property="passwordTextField" destination="Rbz-FF-xzx" id="8AA-6u-u6H"/>
+                        <segue destination="Ey9-OU-wdN" kind="show" identifier="showRegistrationStepTwo" id="wEw-k4-FUC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PK7-Xa-CvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -439,7 +441,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJb-eV-bgD" customClass="DesignableButton" customModule="BroncoCast" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJb-eV-bgD" customClass="ActivityButton" customModule="BroncoCast" customModuleProvider="target">
                                 <rect key="frame" x="16" y="310" width="343" height="38"/>
                                 <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
@@ -499,6 +501,7 @@
                         <outlet property="phoneLabel" destination="ccO-Ie-khX" id="0aY-eo-dSY"/>
                         <outlet property="phoneTextField" destination="Qa1-Yv-56k" id="9bk-iL-n6n"/>
                         <outlet property="phoneTextFieldListener" destination="lVn-3f-W59" id="PXm-ZN-vRD"/>
+                        <outlet property="registerButton" destination="pJb-eV-bgD" id="y7F-ps-KaK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DV7-rh-fQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>

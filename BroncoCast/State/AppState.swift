@@ -12,6 +12,7 @@ import ReSwift
 struct AppState : StateType {
     var navigationState: NavigationState
     var signInState : SignInState
+    var registrationState : RegistrationState
     var profileOrgsState : ProfileOrgsState
     var profileNameState : ProfileNameState
     var profileContactsState : ProfileContactsState
