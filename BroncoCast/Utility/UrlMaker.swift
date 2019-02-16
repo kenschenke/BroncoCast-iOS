@@ -44,6 +44,7 @@ struct UrlMaker {
     }
     
     static func makeUrl(_ url : UrlConstant) -> String {
-        return "\(appSettings.serverAddr)/\(url.rawValue)"
+        let scheme = appSettings.serverAddr == "dev.broncocast.org" ? "http://" : "https://"
+        return "\(scheme)\(appSettings.serverAddr)/\(url.rawValue)"
     }
 }
