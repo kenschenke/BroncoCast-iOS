@@ -8,24 +8,32 @@
 
 import UIKit
 import InputMask
+import ReSwift
+import Alertift
 
 class ForgotPasswordStepOneViewController: UIViewController, UITextFieldDelegate, TextFieldHelperDelegate,
-    MaskedTextFieldDelegateListener {
+    MaskedTextFieldDelegateListener, StoreSubscriber {
 
+    var finding = false
+    var findingErrorMsg = ""
+    var found = false
+    
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailHelpText: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var phoneHelpText: UILabel!
+    @IBOutlet weak var findAccountButton: ActivityButton!
     
     var emailHelper : TextFieldHelper?
     var phoneHelper : TextFieldHelper?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        store.subscribe(self)
 
-        // Do any additional setup after loading the view.
         emailTextField.delegate = self
         
         emailHelper = TextFieldHelper(emailTextField)
@@ -40,18 +48,35 @@ class ForgotPasswordStepOneViewController: UIViewController, UITextFieldDelegate
         
         emailHelpText.text = ""
         phoneHelpText.text = ""
+        
+        findAccountButton.activityLabel = "Finding"
     }
     
-    func getPhoneNumberDigitsOnly() -> String {
-        let value = phoneTextField.text!
-        
-        if value.isEmpty {
-            return ""
+    func newState(state: AppState) {
+        if finding != state.forgotPasswordState.finding {
+            finding = state.forgotPasswordState.finding
+            if finding {
+                findAccountButton.showActivity()
+            } else {
+                findAccountButton.hideActivity()
+            }
         }
         
-        let phoneRegex = try! NSRegularExpression(pattern: "[^0-9]")
-        let range = NSRange(location: 0, length: value.utf16.count)
-        return phoneRegex.stringByReplacingMatches(in: value, options: [], range: range, withTemplate: "")
+        if findingErrorMsg != state.forgotPasswordState.findingErrorMsg {
+            findingErrorMsg = state.forgotPasswordState.findingErrorMsg
+            if !findingErrorMsg.isEmpty {
+                Alertift.alert(title: "An Error Occurred", message: findingErrorMsg)
+                    .action(.default("Ok"))
+                    .show()
+            }
+        }
+        
+        if found != state.forgotPasswordState.found {
+            found = state.forgotPasswordState.found
+            if found {
+                performSegue(withIdentifier: "showForgotPasswordStepTwo", sender: self)
+            }
+        }
     }
     
     func isEmailAddressValid() -> Bool {
@@ -63,7 +88,7 @@ class ForgotPasswordStepOneViewController: UIViewController, UITextFieldDelegate
     }
     
     func isPhoneValid() -> Bool {
-        let phone = getPhoneNumberDigitsOnly()
+        let phone = getPhoneNumberDigitsOnly(phoneTextField.text!)
         
         if phone.isEmpty {
             return true
@@ -110,14 +135,40 @@ class ForgotPasswordStepOneViewController: UIViewController, UITextFieldDelegate
         return true
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func findAccountPressed(_ sender: Any) {
+        let phone = getPhoneNumberDigitsOnly(phoneTextField.text!)
+        let email = emailTextField.text!
+        
+        if !phone.isEmpty && !isPhoneValid() {
+            Alertift.alert(title: "Phone Number", message: "Please enter a valid phone number")
+                .action(.default("Ok"))
+                .show()
+            return
+        }
+        
+        if !email.isEmpty && !isEmailAddressValid() {
+            Alertift.alert(title: "Email Address", message: "Please enter a valid email address")
+                .action(.default("Ok"))
+                .show()
+            return
+        }
+        
+        if !phone.isEmpty && !email.isEmpty {
+            Alertift.alert(title: "One is Required", message: "Enter phone or email (but not both)")
+                .action(.default("Ok"))
+                .show()
+            return
+        }
+        
+        if phone.isEmpty && email.isEmpty {
+            Alertift.alert(title: "One is Required", message: "Either a phone or email is required")
+                .action(.default("Ok"))
+                .show()
+            return
+        }
+        
+        store.dispatch(SetForgotPasswordEmail(email: email))
+        store.dispatch(SetForgotPasswordPhone(phone: phone))
+        store.dispatch(findAccount)
     }
-    */
-
 }

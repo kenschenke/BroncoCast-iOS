@@ -13,6 +13,7 @@ struct AppState : StateType {
     var navigationState: NavigationState
     var signInState : SignInState
     var registrationState : RegistrationState
+    var forgotPasswordState : ForgotPasswordState
     var profileOrgsState : ProfileOrgsState
     var profileNameState : ProfileNameState
     var profileContactsState : ProfileContactsState

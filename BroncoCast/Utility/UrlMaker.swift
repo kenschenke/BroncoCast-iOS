@@ -16,6 +16,9 @@ struct UrlMaker {
         
         case register = "api/register"
         
+        case recover_send = "api/recover/send"
+        case recover_save = "api/recover/save"
+        
         case profile = "api/profile"
         
         case user_broadcasts = "api/broadcasts"

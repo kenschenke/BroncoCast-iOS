@@ -123,7 +123,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="yaS-bX-6Qk" kind="show" id="dNd-eR-g2d"/>
+                                    <action selector="forgotPasswordButtonPressed:" destination="qnN-ED-ESb" eventType="touchUpInside" id="Ikw-Zb-5D1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4E-he-iDN" customClass="ActivityButton" customModule="BroncoCast" customModuleProvider="target">
@@ -205,6 +205,7 @@
                         <outlet property="usernameTextField" destination="6Es-bb-RSp" id="SEK-uX-KlQ"/>
                         <segue destination="l7F-sB-T75" kind="show" identifier="showSignInOptions" id="EF1-78-dkg"/>
                         <segue destination="jtQ-tG-nRT" kind="show" identifier="showRegistrationStepOne" id="rZy-oi-IGG"/>
+                        <segue destination="yaS-bX-6Qk" kind="show" identifier="showForgotPasswordStepOne" id="gL0-rV-RSf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QED-eN-gni" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -665,7 +666,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suQ-WZ-o6T" customClass="DesignableButton" customModule="BroncoCast" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suQ-WZ-o6T" customClass="ActivityButton" customModule="BroncoCast" customModuleProvider="target">
                                 <rect key="frame" x="16" y="309.5" width="343" height="38"/>
                                 <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
@@ -687,7 +688,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="6md-BL-eo9" kind="show" id="Y7a-sX-JAJ"/>
+                                    <action selector="findAccountPressed:" destination="yaS-bX-6Qk" eventType="touchUpInside" id="xl7-VD-2B1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -723,9 +724,11 @@
                         <outlet property="emailHelpText" destination="k4O-kR-ypY" id="7uM-Hu-2fz"/>
                         <outlet property="emailLabel" destination="XRU-L2-obd" id="Fy6-nL-fP9"/>
                         <outlet property="emailTextField" destination="qev-fp-UTD" id="qOA-6e-Ev3"/>
+                        <outlet property="findAccountButton" destination="suQ-WZ-o6T" id="0NG-cX-UxQ"/>
                         <outlet property="phoneHelpText" destination="5LX-JH-hZb" id="o6j-NC-hPz"/>
                         <outlet property="phoneLabel" destination="jfH-3c-maX" id="xbz-NC-6am"/>
                         <outlet property="phoneTextField" destination="qgq-23-NSz" id="vgG-R8-dfi"/>
+                        <segue destination="6md-BL-eo9" kind="show" identifier="showForgotPasswordStepTwo" id="T8V-LU-Anc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uf1-ei-4bo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -770,7 +773,7 @@
                                 <rect key="frame" x="16" y="146" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type new password here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="97g-08-zhW">
                                 <rect key="frame" x="16" y="235" width="343" height="30"/>
@@ -784,7 +787,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6Y-b7-JNE" customClass="DesignableButton" customModule="BroncoCast" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6Y-b7-JNE" customClass="ActivityButton" customModule="BroncoCast" customModuleProvider="target">
                                 <rect key="frame" x="16" y="346" width="343" height="38"/>
                                 <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
@@ -805,31 +808,15 @@
                                         <size key="value" width="1" height="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ria-He-Itr" customClass="DesignableButton" customModule="BroncoCast" customModuleProvider="target">
-                                <rect key="frame" x="16" y="400" width="343" height="38"/>
-                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                <state key="normal" title="Send Code Again">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.75"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="1" height="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resetPasswordPressed:" destination="6md-BL-eo9" eventType="touchUpInside" id="udA-H4-jFD"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RQ6-jb-YDd">
                                 <rect key="frame" x="310" y="290" width="51" height="31"/>
+                                <connections>
+                                    <action selector="showPasswordChanged:" destination="6md-BL-eo9" eventType="valueChanged" id="4T2-Z2-fxD"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -840,17 +827,14 @@
                             <constraint firstItem="Blx-4W-66o" firstAttribute="leading" secondItem="oBc-hx-yHo" secondAttribute="leading" constant="16" id="Cht-Ex-fJm"/>
                             <constraint firstItem="q8K-jb-MQm" firstAttribute="trailing" secondItem="Blx-4W-66o" secondAttribute="trailing" id="GBb-tm-hG0"/>
                             <constraint firstItem="vwy-rd-DyN" firstAttribute="trailing" secondItem="Blx-4W-66o" secondAttribute="trailing" id="GLZ-He-7bv"/>
-                            <constraint firstItem="ria-He-Itr" firstAttribute="leading" secondItem="Blx-4W-66o" secondAttribute="leading" id="MIk-TY-4if"/>
                             <constraint firstItem="iqq-6W-bn5" firstAttribute="top" secondItem="97g-08-zhW" secondAttribute="bottom" constant="30" id="N2q-bD-kmX"/>
                             <constraint firstItem="iqq-6W-bn5" firstAttribute="centerY" secondItem="RQ6-jb-YDd" secondAttribute="centerY" id="Rc5-F9-KHJ"/>
-                            <constraint firstItem="ria-He-Itr" firstAttribute="trailing" secondItem="Blx-4W-66o" secondAttribute="trailing" id="Xit-zC-1VH"/>
                             <constraint firstItem="q8K-jb-MQm" firstAttribute="leading" secondItem="Blx-4W-66o" secondAttribute="leading" id="a0a-8f-NZA"/>
                             <constraint firstItem="97g-08-zhW" firstAttribute="leading" secondItem="Blx-4W-66o" secondAttribute="leading" id="bHR-bT-pY0"/>
                             <constraint firstItem="97g-08-zhW" firstAttribute="top" secondItem="q8K-jb-MQm" secondAttribute="bottom" constant="8" id="c1g-Eq-5VT"/>
                             <constraint firstItem="LLV-cU-Tzv" firstAttribute="centerX" secondItem="cwj-95-OYs" secondAttribute="centerX" id="eLG-eF-I8b"/>
                             <constraint firstItem="vwy-rd-DyN" firstAttribute="top" secondItem="Blx-4W-66o" secondAttribute="bottom" constant="8" id="gbg-xM-XHN"/>
                             <constraint firstItem="q8K-jb-MQm" firstAttribute="top" secondItem="vwy-rd-DyN" secondAttribute="bottom" constant="30" id="iDV-hV-Lec"/>
-                            <constraint firstItem="ria-He-Itr" firstAttribute="top" secondItem="V6Y-b7-JNE" secondAttribute="bottom" constant="16" id="kDc-Ko-7jr"/>
                             <constraint firstItem="LLV-cU-Tzv" firstAttribute="top" secondItem="oBc-hx-yHo" secondAttribute="top" constant="16" id="lZD-Kc-ccA"/>
                             <constraint firstItem="V6Y-b7-JNE" firstAttribute="trailing" secondItem="Blx-4W-66o" secondAttribute="trailing" id="m2m-fR-8zc"/>
                             <constraint firstItem="vwy-rd-DyN" firstAttribute="leading" secondItem="Blx-4W-66o" secondAttribute="leading" id="mWs-LN-0hZ"/>
@@ -862,6 +846,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oBc-hx-yHo"/>
                     </view>
+                    <connections>
+                        <outlet property="codeTextField" destination="vwy-rd-DyN" id="kRo-s0-eE2"/>
+                        <outlet property="passwordTextField" destination="97g-08-zhW" id="JTg-rL-df8"/>
+                        <outlet property="resetPasswordButton" destination="V6Y-b7-JNE" id="PnX-kt-gPl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8MQ-a1-4sb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

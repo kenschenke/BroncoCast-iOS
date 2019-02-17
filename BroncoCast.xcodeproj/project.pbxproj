@@ -95,6 +95,9 @@
 		BEB0B67422186175000F3B59 /* RegistrationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0B67322186175000F3B59 /* RegistrationState.swift */; };
 		BEB0B67622186200000F3B59 /* RegistrationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0B67522186200000F3B59 /* RegistrationActions.swift */; };
 		BEB0B67822186283000F3B59 /* RegistrationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0B67722186283000F3B59 /* RegistrationReducer.swift */; };
+		BEB0B67A2218C9C8000F3B59 /* ForgotPasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0B6792218C9C8000F3B59 /* ForgotPasswordState.swift */; };
+		BEB0B67D2218CA40000F3B59 /* ForgotPasswordActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0B67C2218CA40000F3B59 /* ForgotPasswordActions.swift */; };
+		BEB0B67F2218CABB000F3B59 /* ForgotPasswordReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB0B67E2218CABB000F3B59 /* ForgotPasswordReducer.swift */; };
 		BEB5AFAD22091383003F53D5 /* AdminGroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5AFAC22091383003F53D5 /* AdminGroupDetailViewController.swift */; };
 		BEB5AFAF220913FB003F53D5 /* AdminGroupDetailErrorMsgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5AFAE220913FB003F53D5 /* AdminGroupDetailErrorMsgTableViewCell.swift */; };
 		BEB5AFB12209140F003F53D5 /* AdminGroupDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5AFB02209140F003F53D5 /* AdminGroupDetailTableViewCell.swift */; };
@@ -222,6 +225,9 @@
 		BEB0B67322186175000F3B59 /* RegistrationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationState.swift; sourceTree = "<group>"; };
 		BEB0B67522186200000F3B59 /* RegistrationActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationActions.swift; sourceTree = "<group>"; };
 		BEB0B67722186283000F3B59 /* RegistrationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationReducer.swift; sourceTree = "<group>"; };
+		BEB0B6792218C9C8000F3B59 /* ForgotPasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordState.swift; sourceTree = "<group>"; };
+		BEB0B67C2218CA40000F3B59 /* ForgotPasswordActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordActions.swift; sourceTree = "<group>"; };
+		BEB0B67E2218CABB000F3B59 /* ForgotPasswordReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordReducer.swift; sourceTree = "<group>"; };
 		BEB5AFAC22091383003F53D5 /* AdminGroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupDetailViewController.swift; sourceTree = "<group>"; };
 		BEB5AFAE220913FB003F53D5 /* AdminGroupDetailErrorMsgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupDetailErrorMsgTableViewCell.swift; sourceTree = "<group>"; };
 		BEB5AFB02209140F003F53D5 /* AdminGroupDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -341,6 +347,7 @@
 				BE5D0DE5220DE62E009B6BD2 /* AdminBroadcastDetailActions.swift */,
 				BE5D0DEF220E1823009B6BD2 /* AdminNewBroadcastActions.swift */,
 				BEB0B67522186200000F3B59 /* RegistrationActions.swift */,
+				BEB0B67C2218CA40000F3B59 /* ForgotPasswordActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -369,6 +376,7 @@
 				BE5D0DE3220DE587009B6BD2 /* AdminBroadcastDetailState.swift */,
 				BE5D0DED220E17B6009B6BD2 /* AdminNewBroadcastState.swift */,
 				BEB0B67322186175000F3B59 /* RegistrationState.swift */,
+				BEB0B6792218C9C8000F3B59 /* ForgotPasswordState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -395,6 +403,7 @@
 				BE5D0DE7220DE68C009B6BD2 /* AdminBroadcastDetailReducer.swift */,
 				BE5D0DF1220E18C0009B6BD2 /* AdminNewBroadcastReducer.swift */,
 				BEB0B67722186283000F3B59 /* RegistrationReducer.swift */,
+				BEB0B67E2218CABB000F3B59 /* ForgotPasswordReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -619,6 +628,8 @@
 				BE5D0DF4220E2D50009B6BD2 /* AdminNewBroadcastMsgTableViewCell.swift in Sources */,
 				BE7D5BDC2205EC9B005110DC /* AdminUsersDetailViewController.swift in Sources */,
 				BE1FD3D3220787AB00F23AE2 /* AdminGroupsReducer.swift in Sources */,
+				BEB0B67F2218CABB000F3B59 /* ForgotPasswordReducer.swift in Sources */,
+				BEB0B67D2218CA40000F3B59 /* ForgotPasswordActions.swift in Sources */,
 				BE0DADD321D3ED32003C2B43 /* AppState.swift in Sources */,
 				BE1FD3D72207919500F23AE2 /* AdminGroupsTableViewCell.swift in Sources */,
 				BE5D0DE4220DE587009B6BD2 /* AdminBroadcastDetailState.swift in Sources */,
@@ -643,6 +654,7 @@
 				BEAB0444221665E20000E8BE /* UserBroadcastDetailTableViewCell.swift in Sources */,
 				BE6327E221DB33A7008AB53B /* ProfileNameReducer.swift in Sources */,
 				BE1FD3D92207A5D300F23AE2 /* AdminGroupsNameViewController.swift in Sources */,
+				BEB0B67A2218C9C8000F3B59 /* ForgotPasswordState.swift in Sources */,
 				BE05505721F035050051877C /* ProfileAddContactTableViewCell.swift in Sources */,
 				BED8975F220A8E20006DE525 /* AdminGroupAddMembersViewController.swift in Sources */,
 				BE717C9B21F5786600F081DB /* ProfileContactsEditState.swift in Sources */,

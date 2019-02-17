@@ -66,6 +66,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate, StoreSubscrib
         performSegue(withIdentifier: "showRegistrationStepOne", sender: self)
     }
     
+    @IBAction func forgotPasswordButtonPressed(_ sender: Any) {
+        store.dispatch(ForgotPasswordInit())
+        performSegue(withIdentifier: "showForgotPasswordStepOne", sender: self)
+    }
+    
     func newState(state: AppState) {
         if state.signInState.signingIn != signingIn {
             signingIn = state.signInState.signingIn
