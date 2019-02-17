@@ -14,6 +14,7 @@ class MyBroadcastsViewController: UIViewController, StoreSubscriber {
     var broadcasts : [Broadcast] = []
     var fetching = false
     var fetchingErrorMsg = ""
+    var launchedBroadcastId = 0
     
     @IBOutlet weak var broadcastsTable: UITableView!
     
@@ -26,9 +27,23 @@ class MyBroadcastsViewController: UIViewController, StoreSubscriber {
     }
     
     func newState(state: AppState) {
+        if launchedBroadcastId != state.signInState.launchedBroadcastId {
+            launchedBroadcastId = state.signInState.launchedBroadcastId
+        }
+
         if state.userBroadcastsState.broadcasts != broadcasts {
             broadcasts = state.userBroadcastsState.broadcasts
             broadcastsTable.reloadData()
+            
+            if !broadcasts.isEmpty && launchedBroadcastId != 0 {
+                for (index, broadcast) in broadcasts.enumerated() {
+                    if broadcast.broadcastId == launchedBroadcastId {
+                        store.dispatch(SetLaunchedBroadcastId(broadcastId: 0))
+                        viewBroadcast(row: index)
+                        break
+                    }
+                }
+            }
         }
         
         if fetching != state.userBroadcastsState.fetching {
@@ -100,10 +115,14 @@ extension MyBroadcastsViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        store.dispatch(SetUserBroadcastDetailSentBy(sentBy: broadcasts[indexPath.row].sentBy))
-        store.dispatch(SetUserBroadcastDetailDelivered(delivered: broadcasts[indexPath.row].delivered))
-        store.dispatch(SetUserBroadcastDetailShortMsg(shortMsg: broadcasts[indexPath.row].shortMsg))
-        store.dispatch(SetUserBroadcastDetailLongMsg(longMsg: broadcasts[indexPath.row].longMsg))
+        viewBroadcast(row: indexPath.row)
+    }
+    
+    func viewBroadcast(row: Int) {
+        store.dispatch(SetUserBroadcastDetailSentBy(sentBy: broadcasts[row].sentBy))
+        store.dispatch(SetUserBroadcastDetailDelivered(delivered: broadcasts[row].delivered))
+        store.dispatch(SetUserBroadcastDetailShortMsg(shortMsg: broadcasts[row].shortMsg))
+        store.dispatch(SetUserBroadcastDetailLongMsg(longMsg: broadcasts[row].longMsg))
         
         performSegue(withIdentifier: "UserBroadcastDetail", sender: self)
     }

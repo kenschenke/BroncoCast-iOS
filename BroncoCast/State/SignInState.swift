@@ -14,4 +14,9 @@ struct SignInState : StateType {
     var password = ""
     var signingIn = false
     var errorMsg = ""
+    var deviceToken = ""  // for push notifications
+    
+    // If the app was launched by the user tapping a notification,
+    // this will contain the id of the broadcast for the notification.
+    var launchedBroadcastId = 0
 }

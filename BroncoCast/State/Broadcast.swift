@@ -9,6 +9,7 @@
 import Foundation
 
 struct Broadcast : Equatable {
+    var broadcastId : Int
     var sentBy : String
     var delivered : String
     var shortMsg : String

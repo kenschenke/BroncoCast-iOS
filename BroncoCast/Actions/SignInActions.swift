@@ -27,13 +27,26 @@ struct SetSigningInPassword : Action {
     let password : String
 }
 
+struct SetDeviceToken : Action {
+    var deviceToken : String
+}
+
+struct SetLaunchedBroadcastId : Action {
+    var broadcastId : Int
+}
+
 func isAuth(state : AppState, store : Store<AppState>) -> Action? {
-    Alamofire.request(UrlMaker.makeUrl(.is_auth), method: .get).responseJSON {
+    var url = UrlMaker.makeUrl(.is_auth)
+    if !state.signInState.deviceToken.isEmpty {
+        url += "?DeviceToken=\(state.signInState.deviceToken)"
+    }
+    Alamofire.request(url, method: .get).responseJSON {
         response in
         if response.result.isSuccess {
             let responseJSON : JSON = JSON(response.result.value!)
             if responseJSON["IsAuth"].bool ?? false {
-                store.dispatch(navigateTo(path: .profile_name))
+                store.dispatch(navigateTo(path:
+                    state.signInState.launchedBroadcastId != 0 ? .mybroadcasts : .profile_name))
                 setAdminOrgData(store: store, responseJSON: responseJSON)
                 return
             }
@@ -76,6 +89,7 @@ func signIn(state : AppState, store : Store<AppState>) -> Action? {
         "_password" : state.signInState.password,
         "_remember_me" : "on",
         "applogin": "true",
+        "DeviceToken": state.signInState.deviceToken
     ]
     Alamofire.request(UrlMaker.makeUrl(.sign_in), method: .post, parameters: params).responseJSON {
         response in

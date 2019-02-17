@@ -40,6 +40,7 @@ func getUserBroadcasts(state : AppState, store : Store<AppState>) -> Action? {
                     
                     for (_, object) in responseJSON["Broadcasts"] {
                         broadcasts.append(Broadcast(
+                            broadcastId: object["BroadcastId"].int ?? 0,
                             sentBy: object["UsrName"].string ?? "",
                             delivered: object["Delivered"].string ?? "",
                             shortMsg: object["ShortMsg"].string ?? "",

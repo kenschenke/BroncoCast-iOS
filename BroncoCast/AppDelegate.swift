@@ -8,6 +8,7 @@
 
 import UIKit
 import ReSwift
+import UserNotifications
 
 var store = Store<AppState>(reducer: appReducer, state: nil)
 
@@ -30,8 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appSettings.load()
 
         store.dispatch(navigateTo(path: .checkauth))
-        store.dispatch(isAuth)
         
+        registerForPushNotifications()
+        
+        let notificationOption = launchOptions?[.remoteNotification]
+        if let notification = notificationOption as? [String: AnyObject],
+            let aps = notification["aps"] as? [String: AnyObject],
+            let broadcastId = aps["broadcastId"] as? Int {
+            
+            store.dispatch(SetLaunchedBroadcastId(broadcastId: broadcastId))
+        }
+
         self.window?.makeKeyAndVisible()
         
         return true
@@ -60,6 +70,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(
+        _ application: UIApplication,
+        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+        ) {
+        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+        let token = tokenParts.joined()
+        store.dispatch(SetDeviceToken(deviceToken: token))
+        store.dispatch(isAuth)
+    }
+    
+    func application(
+        _ application: UIApplication,
+        didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        store.dispatch(isAuth)
+    }
+
+    // a07527aa7d18d006c7dd7015048472323c074511e628746d5e09ce26657fdf6f
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            guard settings.authorizationStatus == .authorized else { return }
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
+    }
+
+    func registerForPushNotifications() {
+        UNUserNotificationCenter.current()
+            .requestAuthorization(options: [.alert, .sound, .badge]) {
+                [weak self] granted, error in
+                
+                guard granted else { return }
+                self?.getNotificationSettings()
+        }
+    }
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        guard let aps = userInfo["aps"] as? [String: AnyObject] else {
+            completionHandler(.failed)
+            return
+        }
+        if let broadcastId = aps["broadcastId"] as? Int {
+            store.dispatch(SetLaunchedBroadcastId(broadcastId: broadcastId))
+            store.dispatch(navigateTo(path: .mybroadcasts))
+        }
+    }
 
 }
 

@@ -20,7 +20,12 @@ func signInReducer(_ action : Action, state: SignInState?) -> SignInState {
         newState.username = signingInUsername.username
     } else if let signingInPassword = action as? SetSigningInPassword {
         newState.password = signingInPassword.password
+    } else if let setDeviceToken = action as? SetDeviceToken {
+        newState.deviceToken = setDeviceToken.deviceToken
+    } else if let setLaunchedBroadcastId = action as? SetLaunchedBroadcastId {
+        newState.launchedBroadcastId = setLaunchedBroadcastId.broadcastId
     }
+
     
     return newState
 }

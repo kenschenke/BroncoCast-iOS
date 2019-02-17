@@ -157,6 +157,7 @@
 		BE1FD3DA2207BAA800F23AE2 /* AdminGroupNameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupNameState.swift; sourceTree = "<group>"; };
 		BE1FD3DC2207BB4C00F23AE2 /* AdminGroupNameActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupNameActions.swift; sourceTree = "<group>"; };
 		BE1FD3DE2207BBB700F23AE2 /* AdminGroupNameReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupNameReducer.swift; sourceTree = "<group>"; };
+		BE3F67462219ACDF005027E2 /* BroncoCast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BroncoCast.entitlements; sourceTree = "<group>"; };
 		BE41A64721FE0FC600A9A41D /* AdminUsersState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUsersState.swift; sourceTree = "<group>"; };
 		BE41A64921FE10E000A9A41D /* AdminUsersActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUsersActions.swift; sourceTree = "<group>"; };
 		BE41A64B21FE114400A9A41D /* AdminUsersReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUsersReducer.swift; sourceTree = "<group>"; };
@@ -477,6 +478,7 @@
 		BED9D8D521CEEC56003455E6 /* BroncoCast */ = {
 			isa = PBXGroup;
 			children = (
+				BE3F67462219ACDF005027E2 /* BroncoCast.entitlements */,
 				BE0DADD621D3EF9A003C2B43 /* Reducers */,
 				BE0DADD121D3ED22003C2B43 /* State */,
 				BE0DADCC21D3E8EE003C2B43 /* Actions */,
@@ -527,6 +529,11 @@
 				TargetAttributes = {
 					BED9D8D221CEEC56003455E6 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -892,6 +899,7 @@
 			baseConfigurationReference = 9F4453E832D67EF1DCEA01DD /* Pods-BroncoCast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BroncoCast/BroncoCast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WC7R2MUF8W;
 				INFOPLIST_FILE = BroncoCast/Info.plist;
@@ -911,6 +919,7 @@
 			baseConfigurationReference = C84058CC7F8957F4A1EEB5E2 /* Pods-BroncoCast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BroncoCast/BroncoCast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WC7R2MUF8W;
 				INFOPLIST_FILE = BroncoCast/Info.plist;
