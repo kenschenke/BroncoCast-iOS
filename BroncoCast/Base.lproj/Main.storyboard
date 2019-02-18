@@ -321,6 +321,13 @@
                                     <action selector="showPasswordChanged:" destination="jtQ-tG-nRT" eventType="valueChanged" id="efT-c9-CxH"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjg-gW-XeG">
+                                <rect key="frame" x="140" y="402" width="95" height="30"/>
+                                <state key="normal" title="Privacy Policy"/>
+                                <connections>
+                                    <segue destination="j09-PR-cni" kind="show" id="l64-Hv-cs7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -342,10 +349,12 @@
                             <constraint firstItem="7jX-VC-nRX" firstAttribute="leading" secondItem="xDo-Ko-Thc" secondAttribute="leading" id="UvG-ck-O6V"/>
                             <constraint firstItem="UmR-ws-waz" firstAttribute="leading" secondItem="xDo-Ko-Thc" secondAttribute="leading" id="Uy2-Od-S2W"/>
                             <constraint firstItem="35j-If-Shk" firstAttribute="trailing" secondItem="xDo-Ko-Thc" secondAttribute="trailing" id="WwG-U3-l8z"/>
+                            <constraint firstItem="bjg-gW-XeG" firstAttribute="centerX" secondItem="9Od-Rg-BIg" secondAttribute="centerX" id="Yra-m5-t6E"/>
                             <constraint firstItem="Bxc-jF-WBY" firstAttribute="centerY" secondItem="Z6q-bp-zKC" secondAttribute="centerY" id="cvz-Rh-CG6"/>
                             <constraint firstItem="Z6q-bp-zKC" firstAttribute="leading" secondItem="Bxc-jF-WBY" secondAttribute="trailing" constant="173" id="gfm-e2-wdi"/>
                             <constraint firstItem="ly1-G4-G4y" firstAttribute="top" secondItem="Bxc-jF-WBY" secondAttribute="bottom" constant="30" id="hLp-YC-WgD"/>
                             <constraint firstItem="Bxc-jF-WBY" firstAttribute="leading" secondItem="xDo-Ko-Thc" secondAttribute="leading" id="ibc-cg-SpB"/>
+                            <constraint firstItem="bjg-gW-XeG" firstAttribute="top" secondItem="ly1-G4-G4y" secondAttribute="bottom" constant="8" id="jKp-Cc-pWy"/>
                             <constraint firstItem="35j-If-Shk" firstAttribute="top" secondItem="xDo-Ko-Thc" secondAttribute="bottom" constant="8" id="kTs-kd-3VM"/>
                             <constraint firstItem="7jX-VC-nRX" firstAttribute="trailing" secondItem="xDo-Ko-Thc" secondAttribute="trailing" id="kiC-eV-mq4"/>
                             <constraint firstItem="xDo-Ko-Thc" firstAttribute="top" secondItem="4q1-WX-O4G" secondAttribute="top" constant="15" id="sLv-eN-E8a"/>
@@ -3237,6 +3246,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t5O-gh-vyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2341.5999999999999" y="703.89805097451278"/>
+        </scene>
+        <!--Privacy Policy View Controller-->
+        <scene sceneID="rvF-sf-qgJ">
+            <objects>
+                <viewController id="j09-PR-cni" customClass="PrivacyPolicyViewController" customModule="BroncoCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hTI-si-xE1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fte-Ic-8Ng">
+                                <rect key="frame" x="16" y="79" width="343" height="568"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WeJ-nX-1iC" firstAttribute="trailing" secondItem="fte-Ic-8Ng" secondAttribute="trailing" constant="16" id="84Q-lj-tJz"/>
+                            <constraint firstItem="WeJ-nX-1iC" firstAttribute="bottom" secondItem="fte-Ic-8Ng" secondAttribute="bottom" constant="20" id="NdQ-cA-PO3"/>
+                            <constraint firstItem="fte-Ic-8Ng" firstAttribute="top" secondItem="WeJ-nX-1iC" secondAttribute="top" constant="15" id="O4H-8m-Dju"/>
+                            <constraint firstItem="fte-Ic-8Ng" firstAttribute="leading" secondItem="WeJ-nX-1iC" secondAttribute="leading" constant="16" id="jAb-pf-YGT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WeJ-nX-1iC"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="fte-Ic-8Ng" id="VZv-Sh-2VI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a2W-dm-5i1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3231.1999999999998" y="718.29085457271367"/>
         </scene>
         <!--Profile Name View Controller-->
         <scene sceneID="Vsy-74-p1B">

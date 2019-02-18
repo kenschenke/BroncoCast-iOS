@@ -104,6 +104,8 @@
 		BEB5AFB322091541003F53D5 /* AdminGroupDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5AFB222091541003F53D5 /* AdminGroupDetailState.swift */; };
 		BEB5AFB52209169E003F53D5 /* AdminGroupDetailReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5AFB42209169E003F53D5 /* AdminGroupDetailReducer.swift */; };
 		BEB5AFB722091721003F53D5 /* AdminGroupDetailActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5AFB622091721003F53D5 /* AdminGroupDetailActions.swift */; };
+		BEB8C665221A67CB00BB963A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB8C664221A67CB00BB963A /* WebKit.framework */; };
+		BEB8C667221A682F00BB963A /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8C666221A682F00BB963A /* PrivacyPolicyViewController.swift */; };
 		BECCCE1521F3792F00B37D3B /* ProfileContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCCE1421F3792F00B37D3B /* ProfileContactsState.swift */; };
 		BECCCE1721F379AF00B37D3B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCCE1621F379AF00B37D3B /* Contact.swift */; };
 		BECCCE1921F37A6D00B37D3B /* ProfileContactsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCCE1821F37A6D00B37D3B /* ProfileContactsReducer.swift */; };
@@ -235,6 +237,8 @@
 		BEB5AFB222091541003F53D5 /* AdminGroupDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupDetailState.swift; sourceTree = "<group>"; };
 		BEB5AFB42209169E003F53D5 /* AdminGroupDetailReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupDetailReducer.swift; sourceTree = "<group>"; };
 		BEB5AFB622091721003F53D5 /* AdminGroupDetailActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminGroupDetailActions.swift; sourceTree = "<group>"; };
+		BEB8C664221A67CB00BB963A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		BEB8C666221A682F00BB963A /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		BECCCE1421F3792F00B37D3B /* ProfileContactsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactsState.swift; sourceTree = "<group>"; };
 		BECCCE1621F379AF00B37D3B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BECCCE1821F37A6D00B37D3B /* ProfileContactsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactsReducer.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEB8C665221A67CB00BB963A /* WebKit.framework in Frameworks */,
 				DA8E9C846812FE5B08CC5A32 /* Pods_BroncoCast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +287,7 @@
 		1D350C5E93E6619F86000994 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BEB8C664221A67CB00BB963A /* WebKit.framework */,
 				97B86554F42ACB63E79C9E93 /* Pods_BroncoCast.framework */,
 			);
 			name = Frameworks;
@@ -440,6 +446,7 @@
 				BE5D0DF9220F6E63009B6BD2 /* AdminNewBroadcastMsgViewController.swift */,
 				BE5D0DFB220FCA7C009B6BD2 /* AdminNewBroadcastGroupViewController.swift */,
 				BEAB043F2213B0DA0000E8BE /* SignInOptionsViewController.swift */,
+				BEB8C666221A682F00BB963A /* PrivacyPolicyViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -693,6 +700,7 @@
 				BE05505521F02BA20051877C /* ProfileContactsTableViewCell.swift in Sources */,
 				BE9DE0B721F405DB00068A2B /* ProfileContactErrorMsgCell.swift in Sources */,
 				BEB5AFB322091541003F53D5 /* AdminGroupDetailState.swift in Sources */,
+				BEB8C667221A682F00BB963A /* PrivacyPolicyViewController.swift in Sources */,
 				BE6327DC21DAD126008AB53B /* ProfileNameViewController.swift in Sources */,
 				BE6327E021DB3206008AB53B /* ProfileNameState.swift in Sources */,
 				BECCCE1D21F38D2500B37D3B /* PhoneFormatter.swift in Sources */,
