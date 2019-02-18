@@ -39,6 +39,10 @@ struct SetRegistrationErrorMsg : Action {
     var errorMsg : String
 }
 
+struct SetRegistrationOrgTag : Action {
+    var orgTag : String
+}
+
 func registerUser(state : AppState, store : Store<AppState>) -> Action? {
     store.dispatch(SetRegistrationRegistering(registering: true))
     store.dispatch(SetRegistrationErrorMsg(errorMsg: ""))
@@ -48,6 +52,7 @@ func registerUser(state : AppState, store : Store<AppState>) -> Action? {
         "Password" : state.registrationState.password,
         "Email" : state.registrationState.email,
         "Phone" : state.registrationState.phone,
+        "OrgTag" : state.registrationState.orgTag,
         ]
     Alamofire.request(UrlMaker.makeUrl(.register), method: .post, parameters: params).responseJSON {
         response in

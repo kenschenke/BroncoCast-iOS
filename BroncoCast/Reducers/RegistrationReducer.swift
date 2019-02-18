@@ -19,8 +19,8 @@ func registrationReducer(_ action : Action, state: RegistrationState?) -> Regist
         newState.phone = ""
         newState.registering = false
         newState.errorMsg = ""
-    }
-    else if let setRegistrationName = action as? SetRegistrationName {
+        newState.orgTag = ""
+    } else if let setRegistrationName = action as? SetRegistrationName {
         newState.name = setRegistrationName.name
     } else if let setRegistrationPassword = action as? SetRegistrationPassword {
         newState.password = setRegistrationPassword.password
@@ -32,6 +32,8 @@ func registrationReducer(_ action : Action, state: RegistrationState?) -> Regist
         newState.registering = setRegistrationRegistering.registering
     } else if let setRegistrationErrorMsg = action as? SetRegistrationErrorMsg {
         newState.errorMsg = setRegistrationErrorMsg.errorMsg
+    } else if let setRegistrationOrgTag = action as? SetRegistrationOrgTag {
+        newState.orgTag = setRegistrationOrgTag.orgTag
     }
     
     return newState

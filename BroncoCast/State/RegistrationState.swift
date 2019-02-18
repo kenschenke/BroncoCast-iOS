@@ -16,4 +16,5 @@ struct RegistrationState : StateType {
     var phone = ""
     var registering = false
     var errorMsg = ""
+    var orgTag = ""
 }

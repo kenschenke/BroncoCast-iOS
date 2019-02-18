@@ -24,6 +24,7 @@ class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, 
     @IBOutlet weak var phoneHelpText: UILabel!
     @IBOutlet var phoneTextFieldListener: MaskedTextFieldDelegate!
     @IBOutlet weak var registerButton: ActivityButton!
+    @IBOutlet weak var orgTagTextField: UITextField!
     
     var nameHelper : TextFieldHelper?
     var phoneHelper : TextFieldHelper?
@@ -130,17 +131,28 @@ class RegistrationStepTwoViewController: UIViewController, UITextFieldDelegate, 
             Alertift.alert(title: "Name", message: "Please enter a valid name")
                 .action(.default("Ok"))
                 .show()
+            return
         }
         
         if !isPhoneValid() {
             Alertift.alert(title: "Phone Number", message: "Please enter a valid phone number")
                 .action(.default("Ok"))
                 .show()
+            return
+        }
+        
+        let orgTag = orgTagTextField.text!
+        if orgTag.isEmpty {
+            Alertift.alert(title: "Invite Code", message: "Invite code is required")
+                .action(.default("Ok"))
+                .show()
+            return
         }
         
         store.dispatch(SetRegistrationName(name: nameTextField.text!))
         store.dispatch(SetRegistrationPhone(phone: getPhoneNumberDigitsOnly(phoneTextField.text!)))
-        
+        store.dispatch(SetRegistrationOrgTag(orgTag: orgTag))
+
         store.dispatch(registerUser)
     }
     
