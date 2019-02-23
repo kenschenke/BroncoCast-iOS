@@ -537,6 +537,9 @@
 					BED9D8D221CEEC56003455E6 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
