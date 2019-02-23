@@ -12,6 +12,7 @@ struct Broadcast : Equatable {
     var broadcastId : Int
     var sentBy : String
     var delivered : String
+    var timestamp : Int
     var shortMsg : String
     var longMsg : String
     var recipients : [String]

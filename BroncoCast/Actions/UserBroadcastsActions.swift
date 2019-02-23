@@ -43,12 +43,14 @@ func getUserBroadcasts(state : AppState, store : Store<AppState>) -> Action? {
                             broadcastId: object["BroadcastId"].int ?? 0,
                             sentBy: object["UsrName"].string ?? "",
                             delivered: object["Delivered"].string ?? "",
+                            timestamp: object["Timestamp"].int ?? 0,
                             shortMsg: object["ShortMsg"].string ?? "",
                             longMsg: object["LongMsg"].string ?? "",
                             recipients: [String]()
                         ))
                     }
                     
+                    broadcasts.sort(by: { $0.timestamp >= $1.timestamp })
                     store.dispatch(SetUserBroadcastsBroadcasts(broadcasts: broadcasts))
                 }
             } else {
