@@ -16,7 +16,7 @@ class AppSettings {
         if let serverSetting = defaults.string(forKey: "Server") {
             serverAddr = serverSetting
         } else {
-            serverAddr = "dev.broncocast.org"
+            serverAddr = "www.broncocast.org"
         }
     }
     
