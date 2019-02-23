@@ -38,7 +38,7 @@ struct SetLaunchedBroadcastId : Action {
 func isAuth(state : AppState, store : Store<AppState>) -> Action? {
     var url = UrlMaker.makeUrl(.is_auth)
     if !state.signInState.deviceToken.isEmpty {
-        url += "?DeviceToken=\(state.signInState.deviceToken)"
+        url += "?DeviceToken=\(state.signInState.deviceToken)&DeviceType=APPLE"
     }
     Alamofire.request(url, method: .get).responseJSON {
         response in
@@ -89,7 +89,8 @@ func signIn(state : AppState, store : Store<AppState>) -> Action? {
         "_password" : state.signInState.password,
         "_remember_me" : "on",
         "applogin": "true",
-        "DeviceToken": state.signInState.deviceToken
+        "DeviceToken": state.signInState.deviceToken,
+        "DeviceType": "APPLE"
     ]
     Alamofire.request(UrlMaker.makeUrl(.sign_in), method: .post, parameters: params).responseJSON {
         response in
