@@ -84,14 +84,16 @@ func signIn(state : AppState, store : Store<AppState>) -> Action? {
     
     store.dispatch(SetSigningIn(signingIn: true))
     
-    let params : [String : String] = [
+    var params : [String : String] = [
         "_username" : state.signInState.username,
         "_password" : state.signInState.password,
         "_remember_me" : "on",
-        "applogin": "true",
-        "DeviceToken": state.signInState.deviceToken,
-        "DeviceType": "APPLE"
+        "applogin": "true"
     ]
+    if !state.signInState.deviceToken.isEmpty {
+        params["DeviceToken"] = state.signInState.deviceToken
+        params["DeviceType"] = "APPLE"
+    }
     Alamofire.request(UrlMaker.makeUrl(.sign_in), method: .post, parameters: params).responseJSON {
         response in
         if response.result.isSuccess {

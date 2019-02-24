@@ -86,7 +86,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         store.dispatch(isAuth)
     }
 
-    // a07527aa7d18d006c7dd7015048472323c074511e628746d5e09ce26657fdf6f
     func getNotificationSettings() {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             guard settings.authorizationStatus == .authorized else { return }
@@ -101,7 +100,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .requestAuthorization(options: [.alert, .sound, .badge]) {
                 [weak self] granted, error in
                 
-                guard granted else { return }
+                guard granted else {
+                    store.dispatch(isAuth)
+                    return
+                }
                 self?.getNotificationSettings()
         }
     }
