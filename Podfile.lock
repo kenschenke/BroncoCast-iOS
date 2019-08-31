@@ -1,11 +1,11 @@
 PODS:
-  - Alamofire (4.8.0)
-  - Alertift (4.0)
-  - FontAwesome.swift (1.4.6)
-  - InputMask (4.0.2)
-  - ReSwift (4.0.1)
-  - SwiftyJSON (4.2.0)
-  - SwiftyPickerPopover (6.6.4)
+  - Alamofire (4.8.2)
+  - Alertift (4.1.1)
+  - FontAwesome.swift (1.8.1)
+  - InputMask (4.3.0)
+  - ReSwift (5.0.0)
+  - SwiftyJSON (5.0.0)
+  - SwiftyPickerPopover (6.6.5)
 
 DEPENDENCIES:
   - Alamofire (~> 4)
@@ -27,13 +27,13 @@ SPEC REPOS:
     - SwiftyPickerPopover
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  Alertift: 393ace2617e96e95b4e85c88e80a85bf2d85c698
-  FontAwesome.swift: 18fb500c0decc2bbfadf2ae16a936704ec2c49bd
-  InputMask: b9df7a44c044f59485b2d596661e6bd4334bddb4
-  ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
-  SwiftyPickerPopover: 6d08cbae133c80743654f4e977607cd1553947e6
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Alertift: 950483ca193717cc8bb508a7dbbe34f4af321daf
+  FontAwesome.swift: 6f55c8ed22a30ab6a8ca94033473161f678dcd4b
+  InputMask: 3674235e12cc52e769b01b2f35d6bbc94cd059c7
+  ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  SwiftyPickerPopover: f2975fd0233d04c0a8f8d52d09b6f24b882de6fb
 
 PODFILE CHECKSUM: d2faa45c296c2e013a5b7920029ec45e65c5891f
 

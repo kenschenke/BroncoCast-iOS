@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,7 +28,7 @@
                                 <rect key="frame" x="16" y="138" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
@@ -160,12 +160,19 @@
                                     <action selector="optionsButtonPressed:" destination="qnN-ED-ESb" eventType="touchUpInside" id="rTx-R3-rsK"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You do not need to register if you have already signed up for BroncoCast.  You can sign into this app with the same password." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRg-nH-ebx" userLabel="Registration Help Label">
+                                <rect key="frame" x="16" y="445" width="343" height="50.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1dC-W7-gtY" firstAttribute="centerY" secondItem="QY1-wG-UmB" secondAttribute="centerY" id="11b-Zv-k35"/>
                             <constraint firstItem="IgM-aA-54f" firstAttribute="centerY" secondItem="LEw-2k-eW7" secondAttribute="centerY" id="54T-YJ-NPE"/>
                             <constraint firstItem="QY1-wG-UmB" firstAttribute="leading" secondItem="57f-iK-lcL" secondAttribute="leading" id="5wS-fy-3tr"/>
+                            <constraint firstItem="nRg-nH-ebx" firstAttribute="leading" secondItem="IgM-aA-54f" secondAttribute="leading" id="796-8Z-J69"/>
                             <constraint firstItem="57f-iK-lcL" firstAttribute="top" secondItem="RtL-t6-p5i" secondAttribute="top" constant="45" id="CLe-lw-EfV"/>
                             <constraint firstItem="1dC-W7-gtY" firstAttribute="leading" secondItem="QY1-wG-UmB" secondAttribute="trailing" constant="16" id="Dye-le-cDx"/>
                             <constraint firstItem="6Es-bb-RSp" firstAttribute="leading" secondItem="57f-iK-lcL" secondAttribute="leading" id="EiL-bp-wPR"/>
@@ -177,6 +184,7 @@
                             <constraint firstItem="LEw-2k-eW7" firstAttribute="leading" secondItem="IgM-aA-54f" secondAttribute="trailing" constant="25" id="Uh1-x2-gp3"/>
                             <constraint firstItem="RtL-t6-p5i" firstAttribute="trailing" secondItem="57f-iK-lcL" secondAttribute="trailing" constant="16" id="cpb-YU-Pce"/>
                             <constraint firstItem="LEw-2k-eW7" firstAttribute="trailing" secondItem="57f-iK-lcL" secondAttribute="trailing" id="dOV-9b-79i"/>
+                            <constraint firstItem="nRg-nH-ebx" firstAttribute="top" secondItem="IgM-aA-54f" secondAttribute="bottom" constant="16" id="dQY-zg-Dag"/>
                             <constraint firstItem="IgM-aA-54f" firstAttribute="top" secondItem="R4E-he-iDN" secondAttribute="bottom" constant="25" id="dhD-fe-pei"/>
                             <constraint firstItem="XSS-pp-ga3" firstAttribute="leading" secondItem="RtL-t6-p5i" secondAttribute="leading" constant="16" id="ebr-MN-QxF"/>
                             <constraint firstItem="wgx-G0-5AU" firstAttribute="trailing" secondItem="57f-iK-lcL" secondAttribute="trailing" id="fcv-mg-2YM"/>
@@ -186,6 +194,7 @@
                             <constraint firstItem="BLx-eu-CY5" firstAttribute="top" secondItem="6Es-bb-RSp" secondAttribute="bottom" constant="25" id="hlF-bS-IOy"/>
                             <constraint firstItem="RtL-t6-p5i" firstAttribute="trailing" secondItem="XSS-pp-ga3" secondAttribute="trailing" constant="16" id="it7-or-arO"/>
                             <constraint firstItem="R4E-he-iDN" firstAttribute="leading" secondItem="57f-iK-lcL" secondAttribute="leading" id="kaT-1y-pC6"/>
+                            <constraint firstItem="LEw-2k-eW7" firstAttribute="trailing" secondItem="nRg-nH-ebx" secondAttribute="trailing" id="svz-PJ-Iys"/>
                             <constraint firstItem="QY1-wG-UmB" firstAttribute="top" secondItem="wgx-G0-5AU" secondAttribute="bottom" constant="25" id="taY-Bs-CxM"/>
                             <constraint firstItem="6Es-bb-RSp" firstAttribute="top" secondItem="57f-iK-lcL" secondAttribute="bottom" constant="8" id="uVH-2g-igZ"/>
                             <constraint firstItem="wgx-G0-5AU" firstAttribute="top" secondItem="BLx-eu-CY5" secondAttribute="bottom" constant="8" id="waz-it-RWc"/>
