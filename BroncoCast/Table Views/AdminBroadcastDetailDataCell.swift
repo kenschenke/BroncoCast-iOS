@@ -11,7 +11,7 @@ import UIKit
 class AdminBroadcastDetailDataCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
