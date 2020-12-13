@@ -9,6 +9,7 @@
 import UIKit
 import ReSwift
 import UserNotifications
+import Firebase
 
 var store = Store<AppState>(reducer: appReducer, state: nil)
 
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let storyboard: UIStoryboard
+    let gcmMessageIDKey = "gcm.message_id"
     
     override init() {
         storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -32,15 +34,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         store.dispatch(navigateTo(path: .checkauth))
         
-        registerForPushNotifications()
+        FirebaseApp.configure()
         
-        let notificationOption = launchOptions?[.remoteNotification]
-        if let notification = notificationOption as? [String: AnyObject],
-            let aps = notification["aps"] as? [String: AnyObject],
-            let broadcastId = aps["broadcastId"] as? Int {
+        Messaging.messaging().delegate = self
+        
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
             
-            store.dispatch(SetLaunchedBroadcastId(broadcastId: broadcastId))
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in})
         }
+        
+        application.registerForRemoteNotifications()
+
+//        let notificationOption = launchOptions?[.remoteNotification]
+//        if let notification = notificationOption as? [String: AnyObject],
+//            let aps = notification["aps"] as? [String: AnyObject],
+//            let broadcastId = aps["broadcastId"] as? Int {
+//
+//            store.dispatch(SetLaunchedBroadcastId(broadcastId: broadcastId))
+//        }
 
         self.window?.makeKeyAndVisible()
         
@@ -70,15 +86,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func application(
-        _ application: UIApplication,
-        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
-        ) {
-        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
-        let token = tokenParts.joined()
-        store.dispatch(SetDeviceToken(deviceToken: token))
-        store.dispatch(isAuth)
-    }
+//    func application(
+//        _ application: UIApplication,
+//        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+//        ) {
+//        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+//        let token = tokenParts.joined()
+//        store.dispatch(SetDeviceToken(deviceToken: token))
+//        store.dispatch(isAuth)
+//    }
     
     func application(
         _ application: UIApplication,
@@ -95,18 +111,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func registerForPushNotifications() {
-        UNUserNotificationCenter.current()
-            .requestAuthorization(options: [.alert, .sound, .badge]) {
-                [weak self] granted, error in
-                
-                guard granted else {
-                    store.dispatch(isAuth)
-                    return
-                }
-                self?.getNotificationSettings()
-        }
-    }
+//    func registerForPushNotifications() {
+//
+//        UNUserNotificationCenter.current()
+//            .requestAuthorization(options: [.alert, .sound, .badge]) {
+//                [weak self] granted, error in
+//
+//                guard granted else {
+//                    store.dispatch(isAuth)
+//                    return
+//                }
+//                self?.getNotificationSettings()
+//        }
+//    }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         guard let aps = userInfo["aps"] as? [String: AnyObject] else {
@@ -121,3 +138,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate : UNUserNotificationCenterDelegate {
+    // Receive displayed notifications for iOS 10 devices
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+//        let userInfo = notification.request.content.userInfo
+        // With swizzling disabled you must let Messaging know about the message, for Analytics
+        // Messaging.messaging().appDidReceiveMessage(userInfo)
+
+        // Print message ID.
+//        if let messageID = userInfo[gcmMessageIDKey] {
+//            print("Message ID: \(messageID)")
+//        }
+
+        // Print full message.
+//        print(userInfo)
+        
+        completionHandler([.alert, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+//        let userInfo = response.notification.request.content.userInfo
+        // Print message ID.
+//        if let messageID = userInfo[gcmMessageIDKey] {
+//            print("Message ID: \(messageID)")
+//        }
+
+        // With swizzling disabled you must let Messaging know about the message, for Analytics
+        // Messaging.messaging().appDidReceiveMessage(userInfo)
+
+        // Print full message.
+//        print(userInfo)
+        
+        completionHandler()
+    }
+}
+
+extension AppDelegate : MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+//        print("Firebase registration token: \(String(describing: fcmToken))")
+        store.dispatch(SetDeviceToken(deviceToken: fcmToken))
+        store.dispatch(isAuth)
+        
+        let dataDict:[String: String] = ["token": fcmToken ?? ""]
+        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+    }
+}

@@ -13,4 +13,6 @@ target 'BroncoCast' do
   pod 'SwiftyJSON'
   pod 'FontAwesome.swift'
   pod 'SwiftyPickerPopover'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
 end

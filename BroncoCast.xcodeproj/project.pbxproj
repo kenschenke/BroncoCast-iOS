@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19759B5B9B0252D52C0846ED /* Pods_BroncoCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B369625F0BA94B64D7F3D57 /* Pods_BroncoCast.framework */; };
 		BE05505521F02BA20051877C /* ProfileContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05505421F02BA20051877C /* ProfileContactsTableViewCell.swift */; };
 		BE05505721F035050051877C /* ProfileAddContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05505621F035050051877C /* ProfileAddContactTableViewCell.swift */; };
 		BE0DADCE21D3E903003C2B43 /* NavigationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0DADCD21D3E903003C2B43 /* NavigationAction.swift */; };
@@ -87,6 +88,7 @@
 		BE9F144D21F7F94400D1A386 /* ProfileOrgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F144C21F7F94400D1A386 /* ProfileOrgTableViewCell.swift */; };
 		BEA22CB921D15E5F00D453BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA22CB821D15E5F00D453BE /* ProfileViewController.swift */; };
 		BEA22CBC21D3BCC600D453BE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA22CBB21D3BCC600D453BE /* DesignableView.swift */; };
+		BEA43DF5258411080032DD07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEA43DF4258411080032DD07 /* GoogleService-Info.plist */; };
 		BEA5388221FD50AB006511C4 /* AdminUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA5388121FD50AB006511C4 /* AdminUsersViewController.swift */; };
 		BEAB043E2213AAED0000E8BE /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAB043D2213AAED0000E8BE /* AppSettings.swift */; };
 		BEAB04402213B0DA0000E8BE /* SignInOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAB043F2213B0DA0000E8BE /* SignInOptionsViewController.swift */; };
@@ -133,12 +135,10 @@
 		BEE35C8821F68C7E003F33AD /* ProfileOrgsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE35C8721F68C7E003F33AD /* ProfileOrgsViewController.swift */; };
 		BEE35C8A21F6A846003F33AD /* ProfileOrgsErrorMsgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE35C8921F6A846003F33AD /* ProfileOrgsErrorMsgTableViewCell.swift */; };
 		BEFB3E4721E561AA00CE9426 /* ProfileContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB3E4621E561AA00CE9426 /* ProfileContactsViewController.swift */; };
-		DA8E9C846812FE5B08CC5A32 /* Pods_BroncoCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B86554F42ACB63E79C9E93 /* Pods_BroncoCast.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		97B86554F42ACB63E79C9E93 /* Pods_BroncoCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroncoCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F4453E832D67EF1DCEA01DD /* Pods-BroncoCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroncoCast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BroncoCast/Pods-BroncoCast.debug.xcconfig"; sourceTree = "<group>"; };
+		1B369625F0BA94B64D7F3D57 /* Pods_BroncoCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroncoCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE05505421F02BA20051877C /* ProfileContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactsTableViewCell.swift; sourceTree = "<group>"; };
 		BE05505621F035050051877C /* ProfileAddContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddContactTableViewCell.swift; sourceTree = "<group>"; };
 		BE0DADCD21D3E903003C2B43 /* NavigationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAction.swift; sourceTree = "<group>"; };
@@ -169,6 +169,7 @@
 		BE41A65321FE3B0F00A9A41D /* AdminOrgActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrgActions.swift; sourceTree = "<group>"; };
 		BE41A65521FE41C300A9A41D /* AdminUsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUsersTableViewCell.swift; sourceTree = "<group>"; };
 		BE4772CA21D071A000C12763 /* TextFieldHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldHelper.swift; sourceTree = "<group>"; };
+		BE541196B69B9456678FF6DB /* Pods-BroncoCast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroncoCast.release.xcconfig"; path = "Target Support Files/Pods-BroncoCast/Pods-BroncoCast.release.xcconfig"; sourceTree = "<group>"; };
 		BE59E042220620BE00945AA1 /* AdminUserDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUserDetailState.swift; sourceTree = "<group>"; };
 		BE59E044220621EC00945AA1 /* AdminUserDetailActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUserDetailActions.swift; sourceTree = "<group>"; };
 		BE59E0462206228E00945AA1 /* AdminUserDetailReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUserDetailReducer.swift; sourceTree = "<group>"; };
@@ -220,6 +221,7 @@
 		BE9F144C21F7F94400D1A386 /* ProfileOrgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgTableViewCell.swift; sourceTree = "<group>"; };
 		BEA22CB821D15E5F00D453BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BEA22CBB21D3BCC600D453BE /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		BEA43DF4258411080032DD07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BEA5388121FD50AB006511C4 /* AdminUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUsersViewController.swift; sourceTree = "<group>"; };
 		BEAB043D2213AAED0000E8BE /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		BEAB043F2213B0DA0000E8BE /* SignInOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInOptionsViewController.swift; sourceTree = "<group>"; };
@@ -268,7 +270,7 @@
 		BEE35C8721F68C7E003F33AD /* ProfileOrgsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsViewController.swift; sourceTree = "<group>"; };
 		BEE35C8921F6A846003F33AD /* ProfileOrgsErrorMsgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrgsErrorMsgTableViewCell.swift; sourceTree = "<group>"; };
 		BEFB3E4621E561AA00CE9426 /* ProfileContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactsViewController.swift; sourceTree = "<group>"; };
-		C84058CC7F8957F4A1EEB5E2 /* Pods-BroncoCast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroncoCast.release.xcconfig"; path = "Pods/Target Support Files/Pods-BroncoCast/Pods-BroncoCast.release.xcconfig"; sourceTree = "<group>"; };
+		E78175D03CB1BE6A3AEFA678 /* Pods-BroncoCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroncoCast.debug.xcconfig"; path = "Target Support Files/Pods-BroncoCast/Pods-BroncoCast.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEB8C665221A67CB00BB963A /* WebKit.framework in Frameworks */,
-				DA8E9C846812FE5B08CC5A32 /* Pods_BroncoCast.framework in Frameworks */,
+				19759B5B9B0252D52C0846ED /* Pods_BroncoCast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,18 +290,9 @@
 			isa = PBXGroup;
 			children = (
 				BEB8C664221A67CB00BB963A /* WebKit.framework */,
-				97B86554F42ACB63E79C9E93 /* Pods_BroncoCast.framework */,
+				1B369625F0BA94B64D7F3D57 /* Pods_BroncoCast.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B7DB8E7C33FB3EC0F186823D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9F4453E832D67EF1DCEA01DD /* Pods-BroncoCast.debug.xcconfig */,
-				C84058CC7F8957F4A1EEB5E2 /* Pods-BroncoCast.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		BE05505321F01E120051877C /* Table Views */ = {
@@ -469,8 +462,8 @@
 			children = (
 				BED9D8D521CEEC56003455E6 /* BroncoCast */,
 				BED9D8D421CEEC56003455E6 /* Products */,
-				B7DB8E7C33FB3EC0F186823D /* Pods */,
 				1D350C5E93E6619F86000994 /* Frameworks */,
+				E771063499DCF671970B1B57 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -498,8 +491,18 @@
 				BED9D8DF21CEEC56003455E6 /* LaunchScreen.storyboard */,
 				BED9D8E221CEEC56003455E6 /* Info.plist */,
 				BE4772CA21D071A000C12763 /* TextFieldHelper.swift */,
+				BEA43DF4258411080032DD07 /* GoogleService-Info.plist */,
 			);
 			path = BroncoCast;
+			sourceTree = "<group>";
+		};
+		E771063499DCF671970B1B57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E78175D03CB1BE6A3AEFA678 /* Pods-BroncoCast.debug.xcconfig */,
+				BE541196B69B9456678FF6DB /* Pods-BroncoCast.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,11 +512,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BED9D8E521CEEC56003455E6 /* Build configuration list for PBXNativeTarget "BroncoCast" */;
 			buildPhases = (
-				935458740065A154C0BF8BD3 /* [CP] Check Pods Manifest.lock */,
+				C99A879CE7B68588756B1733 /* [CP] Check Pods Manifest.lock */,
 				BED9D8CF21CEEC56003455E6 /* Sources */,
 				BED9D8D021CEEC56003455E6 /* Frameworks */,
 				BED9D8D121CEEC56003455E6 /* Resources */,
-				E82496D96C5F4A81105C8E5F /* [CP] Embed Pods Frameworks */,
+				9913AB87F38BCBC6F97F1A54 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -531,7 +534,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Ken Schenke";
 				TargetAttributes = {
 					BED9D8D221CEEC56003455E6 = {
@@ -573,13 +576,31 @@
 				BED9D8E121CEEC56003455E6 /* LaunchScreen.storyboard in Resources */,
 				BED9D8DE21CEEC56003455E6 /* Assets.xcassets in Resources */,
 				BED9D8DC21CEEC56003455E6 /* Main.storyboard in Resources */,
+				BEA43DF5258411080032DD07 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		935458740065A154C0BF8BD3 /* [CP] Check Pods Manifest.lock */ = {
+		9913AB87F38BCBC6F97F1A54 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BroncoCast/Pods-BroncoCast-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BroncoCast/Pods-BroncoCast-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BroncoCast/Pods-BroncoCast-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C99A879CE7B68588756B1733 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -599,40 +620,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E82496D96C5F4A81105C8E5F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BroncoCast/Pods-BroncoCast-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Alertift/Alertift.framework",
-				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
-				"${BUILT_PRODUCTS_DIR}/InputMask/InputMask.framework",
-				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyPickerPopover/SwiftyPickerPopover.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alertift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InputMask.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyPickerPopover.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BroncoCast/Pods-BroncoCast-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -815,6 +802,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -876,6 +864,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -907,17 +896,19 @@
 		};
 		BED9D8E621CEEC56003455E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F4453E832D67EF1DCEA01DD /* Pods-BroncoCast.debug.xcconfig */;
+			baseConfigurationReference = E78175D03CB1BE6A3AEFA678 /* Pods-BroncoCast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BroncoCast/BroncoCast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = WC7R2MUF8W;
 				INFOPLIST_FILE = BroncoCast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kenschenke.BroncoCast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -927,17 +918,19 @@
 		};
 		BED9D8E721CEEC56003455E6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C84058CC7F8957F4A1EEB5E2 /* Pods-BroncoCast.release.xcconfig */;
+			baseConfigurationReference = BE541196B69B9456678FF6DB /* Pods-BroncoCast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BroncoCast/BroncoCast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = WC7R2MUF8W;
 				INFOPLIST_FILE = BroncoCast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kenschenke.BroncoCast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

@@ -92,7 +92,7 @@ func signIn(state : AppState, store : Store<AppState>) -> Action? {
     ]
     if !state.signInState.deviceToken.isEmpty {
         params["DeviceToken"] = state.signInState.deviceToken
-        params["DeviceType"] = "APPLE"
+        params["DeviceType"] = "FCM_APPLE"
     }
     Alamofire.request(UrlMaker.makeUrl(.sign_in), method: .post, parameters: params).responseJSON {
         response in
